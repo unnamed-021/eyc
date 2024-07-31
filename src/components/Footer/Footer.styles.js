@@ -40,6 +40,13 @@ export const Image = styled.img`
   user-select: none;
   object-fit: contain;
 `;
+export const HoverImage = styled(Image)`
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    scale: 1.05;
+  }
+`;
 
 export const NavLinks = styled.div`
   display: flex;

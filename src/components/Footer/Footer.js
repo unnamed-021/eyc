@@ -18,6 +18,7 @@ import {
   StyledText,
   AddressContainer,
   Address,
+  HoverImage,
 } from "./Footer.styles";
 import { ReactComponent as Logo } from "../../assets/icons/logoEYCWhite.svg";
 import AppStore from "../../assets/images/applestore.png";
@@ -142,8 +143,8 @@ const Footer = () => {
             <SocialMediaLabel>Linktree</SocialMediaLabel>
           </SocialMediaRow>
 
-          <Image src={GooglePlay} />
-          <Image src={AppStore} />
+          <HoverImage src={GooglePlay} />
+          <HoverImage src={AppStore} />
           <CopyText>
             Copyright © 2023 EyCrowd, Inc. - All Rights Reserved.
           </CopyText>
