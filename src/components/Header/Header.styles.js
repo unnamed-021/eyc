@@ -29,10 +29,10 @@ export const HeaderContainer = styled.div`
   position: relative;
   padding: 0rem 4rem;
   border-bottom: 1px solid #ecf0f8;
+  position: fixed;
+  z-index: 100;
+  top: 0px;
   @media (max-width: 750px) {
-    position: fixed;
-    top: 0px;
-    z-index: 100;
     height: ${(props) => (props.$open ? "100dvh" : "6rem")};
   }
 `;

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import {
@@ -43,8 +43,66 @@ const Header = () => {
     }
   }, [menuOpen]);
 
+  const [headerVisible, setHeaderVisible] = useState(true);
+  const [lastScrollUpY, setLastScrollUpY] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState(null);
+  const lastScrollTopRef = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollTop = window.scrollY;
+      const lastScrollTop = lastScrollTopRef.current;
+
+      if (currentScrollTop === 0) {
+        setHeaderVisible(true);
+        setLastScrollUpY(currentScrollTop);
+        setScrollDirection(null);
+        lastScrollTopRef.current = currentScrollTop;
+        return;
+      }
+
+      if (currentScrollTop > lastScrollTop) {
+        setScrollDirection("down");
+        setLastScrollUpY(currentScrollTop);
+      } else {
+        setScrollDirection("up");
+      }
+
+      if (scrollDirection === "up" && currentScrollTop < lastScrollUpY - 350) {
+        setHeaderVisible(true);
+        setLastScrollUpY(currentScrollTop);
+      }
+
+      if (
+        scrollDirection === "down" &&
+        currentScrollTop > lastScrollUpY + 350
+      ) {
+        setHeaderVisible(false);
+      }
+
+      lastScrollTopRef.current = currentScrollTop;
+    };
+
+    const handleScrollDebounced = () => {
+      requestAnimationFrame(handleScroll);
+    };
+
+    window.addEventListener("scroll", handleScrollDebounced);
+
+    return () => {
+      window.removeEventListener("scroll", handleScrollDebounced);
+    };
+  }, [scrollDirection]);
+
   return (
-    <HeaderContainer $open={menuOpen}>
+    <HeaderContainer
+      $open={menuOpen}
+      style={{
+        opacity: headerVisible ? 1 : 0,
+        transform: headerVisible ? "translateY(0)" : "translateY(-100%)",
+        transition: "all 0.3s ease-in-out",
+      }}
+    >
       <HeaderWrapper>
         <Logo
           style={{ marginTop: -5 }}
