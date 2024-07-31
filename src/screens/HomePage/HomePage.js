@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Container,
@@ -24,10 +24,57 @@ import Button from "../../components/utils/Button/Button";
 const HomePage = () => {
   const navigate = useNavigate();
 
+  /* SCROLL ANIMATION */
+
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [isIntersecting2, setIsIntersecting2] = useState(false);
+  const [isIntersecting3, setIsIntersecting3] = useState(false);
+  const [isIntersecting4, setIsIntersecting4] = useState(false);
+
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
+
+  const handleIntersection = (setIntersecting, ref) => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIntersecting(entry.isIntersecting);
+      },
+      { rootMargin: "-300px" }
+    );
+
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  };
+
+  useEffect(() => handleIntersection(setIsIntersecting, ref, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting2, ref2, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting3, ref3, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting4, ref4, "slide-in"), []);
+
+  useEffect(() => {
+    const handleClassToggle = (isIntersecting, ref, className) => {
+      ref.current.querySelectorAll("div").forEach((el) => {
+        if (isIntersecting) {
+          el.classList.add(className);
+        } else {
+          el.classList.remove(className);
+        }
+      });
+    };
+
+    handleClassToggle(isIntersecting, ref, "slide-in");
+    handleClassToggle(isIntersecting2, ref2, "slide-in");
+    handleClassToggle(isIntersecting3, ref3, "slide-in");
+    handleClassToggle(isIntersecting4, ref4, "slide-in");
+  }, [isIntersecting, isIntersecting2, isIntersecting3, isIntersecting4]);
+
   return (
     <Container>
       <Header />
-      <Section $firstSection>
+      <Section $firstSection ref={ref}>
         <SectionWrapper>
           <TitleContainer>
             <Title>
@@ -65,7 +112,7 @@ const HomePage = () => {
         </SectionWrapper>
       </Section>
 
-      <Section $grey>
+      <Section $grey ref={ref2}>
         <SectionWrapper>
           <Img
             style={{ width: "258px", height: "559px" }}
@@ -99,7 +146,7 @@ const HomePage = () => {
         </SectionWrapper>
       </Section>
 
-      <Section>
+      <Section ref={ref3}>
         <SectionWrapper>
           <TitleContainer>
             <Title>Enjoy In-Person Experiences</Title>
@@ -133,7 +180,7 @@ const HomePage = () => {
         </SectionWrapper>
       </Section>
 
-      <Section $grey>
+      <Section $grey ref={ref4}>
         <SectionWrapper $center>
           <TitleContainer $center>
             <Title $center>

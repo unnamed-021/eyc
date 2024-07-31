@@ -12,7 +12,7 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const Section = styled.section`
+export const Section = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
@@ -42,13 +42,15 @@ export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: ${(props) => (props.$center ? "center" : "space-between")};
+  justify-content: ${(props) => (props.$center ? "center" : "space-around")};
 
   height: 100%;
   gap: 4rem;
   max-width: 1440px;
   width: 100%;
-
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
   @media (max-width: 660px) {
     flex-direction: column;
     justify-content: center;
@@ -81,6 +83,7 @@ export const TitleContainer = styled.div`
   max-width: ${(props) => (props.$center ? "63rem" : "52.5rem")};
   flex-direction: column;
   gap: 2rem;
+
   justify-content: ${(props) => (props.$center ? "center" : "flex-start")};
   @media (max-width: 660px) {
     justify-content: center;

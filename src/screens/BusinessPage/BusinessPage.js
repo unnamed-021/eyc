@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
   Container,
@@ -39,10 +39,71 @@ import { ImageContainer } from "../../components/Header/Header.styles";
 const BusinessPage = () => {
   const navigate = useNavigate();
 
+  /* SCROLL ANIMATION */
+
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const [isIntersecting2, setIsIntersecting2] = useState(false);
+  const [isIntersecting3, setIsIntersecting3] = useState(false);
+  const [isIntersecting4, setIsIntersecting4] = useState(false);
+  const [isIntersecting5, setIsIntersecting5] = useState(false);
+  const [isIntersecting6, setIsIntersecting6] = useState(false);
+
+  const ref = useRef(null);
+  const ref2 = useRef(null);
+  const ref3 = useRef(null);
+  const ref4 = useRef(null);
+  const ref5 = useRef(null);
+  const ref6 = useRef(null);
+
+  const handleIntersection = (setIntersecting, ref) => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIntersecting(entry.isIntersecting);
+      },
+      { rootMargin: "-300px" }
+    );
+
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  };
+
+  useEffect(() => handleIntersection(setIsIntersecting, ref, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting2, ref2, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting3, ref3, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting4, ref4, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting5, ref5, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting6, ref6, "slide-in"), []);
+
+  useEffect(() => {
+    const handleClassToggle = (isIntersecting, ref, className) => {
+      ref.current.querySelectorAll("div").forEach((el) => {
+        if (isIntersecting) {
+          el.classList.add(className);
+        } else {
+          el.classList.remove(className);
+        }
+      });
+    };
+
+    handleClassToggle(isIntersecting, ref, "slide-in");
+    handleClassToggle(isIntersecting2, ref2, "slide-in");
+    handleClassToggle(isIntersecting3, ref3, "slide-in");
+    handleClassToggle(isIntersecting4, ref4, "slide-in");
+    handleClassToggle(isIntersecting5, ref5, "slide-in");
+    handleClassToggle(isIntersecting6, ref6, "slide-in");
+  }, [
+    isIntersecting,
+    isIntersecting2,
+    isIntersecting3,
+    isIntersecting4,
+    isIntersecting5,
+    isIntersecting6,
+  ]);
   return (
     <Container>
       <Header />
-      <Section $firstSection>
+      <Section $firstSection ref={ref}>
         <StyledSectionWrapper>
           <TitleWrapper>
             <TitleContainer>
@@ -144,7 +205,7 @@ const BusinessPage = () => {
         </StyledSectionWrapper>
       </Section>
 
-      <Section $grey>
+      <Section $grey ref={ref2}>
         <StyledSectionWrapper>
           <TitleWrapper>
             <Image
@@ -210,7 +271,7 @@ const BusinessPage = () => {
         </StyledSectionWrapper>
       </Section>
 
-      <Section>
+      <Section ref={ref3}>
         <StyledSectionWrapper>
           <TitleWrapper>
             <TitleContainer>
@@ -273,7 +334,7 @@ const BusinessPage = () => {
         </StyledSectionWrapper>
       </Section>
 
-      <Section $grey>
+      <Section $grey ref={ref4}>
         <StyledSectionWrapper>
           <TitleWrapper>
             <Image
@@ -339,7 +400,7 @@ const BusinessPage = () => {
         </StyledSectionWrapper>
       </Section>
 
-      <Section>
+      <Section ref={ref5}>
         <StyledSectionWrapper $center>
           <TitleContainer $center>
             <Title $center>Why EyCrowd?</Title>
@@ -366,7 +427,7 @@ const BusinessPage = () => {
         </StyledSectionWrapper>
       </Section>
 
-      <Section $grey>
+      <Section $grey ref={ref6}>
         <SectionWrapper $center>
           <TitleContainer $center>
             <Title $center>About EyCrowd</Title>

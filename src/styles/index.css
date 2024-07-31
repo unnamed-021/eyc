@@ -151,3 +151,19 @@
     url("../assets/fonts/Poppins-Black.eot") format("eot"),
     url("../assets/fonts/Poppins-Black.ttf") format("ttf");
 }
+/* 
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+.slide-in {
+  transform: translateX(0) !important;
+  transition: all ease-in 0.4s;
+  opacity: 1 !important;
+}

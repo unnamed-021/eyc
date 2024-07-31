@@ -51,6 +51,9 @@ export const SectionWrapper = styled.div`
   gap: 4rem;
   max-width: 1440px;
   width: 100%;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
 
   @media (max-width: 660px) {
     flex-direction: column;
@@ -153,6 +156,9 @@ export const StyledSectionWrapper = styled.div`
   gap: 4rem;
   max-width: 1440px;
   width: 100%;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: all 0.4s ease-in-out;
 
   @media (max-width: 660px) {
     flex-direction: column;
