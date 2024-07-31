@@ -1,0 +1,153 @@
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #000 #fff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #000;
+}
+
+.swing {
+  transform-origin: top center;
+  animation: swing 1s ease;
+}
+
+@keyframes swing {
+  20% {
+    transform: rotate(8deg);
+  }
+  40% {
+    transform: rotate(-5deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-3deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.roll-out {
+  animation: roll-out 1s ease;
+}
+
+@keyframes roll-out {
+  0% {
+    opacity: 1;
+    transform: translateX(0px) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(100%) rotate(0deg);
+  }
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-ExtraLight";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 200;
+  src: url("../assets/fonts/Poppins-ExtraLight.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-ExtraLight.woff") format("woff"),
+    url("../assets/fonts/Poppins-ExtraLight.eot") format("eot"),
+    url("../assets/fonts/Poppins-ExtraLight.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-Light";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 300;
+  src: url("../assets/fonts/Poppins-Light.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Light.woff") format("woff"),
+    url("../assets/fonts/Poppins-Light.eot") format("eot"),
+    url("../assets/fonts/Poppins-Light.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-Regular";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 400;
+  src: url("../assets/fonts/Poppins-Regular.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Regular.woff") format("woff"),
+    url("../assets/fonts/Poppins-Regular.eot") format("eot"),
+    url("../assets/fonts/Poppins-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-Medium";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 500;
+  src: url("../assets/fonts/Poppins-Medium.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Medium.woff") format("woff"),
+    url("../assets/fonts/Poppins-Medium.eot") format("eot"),
+    url("../assets/fonts/Poppins-Medium.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-SemiBold";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/Poppins-SemiBold.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-SemiBold.woff") format("woff"),
+    url("../assets/fonts/Poppins-SemiBold.eot") format("eot"),
+    url("../assets/fonts/Poppins-SemiBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-Bold";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 700;
+  src: url("../assets/fonts/Poppins-Bold.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Bold.woff") format("woff"),
+    url("../assets/fonts/Poppins-Bold.eot") format("eot"),
+    url("../assets/fonts/Poppins-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-ExtraBold";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 800;
+  src: url("../assets/fonts/Poppins-ExtraBold.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-ExtraBold.woff") format("woff"),
+    url("../assets/fonts/Poppins-ExtraBold.eot") format("eot"),
+    url("../assets/fonts/Poppins-ExtraBold.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Poppins-Black";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 900;
+  src: url("../assets/fonts/Poppins-Black.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-Black.woff") format("woff"),
+    url("../assets/fonts/Poppins-Black.eot") format("eot"),
+    url("../assets/fonts/Poppins-Black.ttf") format("ttf");
+}
