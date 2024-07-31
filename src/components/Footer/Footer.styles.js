@@ -69,6 +69,10 @@ export const AddressContainer = styled.div`
   display: flex;
   flex-direction: column;
   cursor: pointer;
+
+  &:hover {
+    text-shadow: 0px 0px 5px white;
+  }
   @media (max-width: 845px) {
     justify-content: center;
     align-items: center;
@@ -80,6 +84,9 @@ export const Address = styled.span`
   font-family: "Poppins-Regular";
   letter-spacing: -0.2px;
   color: white;
+
+  transition: all 0.3s ease;
+
   @media (max-width: 845px) {
     text-align: center;
   }
@@ -127,6 +134,7 @@ export const SocialMediaRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  transition: all 0.3s ease-in-out;
 `;
 
 export const SocialMediaLabel = styled.span`
@@ -135,6 +143,25 @@ export const SocialMediaLabel = styled.span`
   font-family: "Poppins-Medium";
   letter-spacing: -0.2px;
   user-select: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0px;
+    width: ${(props) => (props.$active ? "100%" : "0")};
+
+    height: 2px;
+    background: white;
+    transition: width 0.3s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 `;
 
 export const Instagram = styled(InstaSvg)`
