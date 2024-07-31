@@ -132,25 +132,47 @@ const Header = () => {
               Home
             </Link>
 
-            <Link
-              $active={pathname === "/business"}
-              onClick={() => {
-                // navigate("/business");
-                window.scrollTo(0, 0);
-              }}
-            >
-              For Business
-            </Link>
+            {pathname === "/business" ? (
+              <Link
+                $active={pathname === "/"}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
+                News
+              </Link>
+            ) : (
+              <Link
+                $active={pathname === "/business"}
+                onClick={() => {
+                  navigate("/business");
+                  window.scrollTo(0, 0);
+                }}
+              >
+                For Business
+              </Link>
+            )}
 
-            <Link
-              $active={pathname === "/news"}
-              onClick={() => {
-                // navigate("/news");
-                window.scrollTo(0, 0);
-              }}
-            >
-              News
-            </Link>
+            {pathname === "/business" ? (
+              <Link
+                $active={pathname === "/"}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
+                About Us
+              </Link>
+            ) : (
+              <Link
+                $active={pathname === "/business"}
+                onClick={() => {
+                  navigate("/business");
+                  window.scrollTo(0, 0);
+                }}
+              >
+                News
+              </Link>
+            )}
           </StyledNavLinks>
         )}
       </HamburgerMenu>
