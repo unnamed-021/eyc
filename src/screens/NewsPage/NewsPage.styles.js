@@ -31,6 +31,9 @@ export const Section = styled.div`
   @media (max-width: 750px) {
     height: 100%;
   }
+  @media (max-width: 490px) {
+    padding: 8rem 2rem 2rem 2rem;
+  }
 `;
 
 export const SectionWrapper = styled.div`
@@ -47,6 +50,10 @@ export const SectionWrapper = styled.div`
   @media (max-width: 660px) {
     flex-direction: column;
     justify-content: center;
+  }
+  @media (max-width: 400px) {
+    opacity: 1 !important;
+    transform: translateX(0);
   }
 `;
 
@@ -124,6 +131,9 @@ export const ImagesContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+  @media (max-width: 920px) {
+    flex-direction: column;
+  }
 `;
 
 export const RightSide = styled.div`
@@ -139,6 +149,9 @@ export const ImageRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+  @media (max-width: 490px) {
+    flex-direction: column;
+  }
 `;
 export const ImageTitle = styled.span`
   font-size: 2.6rem;
@@ -157,16 +170,31 @@ export const ImageLeft = styled.img`
   width: 44.9rem;
   height: 52.4rem;
   border-radius: 1.2rem;
+  object-fit: cover;
+  @media (max-width: 920px) {
+    width: 50.7rem;
+  }
+  @media (max-width: 490px) {
+    width: 100%;
+  }
 `;
 export const ImageRight = styled.img`
+  object-fit: cover;
   width: 50.7rem;
   height: 26rem;
   border-radius: 1.2rem;
+  @media (max-width: 490px) {
+    width: 100%;
+  }
 `;
 export const ImageRightSmall = styled.img`
   border-radius: 1.2rem;
   width: 25rem;
+  object-fit: cover;
   height: 25.8rem;
+  @media (max-width: 490px) {
+    width: 100%;
+  }
 `;
 
 export const NewsContainer = styled.div`
@@ -184,20 +212,37 @@ export const NewContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 2rem;
+  width: 120rem;
+  @media (max-width: 1250px) {
+    width: 100%;
+  }
+  @media (max-width: 660px) {
+    flex-direction: column;
+  }
 `;
 
 export const NewPhoto = styled.img`
-  width: 60rem;
+  width: 48%;
   height: 32rem;
   object-fit: cover;
   border-radius: 3rem 0rem 0rem 3rem;
+  @media (max-width: 660px) {
+    width: 100%;
+    border-radius: 3rem 3rem 0rem 0rem;
+  }
 `;
 
 export const NewColumn = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 60rem;
+  width: 48%;
+
   gap: 2rem;
+  @media (max-width: 660px) {
+    align-items: center;
+    padding: 0rem 2rem 2rem 2rem;
+    width: 100%;
+  }
 `;
 
 export const Date = styled(Subtitle)`

@@ -224,6 +224,7 @@ const NewsPage = () => {
                   <Date>{data.date}</Date>
                   <NewsTitle>{data.title}</NewsTitle>
                   <Description>{data.description}</Description>
+
                   <Button title={"Read More"} />
                 </NewColumn>
               </NewContainer>
