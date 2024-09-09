@@ -22,15 +22,6 @@ export const Section = styled.div`
 
   background-color: white;
 
-  @media (max-height: 1020px) {
-    height: 100dvh;
-  }
-  @media (max-height: 625px) {
-    height: 100%;
-  }
-  @media (max-width: 750px) {
-    height: 100%;
-  }
   @media (max-width: 490px) {
     padding: 8rem 2rem 2rem 2rem;
   }
