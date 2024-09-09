@@ -228,10 +228,6 @@ export const NewPhoto = styled.img`
   height: 100%;
   object-fit: cover;
   max-height: 60rem;
-
-  @media (max-width: 660px) {
-    width: 100%;
-  }
 `;
 
 export const NewColumn = styled.div`
