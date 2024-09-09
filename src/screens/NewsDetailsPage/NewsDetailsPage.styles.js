@@ -260,6 +260,9 @@ export const Description = styled(Subtitle)`
 export const Link = styled(Description)`
   color: #fe5f55;
   cursor: pointer;
+  @media (max-width: 471px) {
+    font-size: 1.6rem;
+  }
 `;
 
 export const StyledDescription = styled(Description)`
@@ -268,4 +271,8 @@ export const StyledDescription = styled(Description)`
   gap: 0.5rem;
   display: flex;
   color: black;
+  @media (max-width: 471px) {
+    flex-direction: column;
+    white-space: break-spaces;
+  }
 `;
