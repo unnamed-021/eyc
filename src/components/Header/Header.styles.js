@@ -187,7 +187,7 @@ export const HamburgerMenu = styled.div`
   justify-content: center;
   width: 100%;
   gap: 2rem;
-  padding: 0rem 2rem;
+
   @media (max-width: 750px) {
     display: flex;
   }
