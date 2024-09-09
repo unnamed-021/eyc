@@ -10,6 +10,7 @@ import {
   ButtonsContainer,
   SectionWrapper,
   Img,
+  Video,
 } from "./HomePage.styles";
 
 import Header from "../../components/Header/Header";
@@ -18,6 +19,7 @@ import Footer from "../../components/Footer/Footer";
 import EYCApp from "../../assets/images/eycApp.png";
 import EYCApp2 from "../../assets/images/eycApp2.png";
 import EYCApp3 from "../../assets/images/eycApp3.png";
+import EYCVideo from "../../assets/videos/videoEYCApp.mp4";
 
 import Button from "../../components/utils/Button/Button";
 
@@ -77,38 +79,20 @@ const HomePage = () => {
       <Section $firstSection ref={ref}>
         <SectionWrapper>
           <TitleContainer>
-            <Title>
-              App-Guided Brand Experiences: Be Real, Have Fun, Meet People, &
-              Earn
-            </Title>
+            <Title>Have Fun and Earn with Brands You Believe In</Title>
             <Subtitle>
-              Join fun app-guided experiences with EyCrowd, online and
-              in-person. Earn money, advocate for brands you value, and connect
-              with old and new friends while being your authentic self.
+              EyCrowd's interactive, app-guided brand experiences let you
+              connect with the brands you believe in and earn rewards while
+              doing it, in-person and online!
             </Subtitle>
-            <StyledSubtitle>Take a look at the video 👉</StyledSubtitle>
+            <StyledSubtitle>Watch the video 👉</StyledSubtitle>
+            <StyledSubtitle>Download and earn!👇</StyledSubtitle>
             <ButtonsContainer>
-              <Button title={"Try Now"} containerStyle={{ width: "48%" }} />
-              <Button
-                title={"Learn More"}
-                containerStyle={{
-                  width: "48%",
-                  backgroundColor: "white",
-                  border: "2px solid #FE5F55",
-                }}
-                titleStyle={{ color: "#FE5F55" }}
-              />
+              <Button title={"Download"} containerStyle={{ width: "48%" }} />
             </ButtonsContainer>
           </TitleContainer>
 
-          <Img
-            style={{ width: "258px", height: "559px" }}
-            src={EYCApp}
-            effect="blur"
-            wrapperProps={{
-              style: { transitionDelay: ".3s" },
-            }}
-          />
+          <Video src={EYCVideo} controls />
         </SectionWrapper>
       </Section>
 
@@ -124,23 +108,16 @@ const HomePage = () => {
           />
 
           <TitleContainer>
-            <Title>Enjoy In-Person Experiences</Title>
+            <Title>Engage, Socialize, and Earn with Brands You Love</Title>
             <Subtitle>
-              Join fun experiences with your favorite brands at their locations,
-              guided by our app. Meet up with old friends and make new ones
-              while you earn.
+              EyCrowd lets you participate in fun and interactive "brand
+              experiences" where you can share your authentic voice, socialize
+              with friends, and earn money while experiencing brands that share
+              your values.
             </Subtitle>
+            <StyledSubtitle>Enjoy and earn!👇</StyledSubtitle>
             <ButtonsContainer>
-              <Button title={"Try Now"} containerStyle={{ width: "48%" }} />
-              <Button
-                title={"Learn More"}
-                containerStyle={{
-                  width: "48%",
-                  backgroundColor: "white",
-                  border: "2px solid #FE5F55",
-                }}
-                titleStyle={{ color: "#FE5F55" }}
-              />
+              <Button title={"Download"} containerStyle={{ width: "48%" }} />
             </ButtonsContainer>
           </TitleContainer>
         </SectionWrapper>
@@ -149,15 +126,18 @@ const HomePage = () => {
       <Section ref={ref3}>
         <SectionWrapper>
           <TitleContainer>
-            <Title>Enjoy In-Person Experiences</Title>
+            <Title>Our Community Loves EyCrowd</Title>
             <Subtitle>
-              Join fun experiences with your favorite brands at their locations,
-              guided by our app. Meet up with old friends and make new ones
-              while you earn.
+              Earning rewards, discovering new brands, and connecting with
+              like-minded people through fun, brand-guided experiences feels
+              amazing. From in-person events to online engagements, EyCrowd
+              makes it easy to enjoy experiences with your favorite brands
+              authentically.
             </Subtitle>
+            <StyledSubtitle>Have fun and earn!👇</StyledSubtitle>
             <ButtonsContainer>
-              <Button title={"Try Now"} containerStyle={{ width: "48%" }} />
-              <Button
+              <Button title={"Download"} containerStyle={{ width: "48%" }} />
+              {/* <Button
                 title={"Learn More"}
                 containerStyle={{
                   width: "48%",
@@ -165,7 +145,7 @@ const HomePage = () => {
                   border: "2px solid #FE5F55",
                 }}
                 titleStyle={{ color: "#FE5F55" }}
-              />
+              /> */}
             </ButtonsContainer>
           </TitleContainer>
 
@@ -188,20 +168,18 @@ const HomePage = () => {
             </Title>
             <Subtitle $center>
               Get ready to become an EyVocate™ and share your love for brands
-              with the world! With EyCrowd™, everyday people like you can
-              participate in exciting brand experience events, earn some extra
-              money, and share your unique voice with others in-person and
-              online. It's all about authentic people connecting with each other
-              while spreading the word about products and services they truly
-              believe in. So let's have some fun, meet cool people who share
-              your interests, and bring your authentic self to the world of
-              marketing. Welcome to EyCrowd™ - where everyone's voice matters!
+              with the world! With EyCrowd™, authentic people like you can
+              participate in exciting app-guided brand experience, earn extra
+              money, and share your unique voice while socializing with others,
+              in-person and online. It's all about genuine people connecting
+              with each other while spreading the word about products and
+              services they truly believe in. So let's have some fun, meet
+              people who share your interests, and bring your authentic self to
+              this amazing community. Welcome to EyCrowd™ - where everyone's
+              voice matters!
             </Subtitle>
             <ButtonsContainer $center>
-              <Button
-                title={"EyCrowd for Business"}
-                containerStyle={{ width: "fit-content" }}
-              />
+              <Button title={"Download"} containerStyle={{ width: "25rem" }} />
             </ButtonsContainer>
           </TitleContainer>
         </SectionWrapper>

@@ -10,6 +10,9 @@ export const Container = styled.div`
   background-color: #fff;
   align-items: center;
   width: 100%;
+  @media (max-width: 750px) {
+    padding-top: 6rem;
+  }
 `;
 
 export const Section = styled.section`
@@ -19,7 +22,9 @@ export const Section = styled.section`
   align-items: center;
   justify-content: center;
   height: 60dvh;
-  padding: 4rem;
+  padding: ${(props) =>
+    props.$paddingBottom ? "4rem 4rem 0rem 4rem" : "4rem"};
+  position: relative;
 
   background-color: ${(props) => (props.$grey ? "#F7F7F8" : "white")};
   border-top: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
@@ -36,8 +41,8 @@ export const Section = styled.section`
   }
   @media (max-width: 750px) {
     height: 100%;
-    padding: ${(props) =>
-      props.$firstSection ? "10rem 4rem 4rem 4rem" : "4rem"};
+    /* padding: ${(props) =>
+      props.$firstSection ? "10rem 4rem 4rem 4rem" : "4rem"}; */
   }
 `;
 
@@ -53,7 +58,7 @@ export const SectionWrapper = styled.div`
   width: 100%;
   transform: translateX(100%);
   opacity: 0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.6s ease-in-out;
 
   @media (max-width: 660px) {
     flex-direction: column;
@@ -64,7 +69,9 @@ export const SectionWrapper = styled.div`
 export const Title = styled.h1`
   font-size: 3.2rem;
   font-family: "Poppins-Bold";
+  line-height: 4.2rem;
   text-align: ${(props) => (props.$center ? "center" : "left")};
+  margin-top: ${(props) => (props.$marginTop ? "3rem" : "0rem")};
   @media (max-width: 660px) {
     text-align: center;
   }
@@ -118,13 +125,30 @@ export const Img = styled(LazyLoadImage)`
   }
 `;
 
+export const CardContainer = styled.div`
+  background-color: white;
+  padding: 4rem;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 57rem;
+  border-radius: 3rem;
+`;
+export const CardRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+`;
 export const ImageRow = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
-  margin-top: 2rem;
+  /* margin-top: 2rem; */
   @media (max-width: 880px) {
     justify-content: center;
   }
@@ -142,6 +166,10 @@ export const TitleWrapper = styled.div`
   }
 `;
 
+export const Icon = styled(LazyLoadImage)`
+  height: auto;
+  margin-bottom: -0.65rem;
+`;
 export const Image = styled(LazyLoadImage)`
   width: ${(props) => (props.$small ? "auto" : "100%")};
   height: ${(props) => (props.$small ? "7.5rem" : "100%")};
@@ -158,7 +186,7 @@ export const StyledSectionWrapper = styled.div`
   width: 100%;
   transform: translateX(100%);
   opacity: 0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.6s ease-in-out;
 
   @media (max-width: 660px) {
     flex-direction: column;
@@ -170,6 +198,15 @@ export const Absolute = styled.div`
   left: 19.4rem;
   bottom: 2.1rem;
 `;
+export const BgEYC = styled.img`
+  width: 100%;
+  /* position: absolute; */
+
+  max-height: 129px;
+  object-fit: contain;
+
+  margin-top: auto;
+`;
 export const ImgContainer = styled.div`
   position: relative;
 `;
@@ -180,7 +217,7 @@ export const ImgRow = styled.div`
   align-items: center;
   gap: 2rem;
   @media (max-width: 880px) {
-    justify-content: center;
+    width: 255px;
   }
 `;
 export const ImgColumn = styled.div`
@@ -196,7 +233,8 @@ export const SmallText = styled.span`
   font-size: 1rem;
   font-family: "Poppins-Medium";
   text-transform: uppercase;
-  max-width: 15rem;
+  max-width: 16rem;
+  line-height: 1rem;
 `;
 export const AbsoluteImage = styled.img`
   position: absolute;

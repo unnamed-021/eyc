@@ -50,7 +50,7 @@ export const SectionWrapper = styled.div`
   width: 100%;
   transform: translateX(100%);
   opacity: 0;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.6s ease-in-out;
   @media (max-width: 660px) {
     flex-direction: column;
     justify-content: center;
@@ -107,6 +107,17 @@ export const Img = styled(LazyLoadImage)`
   width: 300px;
   height: 291px;
   object-fit: ${(props) => (props.$contain ? "contain" : "cover")};
+  border-radius: 1.2rem;
+  user-select: none;
+
+  @media (max-width: 335px) {
+    width: 100%;
+  }
+`;
+export const Video = styled.video`
+  width: 300px;
+  height: auto;
+
   border-radius: 1.2rem;
   user-select: none;
 

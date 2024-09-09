@@ -122,49 +122,36 @@ const Header = () => {
           >
             Home
           </Link>
-          {pathname === "/business" ? (
-            <Link
-              $active={pathname === "/"}
-              onClick={() => {
-                window.scrollTo(0, 0);
-              }}
-            >
-              News
-            </Link>
-          ) : (
-            <Link
-              $active={pathname === "/business"}
-              onClick={() => {
-                navigate("/business");
-                window.scrollTo(0, 0);
-              }}
-            >
-              For Business
-            </Link>
-          )}
 
-          {pathname === "/business" ? (
-            <Link
-              $active={pathname === "/"}
-              onClick={() => {
-                window.scrollTo(0, 0);
-              }}
-            >
-              About Us
-            </Link>
-          ) : (
-            <Link
-              $active={pathname === "/business"}
-              onClick={() => {
-                navigate("/business");
-                window.scrollTo(0, 0);
-              }}
-            >
-              News
-            </Link>
-          )}
+          <Link
+            $active={pathname === "/business"}
+            onClick={() => {
+              navigate("/business");
+              window.scrollTo(0, 0);
+            }}
+          >
+            For Business
+          </Link>
+
+          <Link
+            $active={pathname === "/about-us"}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
+            About
+          </Link>
+
+          <Link
+            $active={pathname === "/news"}
+            onClick={() => {
+              window.scrollTo(0, 0);
+            }}
+          >
+            News
+          </Link>
         </NavLinks>
-        <Button title={"Create Experience"} />
+        <Button title={"Business Login"} />
       </HeaderWrapper>
 
       <HamburgerMenu>
@@ -190,47 +177,34 @@ const Header = () => {
               Home
             </Link>
 
-            {pathname === "/business" ? (
-              <Link
-                $active={pathname === "/"}
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                }}
-              >
-                News
-              </Link>
-            ) : (
-              <Link
-                $active={pathname === "/business"}
-                onClick={() => {
-                  navigate("/business");
-                  window.scrollTo(0, 0);
-                }}
-              >
-                For Business
-              </Link>
-            )}
+            <Link
+              $active={pathname === "/business"}
+              onClick={() => {
+                navigate("/business");
+                window.scrollTo(0, 0);
+              }}
+            >
+              For Business
+            </Link>
 
-            {pathname === "/business" ? (
-              <Link
-                $active={pathname === "/"}
-                onClick={() => {
-                  window.scrollTo(0, 0);
-                }}
-              >
-                About Us
-              </Link>
-            ) : (
-              <Link
-                $active={pathname === "/business"}
-                onClick={() => {
-                  navigate("/business");
-                  window.scrollTo(0, 0);
-                }}
-              >
-                News
-              </Link>
-            )}
+            <Link
+              $active={pathname === "/about-us"}
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
+              About
+            </Link>
+
+            <Link
+              $active={pathname === "/news"}
+              onClick={() => {
+                window.scrollTo(0, 0);
+              }}
+            >
+              News
+            </Link>
+            <Button title={"Business Login"} />
           </StyledNavLinks>
         )}
       </HamburgerMenu>

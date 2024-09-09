@@ -100,8 +100,33 @@ export const Link = styled.span`
   }
 `;
 
+export const CenterRelative = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+`;
+
 export const ImageContainer = styled.div`
   position: relative;
+  width: 7.5rem;
+  height: 7.5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+`;
+export const BigCircleImg = styled.img`
+  position: absolute;
+  z-index: -1;
+  height: 24rem;
+  width: 24rem;
+`;
+export const CircleImg = styled.img`
+  position: absolute;
+  z-index: -1;
+  height: 7.5rem;
+  width: 7.5rem;
 `;
 
 export const Dot = styled.div`
