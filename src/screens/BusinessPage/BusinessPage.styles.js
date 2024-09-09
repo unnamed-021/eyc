@@ -21,7 +21,7 @@ export const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 60dvh;
+  height: 100dvh;
   padding: ${(props) =>
     props.$paddingBottom ? "4rem 4rem 0rem 4rem" : "4rem"};
   position: relative;

@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import GlobalStyles from "./styles/globalStyles";
 import SplashScreen from "./components/SplashScreen/SplashScreen";
 import HomePage from "./screens/HomePage/HomePage";
+import NewsPage from "./screens/NewsPage/NewsPage";
 import BusinessPage from "./screens/BusinessPage/BusinessPage";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -37,6 +38,7 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/business" element={<BusinessPage />} />
+            <Route path="/news" element={<NewsPage />} />
           </Routes>
         </>
       ) : (

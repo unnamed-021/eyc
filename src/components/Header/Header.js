@@ -145,6 +145,7 @@ const Header = () => {
           <Link
             $active={pathname === "/news"}
             onClick={() => {
+              navigate("/news");
               window.scrollTo(0, 0);
             }}
           >
@@ -199,6 +200,7 @@ const Header = () => {
             <Link
               $active={pathname === "/news"}
               onClick={() => {
+                navigate("/news");
                 window.scrollTo(0, 0);
               }}
             >

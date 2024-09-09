@@ -17,13 +17,10 @@ export const Section = styled.div`
   width: 100%;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  height: 100dvh;
-  padding: 4rem;
+  height: 100%;
+  padding: 10rem 4rem 4rem 4rem;
 
-  background-color: ${(props) => (props.$grey ? "#F7F7F8" : "white")};
-  border-top: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
-  border-bottom: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
+  background-color: white;
 
   @media (max-height: 1020px) {
     height: 100dvh;
@@ -33,17 +30,13 @@ export const Section = styled.div`
   }
   @media (max-width: 750px) {
     height: 100%;
-    padding: ${(props) =>
-      props.$firstSection ? "10rem 4rem 4rem 4rem" : "4rem"};
   }
 `;
 
 export const SectionWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: ${(props) => (props.$center ? "center" : "space-around")};
-
   height: 100%;
   gap: 4rem;
   max-width: 1440px;
@@ -124,4 +117,96 @@ export const Video = styled.video`
   @media (max-width: 335px) {
     width: 100%;
   }
+`;
+
+export const ImagesContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+`;
+
+export const RightSide = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+export const ImageContainer = styled.div`
+  position: relative;
+`;
+export const ImageRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+`;
+export const ImageTitle = styled.span`
+  font-size: 2.6rem;
+  font-family: "Poppins-SemiBold";
+  color: white;
+  user-select: none;
+  position: absolute;
+  z-index: 2;
+  bottom: 2rem;
+  left: 1rem;
+  line-height: 3rem;
+  text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+`;
+
+export const ImageLeft = styled.img`
+  width: 44.9rem;
+  height: 52.4rem;
+  border-radius: 1.2rem;
+`;
+export const ImageRight = styled.img`
+  width: 50.7rem;
+  height: 26rem;
+  border-radius: 1.2rem;
+`;
+export const ImageRightSmall = styled.img`
+  border-radius: 1.2rem;
+  width: 25rem;
+  height: 25.8rem;
+`;
+
+export const NewsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+`;
+
+export const NewContainer = styled.div`
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  background-color: white;
+  border-radius: 3rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+`;
+
+export const NewPhoto = styled.img`
+  width: 60rem;
+  height: 32rem;
+  object-fit: cover;
+  border-radius: 3rem 0rem 0rem 3rem;
+`;
+
+export const NewColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  max-width: 60rem;
+  gap: 2rem;
+`;
+
+export const Date = styled(Subtitle)`
+  font-size: 2rem;
+`;
+export const NewsTitle = styled(Title)`
+  color: black;
+  line-height: 3.2rem;
+`;
+export const Description = styled(Subtitle)`
+  font-size: 1.8rem;
 `;

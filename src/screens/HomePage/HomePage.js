@@ -92,7 +92,20 @@ const HomePage = () => {
             </ButtonsContainer>
           </TitleContainer>
 
-          <Video src={EYCVideo} controls />
+          <Img
+            style={{ width: "258px", height: "559px", cursor: "pointer" }}
+            src={EYCApp}
+            effect="blur"
+            onClick={() => {
+              window.open(
+                "https://www.youtube.com/watch?v=IvMN9PdLxG4&t=1s",
+                "_blank"
+              );
+            }}
+            wrapperProps={{
+              style: { transitionDelay: ".3s" },
+            }}
+          />
         </SectionWrapper>
       </Section>
 
