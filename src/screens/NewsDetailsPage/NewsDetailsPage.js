@@ -215,14 +215,14 @@ const NewsDetailsPage = () => {
                 <Description>LinkedIn Profiles:</Description>
                 <Link
                   onClick={() => {
-                    window.open(state?.linkedin?.link1);
+                    window.open("https://www.linkedin.com/in/cowdrey/");
                   }}
                 >
                   {state?.linkedin?.link1}
                 </Link>
                 <Link
                   onClick={() => {
-                    window.open(state?.linkedin?.link2);
+                    window.open("https://www.linkedin.com/in/aymanalzamil/");
                   }}
                 >
                   {state?.linkedin?.link2}
