@@ -7,6 +7,7 @@ import HomePage from "./screens/HomePage/HomePage";
 import NewsPage from "./screens/NewsPage/NewsPage";
 import BusinessPage from "./screens/BusinessPage/BusinessPage";
 import "react-toastify/dist/ReactToastify.css";
+import NewsDetailsPage from "./screens/NewsDetailsPage/NewsDetailsPage";
 
 function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
@@ -39,6 +40,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/business" element={<BusinessPage />} />
             <Route path="/news" element={<NewsPage />} />
+            <Route path="/news-details" element={<NewsDetailsPage />} />
           </Routes>
         </>
       ) : (

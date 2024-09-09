@@ -18,12 +18,12 @@ export const Section = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
-  padding: 10rem 4rem 4rem 4rem;
+  padding: 8rem 4rem 4rem 4rem;
 
   background-color: white;
 
   @media (max-width: 490px) {
-    padding: 8rem 2rem 2rem 2rem;
+    padding: 6rem 2rem 2rem 2rem;
   }
 `;
 
@@ -215,15 +215,22 @@ export const NewContainer = styled.div`
     flex-direction: column;
   }
 `;
-
-export const NewPhoto = styled.img`
-  width: 48%;
-  height: 32rem;
-  object-fit: cover;
-  border-radius: 3rem 0rem 0rem 3rem;
+export const Iframe = styled.iframe`
+  align-self: center;
+  width: 56rem;
+  height: 31.5rem;
   @media (max-width: 660px) {
     width: 100%;
-    border-radius: 3rem 3rem 0rem 0rem;
+  }
+`;
+export const NewPhoto = styled.img`
+  width: calc(100% + 8rem);
+  height: 100%;
+  object-fit: cover;
+  max-height: 60rem;
+
+  @media (max-width: 660px) {
+    width: 100%;
   }
 `;
 
@@ -239,6 +246,9 @@ export const NewColumn = styled.div`
     width: 100%;
   }
 `;
+export const StyledNewColumn = styled(NewColumn)`
+  gap: 0rem;
+`;
 
 export const Date = styled(Subtitle)`
   font-size: 2rem;
@@ -249,4 +259,17 @@ export const NewsTitle = styled(Title)`
 `;
 export const Description = styled(Subtitle)`
   font-size: 1.8rem;
+`;
+
+export const Link = styled(Description)`
+  color: #fe5f55;
+  cursor: pointer;
+`;
+
+export const StyledDescription = styled(Description)`
+  white-space: nowrap;
+  flex-direction: row;
+  gap: 0.5rem;
+  display: flex;
+  color: black;
 `;

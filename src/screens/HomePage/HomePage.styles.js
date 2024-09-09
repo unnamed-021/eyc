@@ -25,9 +25,6 @@ export const Section = styled.div`
   border-top: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
   border-bottom: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
 
-  @media (max-height: 1020px) {
-    height: 100dvh;
-  }
   @media (max-height: 625px) {
     height: 100%;
   }

@@ -37,7 +37,7 @@ export const Section = styled.section`
     height: 100%;
   }
   @media (max-width: 1500px) {
-    height: 100%;
+    height: 100dvh;
   }
   @media (max-width: 750px) {
     height: 100%;

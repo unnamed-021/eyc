@@ -10,22 +10,21 @@ import {
   ButtonsContainer,
   SectionWrapper,
   Img,
-  Video,
 } from "./HomePage.styles";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-import EYCApp from "../../assets/images/eycApp.png";
 import EYCApp2 from "../../assets/images/eycApp2.png";
 import EYCApp3 from "../../assets/images/eycApp3.png";
-import EYCVideo from "../../assets/videos/videoEYCApp.mp4";
+import EYCGif from "../../assets/videos/gif.gif";
 
 import Button from "../../components/utils/Button/Button";
+import VideoModal from "../../components/Modal/VideoModal";
 
 const HomePage = () => {
   const navigate = useNavigate();
-
+  const [showVideo, setShowVideo] = useState(false);
   /* SCROLL ANIMATION */
 
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -94,13 +93,10 @@ const HomePage = () => {
 
           <Img
             style={{ width: "258px", height: "559px", cursor: "pointer" }}
-            src={EYCApp}
+            src={EYCGif}
             effect="blur"
             onClick={() => {
-              window.open(
-                "https://www.youtube.com/watch?v=IvMN9PdLxG4&t=1s",
-                "_blank"
-              );
+              setShowVideo(true);
             }}
             wrapperProps={{
               style: { transitionDelay: ".3s" },
@@ -199,6 +195,7 @@ const HomePage = () => {
       </Section>
 
       <Footer />
+      <VideoModal open={showVideo} close={() => setShowVideo(false)} />
     </Container>
   );
 };
