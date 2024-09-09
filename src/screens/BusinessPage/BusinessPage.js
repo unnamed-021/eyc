@@ -21,6 +21,7 @@ import {
   BgEYC,
   CardContainer,
   CardRow,
+  GoToTop,
 } from "./BusinessPage.styles";
 
 import Header from "../../components/Header/Header";
@@ -48,6 +49,7 @@ import Check from "../../assets/images/check.png";
 import Consumer from "../../assets/images/consumer.png";
 import CircleBig from "../../assets/images/bigCircle.png";
 import BigHeart from "../../assets/images/bigHeart.png";
+import { ReactComponent as ChevronTop } from "../../assets/icons/chevron-top.svg";
 
 import Button from "../../components/utils/Button/Button";
 import {
@@ -60,6 +62,25 @@ import {
 const BusinessPage = () => {
   const navigate = useNavigate();
 
+  const [showGoToTop, setShowGoToTop] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > window.innerHeight) {
+      setShowGoToTop(true);
+    } else {
+      setShowGoToTop(false);
+    }
+  };
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
   /* SCROLL ANIMATION */
 
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -813,6 +834,9 @@ const BusinessPage = () => {
       </Section>
 
       <Footer />
+      <GoToTop show={showGoToTop} onClick={goToTop}>
+        <ChevronTop />
+      </GoToTop>
     </Container>
   );
 };

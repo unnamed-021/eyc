@@ -1,5 +1,35 @@
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+
+const jumpFadeIn = keyframes`
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-10%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: .5;
+  }
+`;
+
+const jumpFadeOut = keyframes`
+  0% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-10%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+`;
 
 export const Container = styled.div`
   display: flex;
@@ -10,6 +40,26 @@ export const Container = styled.div`
   background-color: #fff;
   align-items: center;
   width: 100%;
+`;
+export const GoToTop = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fe5f55;
+  position: fixed;
+  bottom: 40px;
+  cursor: pointer;
+  right: 40px;
+  border: 1.5px solid #fff;
+  animation: ${({ show }) => (show ? jumpFadeIn : jumpFadeOut)} 0.5s forwards;
+
+  &:hover {
+    opacity: 1 !important;
+    background-color: #fe5f55;
+  }
 `;
 
 export const Section = styled.div`

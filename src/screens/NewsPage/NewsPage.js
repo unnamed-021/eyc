@@ -19,10 +19,13 @@ import {
   Description,
   Date,
   NewsTitle,
+  GoToTop,
 } from "./NewsPage.styles";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+
+import { ReactComponent as ChevronTop } from "../../assets/icons/chevron-top.svg";
 
 import Img1 from "../../assets/images/news1.png";
 import Img2 from "../../assets/images/news2.png";
@@ -174,8 +177,26 @@ const NewsPage = () => {
   /* SCROLL ANIMATION */
 
   const [isIntersecting, setIsIntersecting] = useState(false);
-
   const ref = useRef(null);
+  const [showGoToTop, setShowGoToTop] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > window.innerHeight) {
+      setShowGoToTop(true);
+    } else {
+      setShowGoToTop(false);
+    }
+  };
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   const handleIntersection = (setIntersecting, ref) => {
     const observer = new IntersectionObserver(
@@ -258,6 +279,10 @@ const NewsPage = () => {
           </NewsContainer>
         </SectionWrapper>
       </Section>
+
+      <GoToTop show={showGoToTop} onClick={goToTop}>
+        <ChevronTop />
+      </GoToTop>
 
       <Footer />
     </Container>

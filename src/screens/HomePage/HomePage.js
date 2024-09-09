@@ -10,6 +10,7 @@ import {
   ButtonsContainer,
   SectionWrapper,
   Img,
+  GoToTop,
 } from "./HomePage.styles";
 
 import Header from "../../components/Header/Header";
@@ -18,6 +19,7 @@ import Footer from "../../components/Footer/Footer";
 import EYCApp2 from "../../assets/images/eycApp2.png";
 import EYCApp3 from "../../assets/images/eycApp3.png";
 import EYCGif from "../../assets/videos/gif.gif";
+import { ReactComponent as ChevronTop } from "../../assets/icons/chevron-top.svg";
 
 import Button from "../../components/utils/Button/Button";
 import VideoModal from "../../components/Modal/VideoModal";
@@ -25,6 +27,27 @@ import VideoModal from "../../components/Modal/VideoModal";
 const HomePage = () => {
   const navigate = useNavigate();
   const [showVideo, setShowVideo] = useState(false);
+
+  const [showGoToTop, setShowGoToTop] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > window.innerHeight) {
+      setShowGoToTop(true);
+    } else {
+      setShowGoToTop(false);
+    }
+  };
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
+
   /* SCROLL ANIMATION */
 
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -195,6 +218,9 @@ const HomePage = () => {
       </Section>
 
       <Footer />
+      <GoToTop show={showGoToTop} onClick={goToTop}>
+        <ChevronTop />
+      </GoToTop>
       <VideoModal open={showVideo} close={() => setShowVideo(false)} />
     </Container>
   );
