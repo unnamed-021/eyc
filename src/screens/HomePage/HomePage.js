@@ -92,7 +92,7 @@ const HomePage = () => {
           </TitleContainer>
 
           <Img
-            style={{ width: "258px", height: "559px", cursor: "pointer" }}
+            style={{ width: "100%", height: "559px", cursor: "pointer" }}
             src={EYCGif}
             effect="blur"
             onClick={() => {
