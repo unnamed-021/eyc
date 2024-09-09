@@ -138,3 +138,12 @@ export const ModalContentFade = styled.div`
     width: 90% !important;
   }
 `;
+
+export const Iframe = styled.iframe`
+  align-self: center;
+  width: 56rem;
+  height: 31.5rem;
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+`;

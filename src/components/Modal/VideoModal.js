@@ -1,6 +1,7 @@
 import React from "react";
 
 import Modal from "./Modal";
+import { Iframe } from "./Modal.styles";
 
 const VideoModal = ({ open, close }) => {
   return (
@@ -11,9 +12,7 @@ const VideoModal = ({ open, close }) => {
       height={"fit-content"}
       fade
     >
-      <iframe
-        width="560"
-        height="315"
+      <Iframe
         src="https://www.youtube.com/embed/IvMN9PdLxG4"
         title="YouTube video player"
         frameBorder="0"
