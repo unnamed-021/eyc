@@ -8,6 +8,10 @@ import NewsPage from "./screens/NewsPage/NewsPage";
 import BusinessPage from "./screens/BusinessPage/BusinessPage";
 import "react-toastify/dist/ReactToastify.css";
 import NewsDetailsPage from "./screens/NewsDetailsPage/NewsDetailsPage";
+import OptInPage from "./screens/OptInPage/OptInPage";
+import { GoToTop } from "./screens/HomePage/HomePage.styles";
+import { ReactComponent as ChevronTop } from "./assets/icons/chevron-top.svg";
+import RequestFormPage from "./screens/RequestFormPage/RequestFormPage";
 
 function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
@@ -17,6 +21,26 @@ function App() {
     return () => clearTimeout(timer);
   }, []);
 
+  const [showGoToTop, setShowGoToTop] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > window.innerHeight) {
+      setShowGoToTop(true);
+    } else {
+      setShowGoToTop(false);
+    }
+  };
+
+  const goToTop = () => {
+    window.scrollTo(0, 0);
+  };
   return (
     <Fragment>
       <GlobalStyles />
@@ -41,7 +65,12 @@ function App() {
             <Route path="/business" element={<BusinessPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/news-details" element={<NewsDetailsPage />} />
+            <Route path="/opt-in" element={<OptInPage />} />
+            <Route path="/request-form" element={<RequestFormPage />} />
           </Routes>
+          <GoToTop show={showGoToTop} onClick={goToTop}>
+            <ChevronTop />
+          </GoToTop>
         </>
       ) : (
         <SplashScreen />

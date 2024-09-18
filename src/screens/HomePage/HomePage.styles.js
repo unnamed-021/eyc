@@ -54,6 +54,7 @@ export const GoToTop = styled.div`
   cursor: pointer;
   right: 40px;
   border: 1.5px solid #fff;
+
   animation: ${({ show }) => (show ? jumpFadeIn : jumpFadeOut)} 0.5s forwards;
 
   &:hover {

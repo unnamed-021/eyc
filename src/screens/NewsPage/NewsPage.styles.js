@@ -57,26 +57,6 @@ export const Section = styled.div`
   }
 `;
 
-export const GoToTop = styled.div`
-  width: 50px;
-  height: 50px;
-  border-radius: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #fe5f55;
-  position: fixed;
-  bottom: 40px;
-  cursor: pointer;
-  right: 40px;
-  border: 1.5px solid #fff;
-  animation: ${({ show }) => (show ? jumpFadeIn : jumpFadeOut)} 0.5s forwards;
-
-  &:hover {
-    opacity: 1 !important;
-    background-color: #fe5f55;
-  }
-`;
 export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -95,6 +75,27 @@ export const SectionWrapper = styled.div`
   @media (max-width: 400px) {
     opacity: 1 !important;
     transform: translateX(0);
+  }
+`;
+
+export const GoToTop = styled.div`
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fe5f55;
+  position: fixed;
+  bottom: 40px;
+  cursor: pointer;
+  right: 40px;
+  border: 1.5px solid #fff;
+  animation: ${({ show }) => (show ? jumpFadeIn : jumpFadeOut)} 0.5s forwards;
+
+  &:hover {
+    opacity: 1 !important;
+    background-color: #fe5f55;
   }
 `;
 
