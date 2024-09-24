@@ -71,7 +71,7 @@ export const Section = styled.div`
   height: 100%;
   max-width: 1440px;
 
-  border-bottom: 1px solid #ecf0f8;
+  /* border-bottom: 1px solid #ecf0f8; */
   transform: translateX(100%);
   opacity: 0;
   transition: all 0.6s ease-in-out;
@@ -89,6 +89,7 @@ export const SectionWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 100%;
   gap: 4rem;
   width: 100%;
