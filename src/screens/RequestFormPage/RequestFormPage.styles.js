@@ -183,6 +183,7 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4rem;
+  height: 100%;
   width: 98.4rem;
   @media (max-width: 1000px) {
     width: 100%;

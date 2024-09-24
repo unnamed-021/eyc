@@ -111,6 +111,18 @@
   box-shadow: none;
 }
 
+.calendly-inline-widget {
+  height: 1130px !important;
+  margin-top: -66px !important;
+  margin-bottom: -30px !important;
+}
+
+@media (max-width: 912px) {
+  .calendly-inline-widget {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+}
 @keyframes roll-out {
   0% {
     opacity: 1;

@@ -69,18 +69,18 @@ export const Section = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
+  min-height: calc(100dvh + 8rem);
   max-width: 1440px;
   flex-wrap: wrap;
   gap: 5rem;
 
-  /* border-bottom: 1px solid #ecf0f8; */
   transform: translateX(100%);
   opacity: 0;
   transition: all 0.6s ease-in-out;
-  padding: 12rem 4rem 4rem 4rem;
+  padding: 4rem;
 
   @media (max-width: 490px) {
-    padding: 10rem 2rem 2rem 2rem;
+    padding: 2rem;
   }
   @media (max-width: 400px) {
     opacity: 1 !important;

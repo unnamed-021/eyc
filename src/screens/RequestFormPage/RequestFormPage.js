@@ -75,14 +75,24 @@ const RequestFormPage = () => {
   const validateForm = () => {
     const newErrors = {};
 
-    if (!selectBrandIndustry)
+    if (!selectBrandIndustry) {
+      toast.info("Brand Industry is required");
       newErrors.brandIndustry = "Brand Industry is required";
-    if (!selectLocationTypes)
+    }
+    if (!selectLocationTypes) {
+      toast.info("Location Type is required");
       newErrors.locationTypes = "Location Type is required";
-    if (selectIdealCustomers.length === 0)
+    }
+    if (selectIdealCustomers.length === 0) {
+      toast.info("Ideal Customers is required");
       newErrors.idealCustomers = "Ideal Customers is required";
-    if (!name) newErrors.name = "Name is required";
-    if (!brand) newErrors.brand = "Brand is required";
+    }
+    if (!name) {
+      newErrors.name = "Name is required";
+    }
+    if (!brand) {
+      newErrors.brand = "Brand is required";
+    }
     if (!email) {
       newErrors.email = "Email is required";
     } else if (!/\S+@\S+\.\S+/.test(email)) {
@@ -148,7 +158,7 @@ const RequestFormPage = () => {
         websiteForm({
           email: email,
           fullName: name,
-          type: FORM_TYPES.HELP,
+          type: FORM_TYPES.CAMPAIGN_REQUEST,
           data: {
             brandIndustry: selectBrandIndustry,
             idealCustomers: selectIdealCustomers,
@@ -606,7 +616,7 @@ const RequestFormPage = () => {
                 Thank you for your submission. Please select a time to speak
                 with our team.
               </Subtitle>
-              <InlineWidget url="https://calendly.com/your_scheduling_page" />
+              <InlineWidget url="https://calendly.com/ashley-4ec/30min?back=1" />
               <Subtitle $large>
                 We will confirm your details, identify any additional
                 requirements, and launch! Results typically take three to four

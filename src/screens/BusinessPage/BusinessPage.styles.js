@@ -71,7 +71,8 @@ export const Section = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100dvh;
+  height: 100%;
+  min-height: 100dvh;
   padding: ${(props) =>
     props.$paddingBottom ? "4rem 4rem 0rem 4rem" : "4rem"};
   position: relative;
@@ -79,21 +80,6 @@ export const Section = styled.section`
   background-color: ${(props) => (props.$grey ? "#F7F7F8" : "white")};
   border-top: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
   border-bottom: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
-
-  @media (max-height: 1020px) {
-    height: 100dvh;
-  }
-  @media (max-height: 625px) {
-    height: 100%;
-  }
-  @media (max-width: 1500px) {
-    height: 100dvh;
-  }
-  @media (max-width: 750px) {
-    height: 100%;
-    /* padding: ${(props) =>
-      props.$firstSection ? "10rem 4rem 4rem 4rem" : "4rem"}; */
-  }
 `;
 
 export const SectionWrapper = styled.div`
@@ -113,6 +99,18 @@ export const SectionWrapper = styled.div`
   @media (max-width: 660px) {
     flex-direction: column;
     justify-content: center;
+  }
+  @media (max-width: 400px) {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
+`;
+export const StyledSectionWrapperNoAnimation = styled(SectionWrapper)`
+  transform: translateX(0);
+  opacity: 1;
+  @media (max-width: 400px) {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
   }
 `;
 
@@ -242,6 +240,10 @@ export const StyledSectionWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+  @media (max-width: 400px) {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
 `;
 export const Absolute = styled.div`
   position: absolute;
@@ -250,12 +252,12 @@ export const Absolute = styled.div`
 `;
 export const BgEYC = styled.img`
   width: 100%;
-  /* position: absolute; */
+  position: absolute;
 
   max-height: 129px;
   object-fit: contain;
-
-  margin-top: auto;
+  bottom: 0;
+  /* margin-top: auto; */
 `;
 export const ImgContainer = styled.div`
   position: relative;

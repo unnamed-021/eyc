@@ -73,6 +73,17 @@ export const NavLinks = styled.div`
   gap: 2rem;
 `;
 
+export const Login = styled.span`
+  color: black;
+  font-size: 1.8rem;
+  font-family: "Poppins-SemiBold";
+
+  letter-spacing: -0.2px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+`;
+
 export const Link = styled.span`
   color: black;
   font-size: 1.8rem;

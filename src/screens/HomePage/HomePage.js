@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
 import {
   Container,
   Section,
@@ -23,7 +22,6 @@ import Button from "../../components/utils/Button/Button";
 import VideoModal from "../../components/Modal/VideoModal";
 
 const HomePage = () => {
-  const navigate = useNavigate();
   const [showVideo, setShowVideo] = useState(false);
 
   /* SCROLL ANIMATION */
@@ -88,7 +86,13 @@ const HomePage = () => {
             <StyledSubtitle>Watch the video 👉</StyledSubtitle>
             <StyledSubtitle>Download and earn!👇</StyledSubtitle>
             <ButtonsContainer>
-              <Button title={"Download"} containerStyle={{ width: "48%" }} />
+              <Button
+                title={"Download"}
+                containerStyle={{ width: "48%" }}
+                onClick={() =>
+                  window.open("https://eycrowd.app.link/i2OK7w3jinb", "_blank")
+                }
+              />
             </ButtonsContainer>
           </TitleContainer>
 
@@ -127,7 +131,13 @@ const HomePage = () => {
             </Subtitle>
             <StyledSubtitle>Enjoy and earn!👇</StyledSubtitle>
             <ButtonsContainer>
-              <Button title={"Download"} containerStyle={{ width: "48%" }} />
+              <Button
+                title={"Download"}
+                containerStyle={{ width: "48%" }}
+                onClick={() =>
+                  window.open("https://eycrowd.app.link/i2OK7w3jinb", "_blank")
+                }
+              />
             </ButtonsContainer>
           </TitleContainer>
         </SectionWrapper>
@@ -146,7 +156,13 @@ const HomePage = () => {
             </Subtitle>
             <StyledSubtitle>Have fun and earn!👇</StyledSubtitle>
             <ButtonsContainer>
-              <Button title={"Download"} containerStyle={{ width: "48%" }} />
+              <Button
+                title={"Download"}
+                containerStyle={{ width: "48%" }}
+                onClick={() =>
+                  window.open("https://eycrowd.app.link/i2OK7w3jinb", "_blank")
+                }
+              />
               {/* <Button
                 title={"Learn More"}
                 containerStyle={{
@@ -189,7 +205,13 @@ const HomePage = () => {
               voice matters!
             </Subtitle>
             <ButtonsContainer $center>
-              <Button title={"Download"} containerStyle={{ width: "25rem" }} />
+              <Button
+                title={"Download"}
+                containerStyle={{ width: "25rem" }}
+                onClick={() =>
+                  window.open("https://eycrowd.app.link/i2OK7w3jinb", "_blank")
+                }
+              />
             </ButtonsContainer>
           </TitleContainer>
         </SectionWrapper>

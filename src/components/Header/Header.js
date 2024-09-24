@@ -9,13 +9,14 @@ import {
   HamburgerMenu,
   Row,
   StyledNavLinks,
+  Login,
 } from "./Header.styles";
 import Menu from "../utils/Menu";
 
 import { ReactComponent as Logo } from "../../assets/icons/logoEYC.svg";
 import Button from "../utils/Button/Button";
 
-const Header = () => {
+const Header = ({ onAboutClick }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { pathname } = location;
@@ -39,7 +40,7 @@ const Header = () => {
       document.documentElement.style.overflowY = "hidden";
       document.documentElement.style.paddingLeft = 0;
     } else {
-      document.documentElement.style.overflowY = "auto";
+      document.documentElement.style.overflowY = "scroll";
     }
   }, [menuOpen]);
 
@@ -107,7 +108,7 @@ const Header = () => {
         <Logo
           style={{ marginTop: -5 }}
           onClick={() => {
-            navigate("/");
+            navigate("/", { state: false });
             window.scrollTo(0, 0);
           }}
         />
@@ -116,7 +117,7 @@ const Header = () => {
           <Link
             $active={pathname === "/"}
             onClick={() => {
-              navigate("/");
+              navigate("/", { state: false });
               window.scrollTo(0, 0);
             }}
           >
@@ -126,7 +127,7 @@ const Header = () => {
           <Link
             $active={pathname === "/business"}
             onClick={() => {
-              navigate("/business");
+              navigate("/business", { state: false });
               window.scrollTo(0, 0);
             }}
           >
@@ -134,9 +135,12 @@ const Header = () => {
           </Link>
 
           <Link
-            $active={pathname === "/about-us"}
             onClick={() => {
-              window.scrollTo(0, 0);
+              if (pathname === "/business") {
+                onAboutClick();
+              } else {
+                navigate("/business", { state: true });
+              }
             }}
           >
             About
@@ -145,25 +149,25 @@ const Header = () => {
           <Link
             $active={pathname === "/news"}
             onClick={() => {
-              navigate("/news");
+              navigate("/news", { state: false });
               window.scrollTo(0, 0);
             }}
           >
             News
           </Link>
         </NavLinks>
-        <Button title={"Business Login"} />
+        <Login>Login</Login>
       </HeaderWrapper>
 
       <HamburgerMenu>
         <Row $open={menuOpen}>
           <Logo
             onClick={() => {
-              navigate("/");
+              navigate("/", { state: false });
               window.scrollTo(0, 0);
             }}
           />
-          <Menu onClick={() => setMenuOpen(!menuOpen)} />
+          <Menu onClick={() => setMenuOpen(!menuOpen)} menuOpen={menuOpen} />
         </Row>
 
         {isVisible && (
@@ -171,7 +175,7 @@ const Header = () => {
             <Link
               $active={pathname === "/"}
               onClick={() => {
-                navigate("/");
+                navigate("/", { state: false });
                 window.scrollTo(0, 0);
               }}
             >
@@ -181,7 +185,7 @@ const Header = () => {
             <Link
               $active={pathname === "/business"}
               onClick={() => {
-                navigate("/business");
+                navigate("/business", { state: false });
                 window.scrollTo(0, 0);
               }}
             >
@@ -189,9 +193,13 @@ const Header = () => {
             </Link>
 
             <Link
-              $active={pathname === "/about-us"}
               onClick={() => {
-                window.scrollTo(0, 0);
+                if (pathname === "/business") {
+                  onAboutClick();
+                  setMenuOpen(false);
+                } else {
+                  navigate("/business", { state: true });
+                }
               }}
             >
               About
@@ -200,13 +208,13 @@ const Header = () => {
             <Link
               $active={pathname === "/news"}
               onClick={() => {
-                navigate("/news");
+                navigate("/news", { state: false });
                 window.scrollTo(0, 0);
               }}
             >
               News
             </Link>
-            <Button title={"Business Login"} />
+            <Login>Login</Login>
           </StyledNavLinks>
         )}
       </HamburgerMenu>

@@ -103,6 +103,10 @@ export const SectionWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
   }
+  @media (max-width: 400px) {
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+  }
 `;
 
 export const Title = styled.h1`
