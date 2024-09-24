@@ -251,7 +251,7 @@ export const Date = styled(Subtitle)`
 `;
 export const NewsTitle = styled(Title)`
   color: black;
-  line-height: 3.2rem;
+  line-height: 4rem;
 `;
 export const Description = styled(Subtitle)`
   font-size: 1.8rem;
