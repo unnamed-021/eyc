@@ -12,3 +12,9 @@ export const keyboardTypeEnum = {
   decimal: "decimal-pad",
   phone: "phone-pad",
 };
+
+export const FORM_TYPES = {
+  E_MAGAZINE: "e-magazine",
+  HELP: "help",
+  CAMPAIGN_REQUEST: "campaign-request",
+};

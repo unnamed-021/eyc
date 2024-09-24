@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import {
   Column,
   Container,
@@ -15,14 +16,20 @@ import Img2 from "../../assets/images/magazine.png";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-
 import Button from "../../components/utils/Button/Button";
 
+import { FORM_TYPES } from "../../utils/constants";
+
+import { websiteForm } from "../../store/slice/posts/asyncThunk";
+import { selectWebsiteForm } from "../../store/slice/posts/slice";
+
 const MagazinePage = () => {
+  const dispatch = useDispatch();
+  const { loading } = useSelector(selectWebsiteForm);
+
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate();
 
   const handleOnChange = (value, setValue) => {
     setValue(value);
@@ -42,16 +49,34 @@ const MagazinePage = () => {
 
     return Object.keys(newErrors).length === 0;
   };
+  const resetValues = () => {
+    setFullName("");
+    setEmail("");
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Form is valid, submitting...");
+      dispatch(
+        websiteForm({
+          email: email,
+          fullName: fullName,
+          type: FORM_TYPES.E_MAGAZINE,
+          data: {},
+        })
+      )
+        .unwrap()
+        .then(() => {
+          toast.success(
+            `Thank you, ${fullName}! You've successfully subscribed.`
+          );
+          resetValues();
+        })
+        .catch((err) => console.log(err.message));
     } else {
       console.log("Form validation failed");
     }
   };
-
   /* SCROLL ANIMATION */
 
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -130,6 +155,8 @@ const MagazinePage = () => {
               title={"Get my eMagazine"}
               onClick={handleSubmit}
               containerStyle={{ width: 240 }}
+              disabled={loading}
+              loading={loading}
             />
           </Column>
           <Photo src={Img2} alt="Photo-1" />

@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { InlineWidget } from "react-calendly";
+import { toast } from "react-toastify";
 import {
   Checkbox,
   CheckboxContainer,
@@ -33,13 +35,17 @@ import Info from "../../assets/images/info.png";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-
 import Button from "../../components/utils/Button/Button";
+
 import { formatNumberWithCommas } from "../../utils/utils";
-import { InlineWidget } from "react-calendly";
+import { FORM_TYPES } from "../../utils/constants";
+
+import { websiteForm } from "../../store/slice/posts/asyncThunk";
+import { selectWebsiteForm } from "../../store/slice/posts/slice";
 
 const RequestFormPage = () => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { loading } = useSelector(selectWebsiteForm);
 
   const [numberOfNewConsumers, setNumberOfNewConsumers] = useState(50);
   const [budgetPerNewConsumers, setBudgetPerNewConsumers] = useState(15);
@@ -69,6 +75,12 @@ const RequestFormPage = () => {
   const validateForm = () => {
     const newErrors = {};
 
+    if (!selectBrandIndustry)
+      newErrors.brandIndustry = "Brand Industry is required";
+    if (!selectLocationTypes)
+      newErrors.locationTypes = "Location Type is required";
+    if (selectIdealCustomers.length === 0)
+      newErrors.idealCustomers = "Ideal Customers is required";
     if (!name) newErrors.name = "Name is required";
     if (!brand) newErrors.brand = "Brand is required";
     if (!email) {
@@ -129,26 +141,38 @@ const RequestFormPage = () => {
   const totalMonthlyBudget =
     budgetPerNewConsumers * numberOfLocations * numberOfNewConsumers;
 
-  const [formData, setFormData] = useState({});
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      setFormData({
-        brandIndustry: selectBrandIndustry,
-        idealCustomers: selectIdealCustomers,
-        numOfNewConsumers: numberOfNewConsumers,
-        locationType: selectLocationTypes,
-        numOfLocations: numberOfLocations,
-        budgetPerNewConsumers: budgetPerNewConsumers,
-        totalMonthlyBudget: totalMonthlyBudget,
-        fullName: name,
-        workEmail: email,
-        brandName: brand,
-        ...(webSite && { webSite }),
-        ...(phoneNumber && { phoneNumber }),
-      });
-      setTab(1);
+      dispatch(
+        websiteForm({
+          email: email,
+          fullName: name,
+          type: FORM_TYPES.HELP,
+          data: {
+            brandIndustry: selectBrandIndustry,
+            idealCustomers: selectIdealCustomers,
+            numOfNewConsumers: numberOfNewConsumers,
+            locationType: selectLocationTypes,
+            numOfLocations: numberOfLocations,
+            budgetPerNewConsumers: budgetPerNewConsumers,
+            totalMonthlyBudget: totalMonthlyBudget,
+            fullName: name,
+            workEmail: email,
+            brandName: brand,
+            ...(webSite && { webSite }),
+            ...(phoneNumber && { phoneNumber }),
+          },
+        })
+      )
+        .unwrap()
+        .then(() => {
+          toast.success(
+            `Thank you, ${name}! Your request has been successfully submitted.`
+          );
+          setTab(1);
+        })
+        .catch((err) => console.log(err.message));
     } else {
       console.log("Form validation failed");
     }
@@ -191,6 +215,21 @@ const RequestFormPage = () => {
 
     handleClassToggle(isIntersecting, ref, "slide-in");
   }, [isIntersecting]);
+
+  const inputRange = document.getElementById("inputRange");
+  const inputRange2 = document.getElementById("inputRange2");
+  const activeColor = "#338891";
+  const inactiveColor = "#3388911f";
+
+  inputRange?.addEventListener("input", function () {
+    const ratio = ((this.value - this.min) / (this.max - this.min)) * 100;
+    this.style.background = `linear-gradient(90deg, ${activeColor} ${ratio}%, ${inactiveColor} ${ratio}%)`;
+  });
+
+  inputRange2?.addEventListener("input", function () {
+    const ratio = ((this.value - this.min) / (this.max - this.min)) * 100;
+    this.style.background = `linear-gradient(90deg, ${activeColor} ${ratio}%, ${inactiveColor} ${ratio}%)`;
+  });
 
   return (
     <Container>
@@ -358,13 +397,14 @@ const RequestFormPage = () => {
                 />
                 <input
                   type="range"
+                  className="inputRange"
+                  id="inputRange"
                   min="20"
                   max="2000"
                   value={numberOfNewConsumers}
                   onChange={(e) => {
                     setNumberOfNewConsumers(e.target.value);
                   }}
-                  style={{ width: 240 }}
                 />
               </FormRow>
 
@@ -419,6 +459,8 @@ const RequestFormPage = () => {
                 />
 
                 <input
+                  className="inputRange2"
+                  id="inputRange2"
                   type="range"
                   min="1"
                   max="100"
@@ -426,7 +468,6 @@ const RequestFormPage = () => {
                   onChange={(e) => {
                     setNumberOfLocations(e.target.value);
                   }}
-                  style={{ width: 240 }}
                 />
               </FormRow>
 
@@ -442,8 +483,9 @@ const RequestFormPage = () => {
                 <Value $wrap>
                   For ${formatNumberWithCommas(totalMonthlyBudget)}, bring{" "}
                   {numberOfNewConsumers} new consumers to {numberOfLocations}{" "}
-                  locations every month for a total of 100 fresh faces for your
-                  brand
+                  locations every month for a total of{" "}
+                  {numberOfLocations * numberOfNewConsumers} fresh faces for
+                  your brand
                 </Value>
               </FormRow>
 
@@ -533,6 +575,8 @@ const RequestFormPage = () => {
               <Button
                 title="Submit and Book a Call"
                 onClick={handleSubmit}
+                loading={loading}
+                disabled={loading}
                 containerStyle={{ width: 240 }}
               />
 

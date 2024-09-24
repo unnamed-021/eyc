@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-toastify";
 import {
   Column,
   Container,
@@ -16,15 +17,21 @@ import Img1 from "../../assets/images/opt.png";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-
 import Button from "../../components/utils/Button/Button";
 
+import { FORM_TYPES } from "../../utils/constants";
+
+import { selectWebsiteForm } from "../../store/slice/posts/slice";
+import { websiteForm } from "../../store/slice/posts/asyncThunk";
+
 const ContactUsPage = () => {
+  const dispatch = useDispatch();
+  const { loading } = useSelector(selectWebsiteForm);
+
   const [email, setEmail] = useState("");
   const [fullName, setFullName] = useState("");
   const [additional, setAdditional] = useState("");
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate();
 
   const handleOnChange = (value, setValue) => {
     setValue(value);
@@ -46,14 +53,38 @@ const ContactUsPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const resetValues = () => {
+    setFullName("");
+    setEmail("");
+    setAdditional("");
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      console.log("Form is valid, submitting...");
+      dispatch(
+        websiteForm({
+          email: email,
+          fullName: fullName,
+          type: FORM_TYPES.HELP,
+          data: {
+            additionalInfo: additional,
+          },
+        })
+      )
+        .unwrap()
+        .then(() => {
+          toast.success(
+            `Thank you, ${fullName}! Your inquiry has been successfully submitted.`
+          );
+          resetValues();
+        })
+        .catch((err) => console.log(err.message));
     } else {
       console.log("Form validation failed");
     }
   };
+
   /* SCROLL ANIMATION */
 
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -138,6 +169,8 @@ const ContactUsPage = () => {
               title={"Submit"}
               containerStyle={{ width: 240 }}
               onClick={handleSubmit}
+              disabled={loading}
+              loading={loading}
             />
           </Column>
           <Photo src={Img1} alt="Photo-2" $borderRadius />

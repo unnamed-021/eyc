@@ -1,7 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
+import formSlice from "./slice/posts/slice";
 
 const store = configureStore({
-  reducer: {},
+  reducer: {
+    websiteFormInfo: formSlice,
+  },
   devTools: true,
 });
 
