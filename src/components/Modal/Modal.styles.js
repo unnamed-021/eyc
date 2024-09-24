@@ -121,12 +121,12 @@ export const ModalContent = styled.div`
 export const ModalContentFade = styled.div`
   position: relative;
   background-color: white;
-  border-radius: 10px;
+  border-radius: 20px;
   display: flex;
   width: 450px;
   height: fit-content;
   gap: 30px;
-  padding: 32px;
+  padding: 2.4rem;
   flex-direction: column;
   justify-content: space-between;
   animation: ${(props) => (props.$open ? fadeIn : fadeOut)} 0.3s ease-in-out;
@@ -134,15 +134,18 @@ export const ModalContentFade = styled.div`
 
   box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-  @media (max-width: 485px) {
+  @media (max-width: 600px) {
     width: 90% !important;
+    padding: 1.6rem;
   }
 `;
 
 export const Iframe = styled.iframe`
   align-self: center;
-  width: 56rem;
-  height: 31.5rem;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  aspect-ratio: 16/9;
   @media (max-width: 850px) {
     width: 100%;
   }

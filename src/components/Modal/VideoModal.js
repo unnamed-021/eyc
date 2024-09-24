@@ -5,13 +5,7 @@ import { Iframe } from "./Modal.styles";
 
 const VideoModal = ({ open, close }) => {
   return (
-    <Modal
-      open={open}
-      close={close}
-      width={"fit-content"}
-      height={"fit-content"}
-      fade
-    >
+    <Modal open={open} close={close} width={"80%"} height={"fit-content"} fade>
       <Iframe
         src="https://www.youtube.com/embed/IvMN9PdLxG4"
         title="YouTube video player"

@@ -70,7 +70,8 @@ export const Section = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100dvh;
-  padding: 4rem;
+  padding: ${(props) =>
+    props.$firstSection ? "12rem 4rem 4rem 4rem" : "4rem"};
   height: 100%;
 
   background-color: ${(props) => (props.$grey ? "#F7F7F8" : "white")};

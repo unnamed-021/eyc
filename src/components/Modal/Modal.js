@@ -56,8 +56,7 @@ const Modal = ({
   }, [isVisible]);
 
   return (
-    isVisible &&
-    (fade ? (
+    isVisible && (
       <ModalBackground $open={open} onClick={() => close()}>
         <ModalContainer $center>
           <ModalContentFade
@@ -74,15 +73,7 @@ const Modal = ({
           </ModalContentFade>
         </ModalContainer>
       </ModalBackground>
-    ) : (
-      <ModalBackground $open={open} onClick={() => close()}>
-        <ModalContainer>
-          <ModalContent $open={open} style={{ height: height, width: width }}>
-            {children}
-          </ModalContent>
-        </ModalContainer>
-      </ModalBackground>
-    ))
+    )
   );
 };
 
