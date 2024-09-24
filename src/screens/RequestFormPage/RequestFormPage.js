@@ -563,6 +563,20 @@ const RequestFormPage = () => {
                 with our team.
               </Subtitle>
               <InlineWidget url="https://calendly.com/your_scheduling_page" />
+              <Subtitle $large>
+                We will confirm your details, identify any additional
+                requirements, and launch! Results typically take three to four
+                weeks. Feel free to call us at 1.XXX.XXX.XXXX or
+                xxxxx@eycrowd.com.
+                <br />
+                <br />
+                Rest assured, our world-class platform and team handles
+                everything. Results are guaranteed. You don't have to lift a
+                finger.
+                <br />
+                <br />
+                Welcome to EyCrowd!
+              </Subtitle>
             </FormContainer>
           )}
         </SectionWrapper>
