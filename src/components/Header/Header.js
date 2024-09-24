@@ -134,9 +134,8 @@ const Header = () => {
           </Link>
 
           <Link
-            $active={pathname === "/opt-in"}
+            $active={pathname === "/about-us"}
             onClick={() => {
-              navigate("/opt-in");
               window.scrollTo(0, 0);
             }}
           >
@@ -153,10 +152,7 @@ const Header = () => {
             News
           </Link>
         </NavLinks>
-        <Button
-          title={"Business Login"}
-          onClick={() => navigate("/request-form")}
-        />
+        <Button title={"Business Login"} />
       </HeaderWrapper>
 
       <HamburgerMenu>
@@ -193,9 +189,8 @@ const Header = () => {
             </Link>
 
             <Link
-              $active={pathname === "/opt-in"}
+              $active={pathname === "/about-us"}
               onClick={() => {
-                navigate("/opt-in");
                 window.scrollTo(0, 0);
               }}
             >
@@ -211,10 +206,7 @@ const Header = () => {
             >
               News
             </Link>
-            <Button
-              title={"Business Login"}
-              onClick={() => navigate("/request-form")}
-            />
+            <Button title={"Business Login"} />
           </StyledNavLinks>
         )}
       </HamburgerMenu>

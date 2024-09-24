@@ -180,8 +180,10 @@ const BusinessPage = () => {
                 <Button
                   title={"Get Started"}
                   containerStyle={{ width: "48%" }}
+                  onClick={() => navigate("/request-form")}
                 />
                 <Button
+                  onClick={() => navigate("/eMagazine")}
                   title={"Learn More"}
                   containerStyle={{
                     width: "48%",
@@ -227,9 +229,11 @@ const BusinessPage = () => {
               <ButtonsContainer>
                 <Button
                   title={"Get Started"}
+                  onClick={() => navigate("/request-form")}
                   containerStyle={{ width: "48%" }}
                 />
                 <Button
+                  onClick={() => navigate("/eMagazine")}
                   title={"Learn More"}
                   containerStyle={{
                     width: "48%",
@@ -407,6 +411,7 @@ const BusinessPage = () => {
               </Subtitle>
               <ButtonsContainer>
                 <Button
+                  onClick={() => navigate("/request-form")}
                   title={"Get Started"}
                   containerStyle={{ width: "48%" }}
                 />
@@ -467,6 +472,7 @@ const BusinessPage = () => {
               </Subtitle>
               <ButtonsContainer>
                 <Button
+                  onClick={() => navigate("/request-form")}
                   title={"Get Started"}
                   containerStyle={{ width: "48%" }}
                 />
@@ -536,6 +542,7 @@ const BusinessPage = () => {
               </Subtitle>
               <ButtonsContainer>
                 <Button
+                  onClick={() => navigate("/request-form")}
                   title={"Get Started"}
                   containerStyle={{ width: "48%" }}
                 />
@@ -597,7 +604,11 @@ const BusinessPage = () => {
               </Subtitle>
             </CardRow>
             <ButtonsContainer>
-              <Button title={"Get Started"} containerStyle={{ width: "48%" }} />
+              <Button
+                title={"Get Started"}
+                onClick={() => navigate("/request-form")}
+                containerStyle={{ width: "48%" }}
+              />
               <Button
                 title={"See Case Studies"}
                 containerStyle={{
@@ -636,6 +647,7 @@ const BusinessPage = () => {
               </Subtitle>
               <ButtonsContainer>
                 <Button
+                  onClick={() => navigate("/request-form")}
                   title={"Get Started"}
                   containerStyle={{ width: "48%" }}
                 />
@@ -720,10 +732,12 @@ const BusinessPage = () => {
 
               <ButtonsContainer>
                 <Button
+                  onClick={() => navigate("/request-form")}
                   title={"Get Started"}
                   containerStyle={{ width: "48%" }}
                 />
                 <Button
+                  onClick={() => navigate("/eMagazine")}
                   title={"Learn More"}
                   containerStyle={{
                     width: "48%",
@@ -765,7 +779,11 @@ const BusinessPage = () => {
               </Subtitle>
             </CardRow>
             <ButtonsContainer>
-              <Button title={"Get Started"} containerStyle={{ width: "48%" }} />
+              <Button
+                title={"Get Started"}
+                onClick={() => navigate("/request-form")}
+                containerStyle={{ width: "48%" }}
+              />
               <Button
                 title={"See Case Studies"}
                 containerStyle={{
@@ -797,9 +815,14 @@ const BusinessPage = () => {
               of enthusiastic consumers to your brand, in-person and online.
             </Subtitle>
             <ButtonsContainer $center>
-              <Button title={"Get Started"} containerStyle={{ width: "48%" }} />
               <Button
-                title={"See Case Studies"}
+                title={"Get Started"}
+                containerStyle={{ width: "48%" }}
+                onClick={() => navigate("/request-form")}
+              />
+              <Button
+                onClick={() => navigate("/connect")}
+                title={"Contact Us"}
                 containerStyle={{
                   width: "48%",
                   backgroundColor: "white",

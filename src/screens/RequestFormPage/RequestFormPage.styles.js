@@ -102,15 +102,15 @@ export const SectionWrapper = styled.div`
 export const Title = styled.span`
   font-size: 3.2rem;
   font-family: "Poppins-Bold";
-  max-width: 83.7rem;
   line-height: 4rem;
+  max-width: 63rem;
 `;
 
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
+  max-width: 144rem;
   gap: 10rem;
   flex-wrap: wrap;
 `;
@@ -162,15 +162,15 @@ export const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 4rem;
-  width: 83.7rem;
+  width: 98.4rem;
 `;
 
 export const Label = styled.span`
   font-size: 1.6rem;
   font-family: "Poppins-Medium";
   color: #1e1e1ecc;
-  width: 20.2rem;
-  white-space: nowrap;
+  width: 29rem;
+  white-space: ${(props) => (props.$wrap ? "wrap" : "nowrap")};
 `;
 
 export const FormRow = styled.div`
@@ -183,6 +183,7 @@ export const FormRow = styled.div`
 
 export const InfoImg = styled.img`
   width: 1.8rem;
+  user-select: none;
   height: 1.8rem;
   margin-left: 1rem;
 `;
@@ -214,6 +215,7 @@ export const Value = styled.span`
   font-size: 1.6rem;
   font-family: "Poppins-Regular";
   color: #1e1e1ecc;
+  max-width: 30.6rem;
 `;
 
 export const CheckboxLabel = styled.span`
@@ -283,6 +285,7 @@ export const UploadButton = styled.div`
 
 export const InputLabel = styled.label`
   color: #1e1e1e66;
+  color: #000;
   font-size: 1.6rem;
   font-family: "Poppins-Regular";
   white-space: nowrap;
@@ -301,6 +304,7 @@ export const StyledInput = styled.input`
   align-items: center;
   padding: 0rem 1rem;
   color: #1e1e1e66;
+  color: #000;
   font-size: 1.6rem;
   font-family: "Poppins-Regular";
   border: ${(props) =>

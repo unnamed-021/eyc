@@ -8,10 +8,11 @@ import NewsPage from "./screens/NewsPage/NewsPage";
 import BusinessPage from "./screens/BusinessPage/BusinessPage";
 import "react-toastify/dist/ReactToastify.css";
 import NewsDetailsPage from "./screens/NewsDetailsPage/NewsDetailsPage";
-import OptInPage from "./screens/OptInPage/OptInPage";
 import { GoToTop } from "./screens/HomePage/HomePage.styles";
 import { ReactComponent as ChevronTop } from "./assets/icons/chevron-top.svg";
 import RequestFormPage from "./screens/RequestFormPage/RequestFormPage";
+import ContactUsPage from "./screens/ContactUsPage/ContactUsPage";
+import MagazinePage from "./screens/MagazinePage/MagazinePage";
 
 function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
@@ -65,7 +66,8 @@ function App() {
             <Route path="/business" element={<BusinessPage />} />
             <Route path="/news" element={<NewsPage />} />
             <Route path="/news-details" element={<NewsDetailsPage />} />
-            <Route path="/opt-in" element={<OptInPage />} />
+            <Route path="/connect" element={<ContactUsPage />} />
+            <Route path="/eMagazine" element={<MagazinePage />} />
             <Route path="/request-form" element={<RequestFormPage />} />
           </Routes>
           <GoToTop show={showGoToTop} onClick={goToTop}>

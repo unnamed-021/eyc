@@ -65,8 +65,9 @@ export const GoToTop = styled.div`
 export const Section = styled.div`
   display: flex;
   width: 100%;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   height: 100%;
   max-width: 1440px;
 
@@ -102,7 +103,7 @@ export const SectionWrapper = styled.div`
 export const Title = styled.span`
   font-size: 3.2rem;
   font-family: "Poppins-Bold";
-  max-width: 83.7rem;
+
   line-height: 4rem;
 `;
 
@@ -124,7 +125,7 @@ export const Subtitle = styled.span`
 
 export const Input = styled.input`
   color: #8e8e8e;
-  border: 1px solid #8e8e8e;
+
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
   max-width: 48.3rem;
@@ -132,17 +133,32 @@ export const Input = styled.input`
   color: #b0b0b0;
   font-size: 1.6rem;
   font-family: "Poppins-Medium";
+  border: ${(props) => (props.$error ? "1px solid red" : "1px solid #8e8e8e")};
+`;
+export const TextArea = styled.textarea`
+  color: #8e8e8e;
+
+  border-radius: 0.4rem;
+  padding: 0.5rem 1rem;
+  max-width: 48.3rem;
+  min-height: 10rem;
+  outline: none;
+  color: #b0b0b0;
+  font-size: 1.6rem;
+  font-family: "Poppins-Medium";
+  border: ${(props) => (props.$error ? "1px solid red" : "1px solid #8e8e8e")};
 `;
 
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  max-width: 55.6rem;
 `;
 
 export const Photo = styled.img`
-  width: 25.4rem;
-  height: 25.4rem;
-  border-radius: 1.2rem;
+  width: 29.2rem;
+  height: 39.8rem;
+  border-radius: ${(props) => (props.$borderRadius ? "1.2rem" : "0rem")};
   object-fit: contain;
 `;
