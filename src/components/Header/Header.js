@@ -14,7 +14,6 @@ import {
 import Menu from "../utils/Menu";
 
 import { ReactComponent as Logo } from "../../assets/icons/logoEYC.svg";
-import Button from "../utils/Button/Button";
 
 const Header = ({ onAboutClick }) => {
   const navigate = useNavigate();
@@ -156,7 +155,11 @@ const Header = ({ onAboutClick }) => {
             News
           </Link>
         </NavLinks>
-        <Login>Login</Login>
+        <Login
+          onClick={() => window.open("https://app.eycrowd.com/login", "_blank")}
+        >
+          Login
+        </Login>
       </HeaderWrapper>
 
       <HamburgerMenu>
@@ -214,7 +217,13 @@ const Header = ({ onAboutClick }) => {
             >
               News
             </Link>
-            <Login>Login</Login>
+            <Login
+              onClick={() =>
+                window.open("https://app.eycrowd.com/login", "_blank")
+              }
+            >
+              Login
+            </Login>
           </StyledNavLinks>
         )}
       </HamburgerMenu>

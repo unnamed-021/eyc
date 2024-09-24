@@ -453,6 +453,7 @@ const RequestFormPage = () => {
                     <FirstColumn>
                       <CheckboxContainer>
                         <Checkbox
+                          disabled={selectBrandIndustry === "E-commerce"}
                           type="checkbox"
                           checked={selectLocationTypes === "Physical"}
                           onChange={() => setSelectLocationTypes("Physical")}

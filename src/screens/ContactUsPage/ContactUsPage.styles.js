@@ -77,10 +77,10 @@ export const Section = styled.div`
   transform: translateX(100%);
   opacity: 0;
   transition: all 0.6s ease-in-out;
-  padding: 4rem;
+  padding: 12rem 4rem 12rem 4rem;
 
   @media (max-width: 490px) {
-    padding: 2rem;
+    padding: 10rem 2rem 10rem 2rem;
   }
   @media (max-width: 400px) {
     opacity: 1 !important;
