@@ -69,18 +69,15 @@ export const Section = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100dvh;
+  min-height: 100dvh;
   padding: 4rem;
+  height: 100%;
 
   background-color: ${(props) => (props.$grey ? "#F7F7F8" : "white")};
   border-top: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
   border-bottom: ${(props) => (props.$grey ? "1px solid #ecf0f8" : "none")};
 
-  @media (max-height: 625px) {
-    height: 100%;
-  }
   @media (max-width: 750px) {
-    height: 100%;
     padding: ${(props) =>
       props.$firstSection ? "10rem 4rem 4rem 4rem" : "4rem"};
   }
