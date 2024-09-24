@@ -70,15 +70,17 @@ export const Section = styled.div`
   justify-content: center;
   height: 100%;
   max-width: 1440px;
+  flex-wrap: wrap;
+  gap: 5rem;
 
   /* border-bottom: 1px solid #ecf0f8; */
   transform: translateX(100%);
   opacity: 0;
   transition: all 0.6s ease-in-out;
-  padding: 12rem 4rem 12rem 4rem;
+  padding: 12rem 4rem 4rem 4rem;
 
   @media (max-width: 490px) {
-    padding: 10rem 2rem 10rem 2rem;
+    padding: 10rem 2rem 2rem 2rem;
   }
   @media (max-width: 400px) {
     opacity: 1 !important;
@@ -106,6 +108,10 @@ export const Title = styled.span`
   font-family: "Poppins-Bold";
 
   line-height: 4rem;
+
+  @media (max-width: 880px) {
+    text-align: center;
+  }
 `;
 
 export const Row = styled.div`
@@ -122,6 +128,12 @@ export const Subtitle = styled.span`
   color: #848484;
 
   width: 48.3rem;
+  @media (max-width: 880px) {
+    text-align: center;
+  }
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 export const Input = styled.input`
@@ -134,6 +146,9 @@ export const Input = styled.input`
   font-size: 1.6rem;
   font-family: "Poppins-Medium";
   border: ${(props) => (props.$error ? "1px solid red" : "1px solid #8e8e8e")};
+  @media (max-width: 880px) {
+    width: 100%;
+  }
 `;
 export const TextArea = styled.textarea`
   color: #8e8e8e;
@@ -153,6 +168,9 @@ export const Column = styled.div`
   flex-direction: column;
   gap: 2rem;
   max-width: 55.6rem;
+  @media (max-width: 880px) {
+    align-items: center;
+  }
 `;
 
 export const Photo = styled.img`

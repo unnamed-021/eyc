@@ -71,10 +71,10 @@ export const Section = styled.div`
   min-height: 100dvh;
 
   border-bottom: 1px solid #ecf0f8;
-  padding: 12rem 4rem 12rem 4rem;
+  padding: 12rem 4rem 4rem 4rem;
 
   @media (max-width: 490px) {
-    padding: 10rem 2rem 10rem 2rem;
+    padding: 10rem 2rem 2rem 2rem;
   }
 `;
 
@@ -104,6 +104,9 @@ export const Title = styled.span`
   font-family: "Poppins-Bold";
   line-height: 4rem;
   max-width: 63rem;
+  @media (max-width: 912px) {
+    text-align: center;
+  }
 `;
 
 export const Row = styled.div`
@@ -113,6 +116,10 @@ export const Row = styled.div`
   max-width: 144rem;
   gap: 10rem;
   flex-wrap: wrap;
+  @media (max-width: 1063px) {
+    justify-content: center;
+    gap: 5rem;
+  }
 `;
 export const SmallRow = styled.div`
   display: flex;
@@ -120,6 +127,10 @@ export const SmallRow = styled.div`
   flex-wrap: wrap;
 
   gap: 1rem;
+  @media (max-width: 912px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 export const Img = styled.img`
   width: 3rem;
@@ -131,6 +142,16 @@ export const Subtitle = styled.span`
   color: #848484;
 
   width: ${(props) => (props.$large ? "72.7rem" : "48.3rem")};
+
+  @media (max-width: 912px) {
+    text-align: center;
+  }
+  @media (max-width: 800px) {
+    width: ${(props) => (props.$large ? "100%" : "48.3rem")};
+  }
+  @media (max-width: 520px) {
+    width: 100%;
+  }
 `;
 
 export const Input = styled.input`
@@ -163,6 +184,12 @@ export const FormContainer = styled.div`
   flex-direction: column;
   gap: 4rem;
   width: 98.4rem;
+  @media (max-width: 1000px) {
+    width: 100%;
+  }
+  @media (max-width: 912px) {
+    align-items: center;
+  }
 `;
 
 export const Label = styled.span`
@@ -171,6 +198,10 @@ export const Label = styled.span`
   color: #1e1e1ecc;
   width: 29rem;
   white-space: ${(props) => (props.$wrap ? "wrap" : "nowrap")};
+  @media (max-width: 912px) {
+    text-align: center;
+    width: 100%;
+  }
 `;
 
 export const FormRow = styled.div`
@@ -179,6 +210,12 @@ export const FormRow = styled.div`
   align-items: ${(props) => (props.$flexStart ? "flex-start" : "center")};
   gap: 3rem;
   flex-wrap: wrap;
+  @media (max-width: 912px) {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+  }
 `;
 
 export const InfoImg = styled.img`
@@ -186,6 +223,9 @@ export const InfoImg = styled.img`
   user-select: none;
   height: 1.8rem;
   margin-left: 1rem;
+  @media (max-width: 912px) {
+    display: none;
+  }
 `;
 
 export const ValueContainer = styled.div`
@@ -216,6 +256,9 @@ export const Value = styled.span`
   font-family: "Poppins-Regular";
   color: #1e1e1ecc;
   max-width: 30.6rem;
+  @media (max-width: 912px) {
+    text-align: center;
+  }
 `;
 
 export const CheckboxLabel = styled.span`
@@ -310,4 +353,7 @@ export const StyledInput = styled.input`
   border: ${(props) =>
     props.$error ? "1px solid red" : "1px solid transparent"};
   outline: none;
+  @media (max-width: 400px) {
+    width: 100%;
+  }
 `;

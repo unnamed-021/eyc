@@ -459,7 +459,7 @@ const RequestFormPage = () => {
               </FormRow>
 
               <FormRow>
-                <Label>Your Name</Label>
+                <Label>Your Name:</Label>
                 <InfoImg src={Info} />
                 <StyledInput
                   $error={errors.name}
@@ -473,7 +473,7 @@ const RequestFormPage = () => {
               </FormRow>
 
               <FormRow>
-                <Label>Your Work Email</Label>
+                <Label>Your Work Email:</Label>
                 <InfoImg src={Info} />
                 <StyledInput
                   $error={errors.email}
@@ -487,7 +487,7 @@ const RequestFormPage = () => {
               </FormRow>
 
               <FormRow>
-                <Label>Your Brand</Label>
+                <Label>Your Brand:</Label>
                 <InfoImg src={Info} />
                 <StyledInput
                   $error={errors.brand}
@@ -501,7 +501,7 @@ const RequestFormPage = () => {
               </FormRow>
 
               <FormRow>
-                <Label>Your Brand Website (optional)</Label>
+                <Label>Your Brand Website (optional):</Label>
                 <InfoImg src={Info} />
                 <StyledInput
                   $error={errors.webSite}
@@ -514,7 +514,7 @@ const RequestFormPage = () => {
                 />
               </FormRow>
               <FormRow>
-                <Label>Your Phone Number (optional)</Label>
+                <Label>Your Phone Number (optional):</Label>
                 <InfoImg src={Info} />
 
                 <StyledInput
