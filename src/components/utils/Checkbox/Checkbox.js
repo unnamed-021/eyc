@@ -1,17 +1,18 @@
-import React from 'react';
-import { ReactComponent as Unchecked } from '../../../assets/icons/checkbox.svg';
-import { ReactComponent as Checked } from '../../../assets/icons/checkedBox.svg';
+import React from "react";
 
-const Checkbox = ({ checked, onChange, width, height, stroke }) => {
+const CheckboxComponent = ({ checked, onChange, label, disabled }) => {
   return (
-    <div onClick={onChange}>
-      {checked ? (
-        <Unchecked width={width} height={height} />
-      ) : (
-        <Checked width={width} height={height} stroke={stroke} />
-      )}
-    </div>
+    <label class="checkbox">
+      <input
+        type="checkbox"
+        name="checkbox"
+        onChange={onChange}
+        disabled={disabled}
+        checked={checked}
+      />{" "}
+      {label} <span></span>
+    </label>
   );
 };
 
-export default Checkbox;
+export default CheckboxComponent;

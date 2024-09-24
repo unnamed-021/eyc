@@ -1,11 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { InlineWidget } from "react-calendly";
-import { toast } from "react-toastify";
+import openToast from "../../utils/toast";
 import {
-  Checkbox,
-  CheckboxContainer,
-  CheckboxLabel,
   Column,
   ColumnsRow,
   Container,
@@ -36,13 +33,13 @@ import Info from "../../assets/images/info.png";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/utils/Button/Button";
+import CheckboxComponent from "../../components/utils/Checkbox/Checkbox";
 
 import { formatNumberWithCommas } from "../../utils/utils";
 import { FORM_TYPES } from "../../utils/constants";
 
 import { websiteForm } from "../../store/slice/posts/asyncThunk";
 import { selectWebsiteForm } from "../../store/slice/posts/slice";
-import openToast from "../../utils/toast";
 
 const RequestFormPage = () => {
   const dispatch = useDispatch();
@@ -301,45 +298,33 @@ const RequestFormPage = () => {
                 <FormColumn>
                   <ColumnsRow>
                     <FirstColumn>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectBrandIndustry === "Retail"}
-                          onChange={() => setSelectBrandIndustry("Retail")}
-                        />
-                        <CheckboxLabel>Retail</CheckboxLabel>
-                      </CheckboxContainer>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectBrandIndustry === "Consumer Goods"}
-                          onChange={() =>
-                            setSelectBrandIndustry("Consumer Goods")
-                          }
-                        />
-                        <CheckboxLabel>Consumer Goods</CheckboxLabel>
-                      </CheckboxContainer>
+                      <CheckboxComponent
+                        checked={selectBrandIndustry === "Retail"}
+                        onChange={() => setSelectBrandIndustry("Retail")}
+                        label={"Retail"}
+                      />
+
+                      <CheckboxComponent
+                        checked={selectBrandIndustry === "Consumer Goods"}
+                        onChange={() =>
+                          setSelectBrandIndustry("Consumer Goods")
+                        }
+                        label={"Consumer Goods"}
+                      />
                     </FirstColumn>
 
                     <SecondColumn>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectBrandIndustry === "E-commerce"}
-                          onChange={() => setSelectBrandIndustry("E-commerce")}
-                        />
-                        <CheckboxLabel>E-commerce</CheckboxLabel>
-                      </CheckboxContainer>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectBrandIndustry === "Food Service"}
-                          onChange={() =>
-                            setSelectBrandIndustry("Food Service")
-                          }
-                        />
-                        <CheckboxLabel>Food Service</CheckboxLabel>
-                      </CheckboxContainer>
+                      <CheckboxComponent
+                        checked={selectBrandIndustry === "E-commerce"}
+                        onChange={() => setSelectBrandIndustry("E-commerce")}
+                        label={"E-commerce"}
+                      />
+
+                      <CheckboxComponent
+                        checked={selectBrandIndustry === "Food Service"}
+                        onChange={() => setSelectBrandIndustry("Food Service")}
+                        label={"Food Service"}
+                      />
                     </SecondColumn>
                   </ColumnsRow>
                 </FormColumn>
@@ -353,61 +338,47 @@ const RequestFormPage = () => {
                 <FormColumn>
                   <ColumnsRow>
                     <FirstColumn>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectIdealCustomers.includes("Mass Market")}
-                          onChange={() =>
-                            handleCheckboxChange(
-                              "Mass Market",
-                              setSelectIdealCustomers
-                            )
-                          }
-                        />
-                        <CheckboxLabel>Mass Market</CheckboxLabel>
-                      </CheckboxContainer>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectIdealCustomers.includes("Premium")}
-                          onChange={() =>
-                            handleCheckboxChange(
-                              "Premium",
-                              setSelectIdealCustomers
-                            )
-                          }
-                        />
-                        <CheckboxLabel>Premium</CheckboxLabel>
-                      </CheckboxContainer>
+                      <CheckboxComponent
+                        checked={selectIdealCustomers.includes("Mass Market")}
+                        onChange={() =>
+                          handleCheckboxChange(
+                            "Mass Market",
+                            setSelectIdealCustomers
+                          )
+                        }
+                        label={"Mass Market"}
+                      />
+
+                      <CheckboxComponent
+                        checked={selectIdealCustomers.includes("Premium")}
+                        onChange={() =>
+                          handleCheckboxChange(
+                            "Premium",
+                            setSelectIdealCustomers
+                          )
+                        }
+                        label={"Premium"}
+                      />
                     </FirstColumn>
 
                     <SecondColumn>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectIdealCustomers.includes("Value")}
-                          onChange={() =>
-                            handleCheckboxChange(
-                              "Value",
-                              setSelectIdealCustomers
-                            )
-                          }
-                        />
-                        <CheckboxLabel>Value</CheckboxLabel>
-                      </CheckboxContainer>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectIdealCustomers.includes("Luxury")}
-                          onChange={() =>
-                            handleCheckboxChange(
-                              "Luxury",
-                              setSelectIdealCustomers
-                            )
-                          }
-                        />
-                        <CheckboxLabel>Luxury</CheckboxLabel>
-                      </CheckboxContainer>
+                      <CheckboxComponent
+                        checked={selectIdealCustomers.includes("Value")}
+                        onChange={() =>
+                          handleCheckboxChange("Value", setSelectIdealCustomers)
+                        }
+                        label={"Value"}
+                      />
+                      <CheckboxComponent
+                        checked={selectIdealCustomers.includes("Luxury")}
+                        onChange={() =>
+                          handleCheckboxChange(
+                            "Luxury",
+                            setSelectIdealCustomers
+                          )
+                        }
+                        label={"Luxury"}
+                      />
                     </SecondColumn>
                   </ColumnsRow>
                 </FormColumn>
@@ -451,26 +422,20 @@ const RequestFormPage = () => {
                 <FormColumn>
                   <ColumnsRow>
                     <FirstColumn>
-                      <CheckboxContainer>
-                        <Checkbox
-                          disabled={selectBrandIndustry === "E-commerce"}
-                          type="checkbox"
-                          checked={selectLocationTypes === "Physical"}
-                          onChange={() => setSelectLocationTypes("Physical")}
-                        />
-                        <CheckboxLabel>Physical</CheckboxLabel>
-                      </CheckboxContainer>
+                      <CheckboxComponent
+                        disabled={selectBrandIndustry === "E-commerce"}
+                        checked={selectLocationTypes === "Physical"}
+                        onChange={() => setSelectLocationTypes("Physical")}
+                        label={"Physical"}
+                      />
                     </FirstColumn>
 
                     <SecondColumn>
-                      <CheckboxContainer>
-                        <Checkbox
-                          type="checkbox"
-                          checked={selectLocationTypes === "Online"}
-                          onChange={() => setSelectLocationTypes("Online")}
-                        />
-                        <CheckboxLabel>Online</CheckboxLabel>
-                      </CheckboxContainer>
+                      <CheckboxComponent
+                        checked={selectLocationTypes === "Online"}
+                        onChange={() => setSelectLocationTypes("Online")}
+                        label={"Online"}
+                      />
                     </SecondColumn>
                   </ColumnsRow>
                 </FormColumn>
