@@ -196,7 +196,7 @@ export const FormContainer = styled.div`
 export const Label = styled.span`
   font-size: 1.6rem;
   font-family: "Poppins-Medium";
-  color: #1e1e1ecc;
+  color: ${(props) => (props.$error ? "red" : "#1e1e1ecc")};
   width: 29rem;
   white-space: ${(props) => (props.$wrap ? "wrap" : "nowrap")};
   @media (max-width: 912px) {

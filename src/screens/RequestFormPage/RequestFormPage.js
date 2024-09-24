@@ -42,9 +42,11 @@ import { FORM_TYPES } from "../../utils/constants";
 
 import { websiteForm } from "../../store/slice/posts/asyncThunk";
 import { selectWebsiteForm } from "../../store/slice/posts/slice";
+import openToast from "../../utils/toast";
 
 const RequestFormPage = () => {
   const dispatch = useDispatch();
+  const toastId = useRef(null);
   const { loading } = useSelector(selectWebsiteForm);
 
   const [numberOfNewConsumers, setNumberOfNewConsumers] = useState(50);
@@ -76,15 +78,31 @@ const RequestFormPage = () => {
     const newErrors = {};
 
     if (!selectBrandIndustry) {
-      toast.info("Brand Industry is required");
+      openToast(
+        toastId,
+        "brandIndustry-required",
+        "info",
+        "Brand Industry is required"
+      );
+
       newErrors.brandIndustry = "Brand Industry is required";
     }
     if (!selectLocationTypes) {
-      toast.info("Location Type is required");
+      openToast(
+        toastId,
+        "locationType-required",
+        "info",
+        "Location Type is required"
+      );
       newErrors.locationTypes = "Location Type is required";
     }
     if (selectIdealCustomers.length === 0) {
-      toast.info("Ideal Customers is required");
+      openToast(
+        toastId,
+        "idealCustomers-required",
+        "info",
+        "Ideal Customers is required"
+      );
       newErrors.idealCustomers = "Ideal Customers is required";
     }
     if (!name) {
@@ -177,14 +195,16 @@ const RequestFormPage = () => {
       )
         .unwrap()
         .then(() => {
-          toast.success(
+          openToast(
+            toastId,
+            "submit-message",
+            "success",
             `Thank you, ${name}! Your request has been successfully submitted.`
           );
+
           setTab(1);
         })
         .catch((err) => console.log(err.message));
-    } else {
-      console.log("Form validation failed");
     }
   };
 
@@ -274,7 +294,9 @@ const RequestFormPage = () => {
           {tab === 0 && (
             <FormContainer>
               <FormRow $flexStart>
-                <Label>Your Brand Industry:</Label>
+                <Label $error={errors.brandIndustry}>
+                  Your Brand Industry:
+                </Label>
                 <InfoImg src={Info} />
                 <FormColumn>
                   <ColumnsRow>
@@ -324,7 +346,9 @@ const RequestFormPage = () => {
               </FormRow>
 
               <FormRow $flexStart>
-                <Label>Your Ideal Customers:</Label>
+                <Label $error={errors.idealCustomers}>
+                  Your Ideal Customers:
+                </Label>
                 <InfoImg src={Info} />
                 <FormColumn>
                   <ColumnsRow>
@@ -419,7 +443,7 @@ const RequestFormPage = () => {
               </FormRow>
 
               <FormRow $flexStart>
-                <Label>
+                <Label $error={errors.locationTypes}>
                   Location Types <br />
                   (to bring new consumers):
                 </Label>

@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
+import openToast from "../../utils/toast";
+
 import {
   Column,
   Container,
@@ -26,6 +27,7 @@ import { websiteForm } from "../../store/slice/posts/asyncThunk";
 
 const ContactUsPage = () => {
   const dispatch = useDispatch();
+  const toastId = useRef(null);
   const { loading } = useSelector(selectWebsiteForm);
 
   const [email, setEmail] = useState("");
@@ -74,14 +76,16 @@ const ContactUsPage = () => {
       )
         .unwrap()
         .then(() => {
-          toast.success(
+          openToast(
+            toastId,
+            "submit-message",
+            "success",
             `Thank you, ${fullName}! Your inquiry has been successfully submitted.`
           );
+
           resetValues();
         })
         .catch((err) => console.log(err.message));
-    } else {
-      console.log("Form validation failed");
     }
   };
 

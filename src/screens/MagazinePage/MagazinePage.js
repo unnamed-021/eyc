@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toast } from "react-toastify";
+import openToast from "../../utils/toast";
+
 import {
   Column,
   Container,
@@ -25,6 +26,7 @@ import { selectWebsiteForm } from "../../store/slice/posts/slice";
 
 const MagazinePage = () => {
   const dispatch = useDispatch();
+  const toastId = useRef(null);
   const { loading } = useSelector(selectWebsiteForm);
 
   const [email, setEmail] = useState("");
@@ -67,14 +69,15 @@ const MagazinePage = () => {
       )
         .unwrap()
         .then(() => {
-          toast.success(
+          openToast(
+            toastId,
+            "submit-message",
+            "success",
             `Thank you, ${fullName}! You've successfully subscribed.`
           );
           resetValues();
         })
         .catch((err) => console.log(err.message));
-    } else {
-      console.log("Form validation failed");
     }
   };
   /* SCROLL ANIMATION */
