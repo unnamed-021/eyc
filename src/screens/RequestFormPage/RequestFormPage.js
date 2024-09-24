@@ -244,18 +244,24 @@ const RequestFormPage = () => {
   }, [isIntersecting]);
 
   const inputRange = document.getElementById("inputRange");
-  const inputRange2 = document.getElementById("inputRange2");
+  const inputRange2 = document.getElementById("inputRange");
   const activeColor = "#338891";
   const inactiveColor = "#3388911f";
 
+  const updateRangeBackground = (inputElement) => {
+    const ratio =
+      ((inputElement.value - inputElement.min) /
+        (inputElement.max - inputElement.min)) *
+      100;
+    inputElement.style.background = `linear-gradient(90deg, ${activeColor} ${ratio}%, ${inactiveColor} ${ratio}%)`;
+  };
+
   inputRange?.addEventListener("input", function () {
-    const ratio = ((this.value - this.min) / (this.max - this.min)) * 100;
-    this.style.background = `linear-gradient(90deg, ${activeColor} ${ratio}%, ${inactiveColor} ${ratio}%)`;
+    updateRangeBackground(this);
   });
 
   inputRange2?.addEventListener("input", function () {
-    const ratio = ((this.value - this.min) / (this.max - this.min)) * 100;
-    this.style.background = `linear-gradient(90deg, ${activeColor} ${ratio}%, ${inactiveColor} ${ratio}%)`;
+    updateRangeBackground(this);
   });
 
   return (
@@ -398,6 +404,13 @@ const RequestFormPage = () => {
                     if (/^\d*$/.test(value)) {
                       setNumberOfNewConsumers(value);
                     }
+
+                    const inputRangeElement =
+                      document.getElementById("inputRange");
+                    if (inputRangeElement) {
+                      inputRangeElement.value = value;
+                      updateRangeBackground(inputRangeElement);
+                    }
                   }}
                 />
                 <input
@@ -409,6 +422,7 @@ const RequestFormPage = () => {
                   value={numberOfNewConsumers}
                   onChange={(e) => {
                     setNumberOfNewConsumers(e.target.value);
+                    updateRangeBackground(e.target);
                   }}
                 />
               </FormRow>
@@ -455,6 +469,12 @@ const RequestFormPage = () => {
                     if (/^\d*$/.test(value)) {
                       setNumberOfLocations(value);
                     }
+                    const inputRangeElement =
+                      document.getElementById("inputRange2");
+                    if (inputRangeElement) {
+                      inputRangeElement.value = value;
+                      updateRangeBackground(inputRangeElement);
+                    }
                   }}
                 />
 
@@ -467,6 +487,7 @@ const RequestFormPage = () => {
                   value={numberOfLocations}
                   onChange={(e) => {
                     setNumberOfLocations(e.target.value);
+                    updateRangeBackground(e.target);
                   }}
                 />
               </FormRow>
