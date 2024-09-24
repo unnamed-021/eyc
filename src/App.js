@@ -46,7 +46,7 @@ function App() {
     <Fragment>
       <GlobalStyles />
 
-      {minimumDurationPassed ? (
+      {!minimumDurationPassed ? (
         <>
           <ToastContainer
             position="top-right"

@@ -1,12 +1,11 @@
 import React from "react";
-import { Container, Logo } from "./SplashScreen.styles";
-import { ReactComponent as LogoSVG } from "../../assets/icons/logoEYC.svg";
+import { Container, Logo, LogoSVG } from "./SplashScreen.styles";
 
 const SplashScreen = () => {
   return (
     <Container>
       <Logo>
-        <LogoSVG height={70} width={"auto"} />
+        <LogoSVG />
       </Logo>
     </Container>
   );

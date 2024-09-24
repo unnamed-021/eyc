@@ -516,10 +516,12 @@ const RequestFormPage = () => {
                 <InfoImg src={Info} />
                 <Value $wrap>
                   For ${formatNumberWithCommas(totalMonthlyBudget)}, bring{" "}
-                  {numberOfNewConsumers} new consumers to {numberOfLocations}{" "}
-                  locations every month for a total of{" "}
-                  {numberOfLocations * numberOfNewConsumers} fresh faces for
-                  your brand
+                  {formatNumberWithCommas(numberOfNewConsumers)} new consumers
+                  to {numberOfLocations} locations every month for a total of{" "}
+                  {formatNumberWithCommas(
+                    numberOfLocations * numberOfNewConsumers
+                  )}{" "}
+                  fresh faces for your brand
                 </Value>
               </FormRow>
 
@@ -527,10 +529,12 @@ const RequestFormPage = () => {
                 <Label>Additional Benefits:</Label>
                 <InfoImg src={Info} />
                 <Value $wrap>
-                  You also receive {4 * numberOfNewConsumers} rated UGC photos,{" "}
-                  {manHours.toFixed(0)} man hours of brand exposure, and{" "}
-                  {3 * numberOfNewConsumers} interactions with new consumers for
-                  your brand every month!
+                  You also receive{" "}
+                  {formatNumberWithCommas(4 * numberOfNewConsumers)} rated UGC
+                  photos, {formatNumberWithCommas(manHours.toFixed(0))} man
+                  hours of brand exposure, and{" "}
+                  {formatNumberWithCommas(3 * numberOfNewConsumers)}{" "}
+                  interactions with new consumers for your brand every month!
                 </Value>
               </FormRow>
 

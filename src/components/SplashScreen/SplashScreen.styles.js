@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { ReactComponent as Svg } from "../../assets/icons/logoEYC.svg";
 
 const growAndShrink = keyframes`
   0% {
@@ -33,4 +34,12 @@ export const Logo = styled.div`
 export const Image = styled.img`
   width: 100%;
   height: auto;
+`;
+
+export const LogoSVG = styled(Svg)`
+  width: auto;
+  height: 7rem;
+  @media (max-width: 400px) {
+    height: 5rem;
+  }
 `;

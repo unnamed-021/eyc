@@ -71,10 +71,10 @@ export const Section = styled.div`
   min-height: 100dvh;
 
   border-bottom: 1px solid #ecf0f8;
-  padding: 12rem 4rem 4rem 4rem;
+  padding: 12rem 4rem 12rem 4rem;
 
   @media (max-width: 490px) {
-    padding: 10rem 2rem 2rem 2rem;
+    padding: 10rem 2rem 10rem 2rem;
   }
 `;
 
@@ -256,7 +256,7 @@ export const Value = styled.span`
   font-size: 1.6rem;
   font-family: "Poppins-Regular";
   color: #1e1e1ecc;
-  max-width: 30.6rem;
+  max-width: 35rem;
   @media (max-width: 912px) {
     text-align: center;
   }
