@@ -105,7 +105,7 @@ export const Title = styled.span`
   line-height: 4rem;
   max-width: 63rem;
   @media (max-width: 912px) {
-    text-align: center;
+    /* text-align: center; */
   }
 `;
 
@@ -117,19 +117,19 @@ export const Row = styled.div`
   gap: 10rem;
   flex-wrap: wrap;
   @media (max-width: 1063px) {
-    justify-content: center;
+    /* justify-content: center; */
     gap: 5rem;
   }
 `;
 export const SmallRow = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  flex-wrap: ${(props) => (props.$noWrap ? "unset" : "wrap")};
 
   gap: 1rem;
   @media (max-width: 912px) {
-    flex-direction: column;
-    align-items: center;
+    /* flex-direction: column;
+    align-items: center; */
   }
 `;
 export const Img = styled.img`
@@ -144,7 +144,7 @@ export const Subtitle = styled.span`
   width: ${(props) => (props.$large ? "72.7rem" : "48.3rem")};
 
   @media (max-width: 912px) {
-    text-align: center;
+    /* text-align: center; */
   }
   @media (max-width: 800px) {
     width: ${(props) => (props.$large ? "100%" : "48.3rem")};
@@ -195,7 +195,7 @@ export const FormContainer = styled.div`
     width: 100%;
   }
   @media (max-width: 912px) {
-    align-items: center;
+    /* align-items: center; */
   }
 `;
 
@@ -206,7 +206,7 @@ export const Label = styled.span`
   width: 29rem;
   white-space: ${(props) => (props.$wrap ? "wrap" : "nowrap")};
   @media (max-width: 912px) {
-    text-align: center;
+    /* text-align: center; */
     width: 100%;
   }
 `;
@@ -218,10 +218,10 @@ export const FormRow = styled.div`
   gap: 3rem;
   flex-wrap: wrap;
   @media (max-width: 912px) {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    justify-content: center;
+    /* flex-direction: column; */
+    /* align-items: center; */
+    /* width: 100%; */
+    /* justify-content: center; */
   }
 `;
 
@@ -264,7 +264,7 @@ export const Value = styled.span`
   color: #1e1e1ecc;
   max-width: 35rem;
   @media (max-width: 912px) {
-    text-align: center;
+    /* text-align: center; */
   }
 `;
 

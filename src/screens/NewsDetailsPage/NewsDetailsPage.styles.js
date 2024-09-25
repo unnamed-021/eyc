@@ -53,7 +53,7 @@ export const Title = styled.h1`
   font-family: "Poppins-Bold";
   text-align: ${(props) => (props.$center ? "center" : "left")};
   @media (max-width: 660px) {
-    text-align: center;
+    /* text-align: center; */
   }
 `;
 export const Subtitle = styled.h2`
@@ -62,7 +62,7 @@ export const Subtitle = styled.h2`
   color: #848484;
   text-align: ${(props) => (props.$center ? "center" : "left")};
   @media (max-width: 660px) {
-    text-align: center;
+    /* text-align: center; */
   }
 `;
 export const StyledSubtitle = styled(Subtitle)`

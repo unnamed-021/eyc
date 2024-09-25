@@ -200,6 +200,10 @@ export const ImageRow = styled.div`
   @media (max-width: 880px) {
     justify-content: center;
   }
+  @media (max-width: 829px) {
+    gap: 0rem;
+    align-items: flex-start;
+  }
 `;
 
 export const TitleWrapper = styled.div`

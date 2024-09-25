@@ -5,7 +5,6 @@ import {
   Section,
   SectionWrapper,
   ImagesContainer,
-  ImageContainer,
   ImageLeft,
   ImageTitle,
   RightSide,
@@ -19,6 +18,7 @@ import {
   Description,
   Date,
   NewsTitle,
+  ImageShadow,
 } from "./NewsPage.styles";
 
 import Header from "../../components/Header/Header";
@@ -208,37 +208,53 @@ const NewsPage = () => {
   return (
     <Container>
       <Header />
-      <Section $firstSection ref={ref}>
+      <Section $firstSection>
         <SectionWrapper>
           <ImagesContainer>
-            <ImageContainer>
-              <ImageLeft src={Img1} />
-              <ImageTitle>
-                Activate Your Fans' True Voice, Energize Your Brand
-              </ImageTitle>
-            </ImageContainer>
+            <ImageLeft
+              bgImage={newsData[0].thumbnail}
+              onClick={() => navigate("/news-details", { state: newsData[0] })}
+            >
+              <ImageShadow />
+
+              <ImageTitle>{newsData[0].title}</ImageTitle>
+            </ImageLeft>
 
             <RightSide>
-              <ImageContainer>
-                <ImageRight src={Img2} />
-                <ImageTitle>
-                  EyCrowd Updates Now Available on the Client Portal
-                </ImageTitle>
-              </ImageContainer>
+              <ImageRight
+                bgImage={newsData[3].thumbnail}
+                onClick={() =>
+                  navigate("/news-details", { state: newsData[3] })
+                }
+              >
+                <ImageShadow />
+
+                <ImageTitle>{newsData[3].title}</ImageTitle>
+              </ImageRight>
               <ImageRow>
-                <ImageContainer>
-                  <ImageRightSmall src={Img3} />
-                  <ImageTitle>Start-to-Finish App Walkthrough</ImageTitle>
-                </ImageContainer>
-                <ImageContainer>
-                  <ImageRightSmall src={Img4} />
-                  <ImageTitle>Performing POST-Tasks</ImageTitle>
-                </ImageContainer>
+                <ImageRightSmall
+                  bgImage={newsData[6].thumbnail}
+                  onClick={() =>
+                    navigate("/news-details", { state: newsData[6] })
+                  }
+                >
+                  <ImageShadow />
+                  <ImageTitle>{newsData[6].title}</ImageTitle>
+                </ImageRightSmall>
+                <ImageRightSmall
+                  bgImage={newsData[10].thumbnail}
+                  onClick={() =>
+                    navigate("/news-details", { state: newsData[10] })
+                  }
+                >
+                  <ImageShadow />
+                  <ImageTitle>{newsData[10].title}</ImageTitle>
+                </ImageRightSmall>
               </ImageRow>
             </RightSide>
           </ImagesContainer>
 
-          <NewsContainer>
+          <NewsContainer ref={ref}>
             {newsData.map((data) => (
               <NewContainer key={data.id}>
                 <NewPhoto src={data.thumbnail} />

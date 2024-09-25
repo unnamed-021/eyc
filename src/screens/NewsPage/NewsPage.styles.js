@@ -65,8 +65,8 @@ export const SectionWrapper = styled.div`
   gap: 4rem;
   max-width: 1440px;
   width: 100%;
-  scale: 0;
-  opacity: 0;
+  /* scale: 0;
+  opacity: 0; */
   transition: scale 0.6s ease-in-out, opacity 1s ease-in-out;
   @media (max-width: 660px) {
     flex-direction: column;
@@ -173,8 +173,12 @@ export const ImagesContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+
   @media (max-width: 920px) {
     flex-direction: column;
+  }
+  @media (max-width: 490px) {
+    width: 100%;
   }
 `;
 
@@ -182,10 +186,28 @@ export const RightSide = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  @media (max-width: 490px) {
+    width: 100%;
+  }
 `;
-export const ImageContainer = styled.div`
-  position: relative;
+
+export const ImageShadow = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transition: all 0.3s ease-in-out;
+
+  background: linear-gradient(
+    180deg,
+    rgba(236, 236, 236, 0) 45%,
+    rgba(0, 0, 0, 0.65) 100%
+  );
+  z-index: 10;
+  border-radius: 1.2rem;
 `;
+
 export const ImageRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -204,15 +226,27 @@ export const ImageTitle = styled.span`
   z-index: 2;
   bottom: 2rem;
   left: 1rem;
+  z-index: 30;
   line-height: 3rem;
   text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
 `;
 
-export const ImageLeft = styled.img`
+export const ImageLeft = styled.div`
   width: 44.9rem;
   height: 52.4rem;
+  z-index: 5;
   border-radius: 1.2rem;
-  object-fit: cover;
+  transition: all 0.3s ease-in-out;
+
+  position: relative;
+  cursor: pointer;
+  background-image: url(${(props) => props.bgImage});
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  &:hover {
+    scale: 1.015;
+  }
   @media (max-width: 920px) {
     width: 50.7rem;
   }
@@ -220,20 +254,43 @@ export const ImageLeft = styled.img`
     width: 100%;
   }
 `;
-export const ImageRight = styled.img`
-  object-fit: cover;
+export const ImageRight = styled.div`
   width: 50.7rem;
+  transition: all 0.3s ease-in-out;
   height: 26rem;
+  z-index: 5;
   border-radius: 1.2rem;
+  position: relative;
+
+  cursor: pointer;
+  background-image: url(${(props) => props.bgImage});
+  background-size: cover;
+  background-position: center;
+  display: flex;
+
+  &:hover {
+    scale: 1.015;
+  }
   @media (max-width: 490px) {
     width: 100%;
   }
 `;
-export const ImageRightSmall = styled.img`
+export const ImageRightSmall = styled.div`
   border-radius: 1.2rem;
+  transition: all 0.3s ease-in-out;
   width: 25rem;
-  object-fit: cover;
+  z-index: 5;
   height: 25.8rem;
+
+  position: relative;
+  cursor: pointer;
+  background-image: url(${(props) => props.bgImage});
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  &:hover {
+    scale: 1.015;
+  }
   @media (max-width: 490px) {
     width: 100%;
   }

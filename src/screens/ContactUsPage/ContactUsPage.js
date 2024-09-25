@@ -143,7 +143,7 @@ const ContactUsPage = () => {
               Have questions or need assistance? Fill out the form below, and
               our team will respond promptly. Whether you're seeking more
               information, support, or just want to explore how we can help grow
-              your brand, we're here for you every step of the way!"
+              your brand, we're here for you every step of the way!
             </Subtitle>
             <Input
               placeholder="Full Name"

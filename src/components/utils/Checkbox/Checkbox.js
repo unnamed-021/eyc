@@ -2,7 +2,7 @@ import React from "react";
 
 const CheckboxComponent = ({ checked, onChange, label, disabled }) => {
   return (
-    <label class="checkbox">
+    <label class="checkbox" style={{ width: 170 }}>
       <input
         type="checkbox"
         name="checkbox"

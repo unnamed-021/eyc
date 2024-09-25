@@ -430,6 +430,7 @@ const BusinessPage = () => {
                   containerStyle={{ width: "48%" }}
                 />
                 <Button
+                  onClick={() => navigate("/eMagazine")}
                   title={"See Case Studies"}
                   containerStyle={{
                     width: "48%",
@@ -450,7 +451,7 @@ const BusinessPage = () => {
                 style: { transitionDelay: ".3s" },
               }}
             />
-            <Image
+            <StyledImage
               src={Image1}
               effect="blur"
               wrapperProps={{
@@ -495,6 +496,7 @@ const BusinessPage = () => {
                   containerStyle={{ width: "48%" }}
                 />
                 <Button
+                  onClick={() => navigate("/eMagazine")}
                   title={"See Case Studies"}
                   containerStyle={{
                     width: "48%",
@@ -515,7 +517,7 @@ const BusinessPage = () => {
                 style: { transitionDelay: ".3s" },
               }}
             />
-            <Image
+            <StyledImage
               src={Image3}
               effect="blur"
               wrapperProps={{
@@ -560,6 +562,7 @@ const BusinessPage = () => {
                   containerStyle={{ width: "48%" }}
                 />
                 <Button
+                  onClick={() => navigate("/eMagazine")}
                   title={"See Case Studies"}
                   containerStyle={{
                     width: "48%",
@@ -580,7 +583,7 @@ const BusinessPage = () => {
                 style: { transitionDelay: ".3s" },
               }}
             />
-            <Image
+            <StyledImage
               src={Image4}
               effect="blur"
               wrapperProps={{
@@ -623,6 +626,7 @@ const BusinessPage = () => {
                 containerStyle={{ width: "48%" }}
               />
               <Button
+                onClick={() => navigate("/eMagazine")}
                 title={"See Case Studies"}
                 containerStyle={{
                   width: "48%",
@@ -665,6 +669,7 @@ const BusinessPage = () => {
                   containerStyle={{ width: "48%" }}
                 />
                 <Button
+                  onClick={() => navigate("/eMagazine")}
                   title={"See Case Studies"}
                   containerStyle={{
                     width: "48%",
@@ -685,7 +690,7 @@ const BusinessPage = () => {
                 style: { transitionDelay: ".3s" },
               }}
             />
-            <Image
+            <StyledImage
               src={Image4}
               effect="blur"
               wrapperProps={{
@@ -786,6 +791,7 @@ const BusinessPage = () => {
                 containerStyle={{ width: "48%" }}
               />
               <Button
+                onClick={() => navigate("/eMagazine")}
                 title={"See Case Studies"}
                 containerStyle={{
                   width: "48%",

@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import {
   NavLinks,
   Link,
@@ -17,94 +18,113 @@ import {
   AddressContainer,
   Address,
   HoverImage,
-  StyledNavLinks,
 } from "./Footer.styles";
+
 import { ReactComponent as Logo } from "../../assets/icons/logoEYCWhite.svg";
+
 import AppStore from "../../assets/images/applestore.png";
 import GooglePlay from "../../assets/images/googleplay.png";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const openLink = (link) => {
+    window.open(link, "_blank");
+  };
+
   return (
     <FooterContainer>
       <FooterWrapper>
         <NavLinks>
           <Text>Links</Text>
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              window.scrollTo(0, 0);
+              navigate("/");
+            }}
           >
             Home
           </Link>
 
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://app.eycrowd.com/create-campaign");
+            }}
           >
             Create a Brand Experience
           </Link>
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/businessfaqs");
+            }}
           >
             Business FAQ's
           </Link>
 
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              // openLink("https://www.eycrowd.com/supportrequest");
+            }}
           >
             Support
           </Link>
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/cookie-policy");
+            }}
           >
             Cookie Policy
           </Link>
 
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/terms-and-conditions");
+            }}
           >
             Terms and Conditions
           </Link>
 
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/eula");
+            }}
           >
             End User License Agreement
           </Link>
 
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/disclaimer");
+            }}
           >
             Disclaimer
           </Link>
 
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/privacy");
+            }}
           >
             Privacy Policy
           </Link>
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/dsaf");
+            }}
           >
             Data Subject Access Request
           </Link>
 
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/dsaf");
+            }}
           >
             Do Not Sell My Info
           </Link>
           <Link
-            // $active={pathname === ""}
-            onClick={() => {}}
+            onClick={() => {
+              openLink("https://www.eycrowd.com/cookie-policy");
+            }}
           >
             Cookie Preferences
           </Link>
@@ -113,33 +133,67 @@ const Footer = () => {
 
         <NavLinks>
           <Text>Connect With Us</Text>
-          <SocialMediaRow>
+          <SocialMediaRow
+            onClick={() => {
+              openLink("https://www.instagram.com/eycrowd/");
+            }}
+          >
             <Instagram />
             <SocialMediaLabel>Instagram</SocialMediaLabel>
           </SocialMediaRow>
 
-          <SocialMediaRow>
+          <SocialMediaRow
+            onClick={() => {
+              openLink("https://www.facebook.com/eycrowd/");
+            }}
+          >
             <Facebook />
             <SocialMediaLabel>Facebook</SocialMediaLabel>
           </SocialMediaRow>
 
-          <SocialMediaRow>
+          <SocialMediaRow
+            onClick={() => {
+              openLink(
+                "https://www.linkedin.com/company/eycrowd/posts/?feedView=all"
+              );
+            }}
+          >
             <LinkedIn />
             <SocialMediaLabel>LinkedIn</SocialMediaLabel>
           </SocialMediaRow>
 
-          <SocialMediaRow>
+          <SocialMediaRow
+            onClick={() => {
+              openLink("https://x.com/eycrowdinc");
+            }}
+          >
             <Twitter />
             <SocialMediaLabel>Twitter</SocialMediaLabel>
           </SocialMediaRow>
 
-          <SocialMediaRow>
+          <SocialMediaRow
+            onClick={() => {
+              openLink("https://linktr.ee/eycrowd");
+            }}
+          >
             <Linktree />
             <SocialMediaLabel>Linktree</SocialMediaLabel>
           </SocialMediaRow>
 
-          <HoverImage src={GooglePlay} />
-          <HoverImage src={AppStore} />
+          <HoverImage
+            src={GooglePlay}
+            onClick={() => {
+              openLink(
+                "https://play.google.com/store/apps/details?id=com.eycrowd.application"
+              );
+            }}
+          />
+          <HoverImage
+            src={AppStore}
+            onClick={() => {
+              openLink("https://apps.apple.com/us/app/eycrowd/id1559741643");
+            }}
+          />
           <CopyText>
             Copyright © 2023 EyCrowd, Inc. - All Rights Reserved.
           </CopyText>

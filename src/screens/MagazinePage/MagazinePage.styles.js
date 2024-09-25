@@ -108,9 +108,10 @@ export const Title = styled.span`
   font-family: "Poppins-Bold";
 
   line-height: 4rem;
+  width: 100%;
 
   @media (max-width: 880px) {
-    text-align: center;
+    /* text-align: center; */
   }
 `;
 
@@ -127,12 +128,10 @@ export const Subtitle = styled.span`
   font-family: "Poppins-Regular";
   color: #848484;
 
-  width: 48.3rem;
+  width: 100%;
+
   @media (max-width: 880px) {
-    text-align: center;
-  }
-  @media (max-width: 500px) {
-    width: 100%;
+    /* text-align: center; */
   }
 `;
 
@@ -140,7 +139,8 @@ export const Input = styled.input`
   color: #8e8e8e;
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
-  max-width: 48.3rem;
+  width: 100%;
+
   outline: none;
   color: #b0b0b0;
   font-size: 1.6rem;
@@ -155,7 +155,7 @@ export const TextArea = styled.textarea`
   border: 1px solid #8e8e8e;
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
-  max-width: 48.3rem;
+  width: 100%;
   min-height: 10rem;
   outline: none;
   color: #b0b0b0;

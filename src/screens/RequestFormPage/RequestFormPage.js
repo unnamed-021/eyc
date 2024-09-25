@@ -263,7 +263,7 @@ const RequestFormPage = () => {
                 Welcome to White-Glove Service: Let's bring waves of new
                 consumers from our community to your brand.
               </Title>
-              <SmallRow>
+              <SmallRow $noWrap>
                 <Img src={Check} />
                 <Subtitle>
                   Tell us how many new consumers to bring from our vibrant
@@ -271,7 +271,7 @@ const RequestFormPage = () => {
                   your budget.
                 </Subtitle>
               </SmallRow>
-              <SmallRow>
+              <SmallRow $noWrap>
                 <Img src={Check} />
                 <Subtitle>
                   Our world-class platform and team handles everything. You
