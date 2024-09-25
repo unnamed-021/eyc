@@ -57,6 +57,15 @@ export const NavLinks = styled.div`
     align-items: center;
   }
 `;
+
+export const StyledNavLinks = styled(NavLinks)`
+  display: none;
+
+  @media (max-width: 845px) {
+    display: ${(props) => (props.$show ? "flex" : "none")};
+  }
+`;
+
 export const Text = styled.span`
   color: white;
   font-size: 1.8rem;
@@ -141,6 +150,7 @@ export const SocialMediaRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 1rem;
+  min-width: 101.5px;
   transition: all 0.3s ease-in-out;
 `;
 

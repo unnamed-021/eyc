@@ -1,5 +1,4 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import {
   NavLinks,
   Link,
@@ -13,22 +12,18 @@ import {
   LinkedIn,
   Twitter,
   Linktree,
-  Image,
   CopyText,
   StyledText,
   AddressContainer,
   Address,
   HoverImage,
+  StyledNavLinks,
 } from "./Footer.styles";
 import { ReactComponent as Logo } from "../../assets/icons/logoEYCWhite.svg";
 import AppStore from "../../assets/images/applestore.png";
 import GooglePlay from "../../assets/images/googleplay.png";
 
 const Footer = () => {
-  const navigate = useNavigate();
-  const location = useLocation();
-  const { pathname } = location;
-
   return (
     <FooterContainer>
       <FooterWrapper>
