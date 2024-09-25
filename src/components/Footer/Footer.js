@@ -27,8 +27,16 @@ import GooglePlay from "../../assets/images/googleplay.png";
 
 const Footer = () => {
   const navigate = useNavigate();
+
   const openLink = (link) => {
     window.open(link, "_blank");
+  };
+
+  const handleSearch = (searchText) => {
+    const url = `https://www.google.com/search?q=${encodeURIComponent(
+      searchText
+    )}`;
+    window.open(url, "_blank");
   };
 
   return (
@@ -203,35 +211,63 @@ const Footer = () => {
           <Text>Offices</Text>
 
           <StyledText>United States of America</StyledText>
-          <AddressContainer>
+          <AddressContainer
+            onClick={() =>
+              handleSearch("Levis Plaza, San Francisco, California")
+            }
+          >
             <Address>Levis Plaza</Address>
             <Address>San Francisco, California</Address>
           </AddressContainer>
-          <AddressContainer>
+          <AddressContainer
+            onClick={() =>
+              handleSearch("Millennium Playa Vista, Los Angeles, California")
+            }
+          >
             <Address>Millennium Playa Vista</Address>
             <Address>Los Angeles, California</Address>
           </AddressContainer>
-          <AddressContainer>
+          <AddressContainer
+            onClick={() =>
+              handleSearch("Civica Cherry Greek, Denver, Colorado")
+            }
+          >
             <Address>Civica Cherry Greek</Address>
             <Address>Denver, Colorado</Address>
           </AddressContainer>
-          <AddressContainer>
+          <AddressContainer
+            onClick={() =>
+              handleSearch(
+                "Headquarters: Galleria Office Tower, Houston, Texas"
+              )
+            }
+          >
             <Address>Headquarters: Galleria Office Tower</Address>
             <Address>Houston, Texas</Address>
           </AddressContainer>
-          <AddressContainer>
+          <AddressContainer
+            onClick={() =>
+              handleSearch(
+                "Mail: 945 McKinney Street, #17965, Houston, Texas 77002"
+              )
+            }
+          >
             <Address>Mail: 945 McKinney Street, #17965</Address>
             <Address>Houston, Texas 77002</Address>
           </AddressContainer>
 
           <StyledText>Kingdom of Saudi Arabia</StyledText>
-          <AddressContainer>
+          <AddressContainer
+            onClick={() => handleSearch("Smart Tower, Riyadh 12313")}
+          >
             <Address>Smart Tower</Address>
             <Address>Riyadh 12313</Address>
           </AddressContainer>
 
           <StyledText>Republic of Serbia</StyledText>
-          <AddressContainer>
+          <AddressContainer
+            onClick={() => handleSearch("Futoska, Novi Sad 2100")}
+          >
             <Address>Futoska</Address>
             <Address>Novi Sad 21000</Address>
           </AddressContainer>
