@@ -43,15 +43,6 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  useEffect(() => {
-    if (minimumDurationPassed) {
-      document.documentElement.style.overflowY = "hidden";
-      document.documentElement.style.paddingLeft = 0;
-    } else {
-      document.documentElement.style.overflowY = "scroll";
-    }
-  }, [minimumDurationPassed]);
-
   return (
     <Fragment>
       <GlobalStyles />
