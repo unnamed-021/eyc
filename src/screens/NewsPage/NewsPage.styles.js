@@ -248,7 +248,7 @@ export const ImageLeft = styled.div`
   background-position: center;
   display: flex;
   &:hover {
-    scale: 1.015;
+    scale: 1.01;
   }
 `;
 export const ImageRight = styled.div`
@@ -266,7 +266,7 @@ export const ImageRight = styled.div`
   display: flex;
 
   &:hover {
-    scale: 1.015;
+    scale: 1.01;
   }
 `;
 export const ImageRightSmall = styled.div`
@@ -283,7 +283,7 @@ export const ImageRightSmall = styled.div`
   background-position: center;
   display: flex;
   &:hover {
-    scale: 1.015;
+    scale: 1.01;
   }
 
   @media (max-width: 490px) {
