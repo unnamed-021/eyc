@@ -145,8 +145,11 @@ export const Iframe = styled.iframe`
   width: 100%;
   height: auto;
   border-radius: 16px;
-  aspect-ratio: 16/9;
+  aspect-ratio: 16 / 9;
   @media (max-width: 850px) {
     width: 100%;
+  }
+  @media (max-width: 650px) {
+    aspect-ratio: 9 / 16;
   }
 `;
