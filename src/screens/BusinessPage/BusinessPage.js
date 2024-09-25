@@ -20,7 +20,6 @@ import {
   BgEYC,
   CardContainer,
   CardRow,
-  StyledSectionWrapperNoAnimation,
   StyledImage,
 } from "./BusinessPage.styles";
 
@@ -43,7 +42,6 @@ import HomeImgBig from "../../assets/images/bigHome.png";
 import WatchImg from "../../assets/images/watch.png";
 import DotGreen from "../../assets/images/dotGreen.png";
 import Dot from "../../assets/images/dotBlue.png";
-import Subs from "../../assets/images/sub2.png";
 import Bg from "../../assets/images/bgeyc.png";
 import Check from "../../assets/images/check.png";
 import Consumer from "../../assets/images/consumer.png";
