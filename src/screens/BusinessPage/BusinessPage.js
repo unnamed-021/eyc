@@ -21,6 +21,7 @@ import {
   CardContainer,
   CardRow,
   StyledSectionWrapperNoAnimation,
+  StyledImage,
 } from "./BusinessPage.styles";
 
 import Header from "../../components/Header/Header";
@@ -457,7 +458,7 @@ const BusinessPage = () => {
                 style: { transitionDelay: ".3s" },
               }}
             />
-            <Image
+            <StyledImage
               src={Image1}
               effect="blur"
               wrapperProps={{
@@ -470,7 +471,11 @@ const BusinessPage = () => {
 
       <Section ref={ref3}>
         <StyledSectionWrapper>
-          <TitleWrapper>
+          <TitleWrapper $reverse>
+            <CenterRelative style={{ width: 240, height: 240 }}>
+              <BigCircleImg src={CircleBig} />
+              <Icon src={HomeImgBig} />
+            </CenterRelative>
             <TitleContainer>
               <Title>Retail</Title>
               <Subtitle>
@@ -501,11 +506,6 @@ const BusinessPage = () => {
                 />
               </ButtonsContainer>
             </TitleContainer>
-
-            <CenterRelative style={{ width: 240, height: 240 }}>
-              <BigCircleImg src={CircleBig} />
-              <Icon src={HomeImgBig} />
-            </CenterRelative>
           </TitleWrapper>
 
           <ImageRow>
@@ -523,7 +523,7 @@ const BusinessPage = () => {
                 style: { transitionDelay: ".3s" },
               }}
             />
-            <Image
+            <StyledImage
               src={Image2}
               effect="blur"
               wrapperProps={{
@@ -588,7 +588,7 @@ const BusinessPage = () => {
                 style: { transitionDelay: ".3s" },
               }}
             />
-            <Image
+            <StyledImage
               src={Image4}
               effect="blur"
               wrapperProps={{
@@ -693,7 +693,7 @@ const BusinessPage = () => {
                 style: { transitionDelay: ".3s" },
               }}
             />
-            <Image
+            <StyledImage
               src={Image4}
               effect="blur"
               wrapperProps={{

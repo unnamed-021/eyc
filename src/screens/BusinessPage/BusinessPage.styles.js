@@ -204,11 +204,12 @@ export const ImageRow = styled.div`
 
 export const TitleWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => (props.$reverse ? "row-reverse" : "row")};
   align-items: center;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 5rem;
+
   @media (max-width: 967px) {
     justify-content: center;
   }
@@ -221,6 +222,11 @@ export const Icon = styled(LazyLoadImage)`
 export const Image = styled(LazyLoadImage)`
   width: ${(props) => (props.$small ? "auto" : "100%")};
   height: ${(props) => (props.$small ? "7.5rem" : "100%")};
+`;
+export const StyledImage = styled(Image)`
+  @media (max-width: 829px) {
+    display: none;
+  }
 `;
 
 export const StyledSectionWrapper = styled.div`
@@ -268,6 +274,7 @@ export const ImgRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 2rem;
+
   @media (max-width: 880px) {
     width: 255px;
   }
