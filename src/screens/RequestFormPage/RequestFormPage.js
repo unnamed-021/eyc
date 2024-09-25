@@ -75,31 +75,12 @@ const RequestFormPage = () => {
     const newErrors = {};
 
     if (!selectBrandIndustry) {
-      openToast(
-        toastId,
-        "brandIndustry-required",
-        "info",
-        "Brand Industry is required"
-      );
-
       newErrors.brandIndustry = "Brand Industry is required";
     }
     if (!selectLocationTypes) {
-      openToast(
-        toastId,
-        "locationType-required",
-        "info",
-        "Location Type is required"
-      );
       newErrors.locationTypes = "Location Type is required";
     }
     if (selectIdealCustomers.length === 0) {
-      openToast(
-        toastId,
-        "idealCustomers-required",
-        "info",
-        "Ideal Customers is required"
-      );
       newErrors.idealCustomers = "Ideal Customers is required";
     }
     if (!name) {
@@ -202,6 +183,13 @@ const RequestFormPage = () => {
           setTab(1);
         })
         .catch((err) => console.log(err.message));
+    } else {
+      openToast(
+        toastId,
+        "submit-error",
+        "error",
+        "Please fill in all required fields."
+      );
     }
   };
 

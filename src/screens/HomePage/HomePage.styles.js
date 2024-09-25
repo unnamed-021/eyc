@@ -94,15 +94,15 @@ export const SectionWrapper = styled.div`
   gap: 4rem;
   max-width: 1440px;
   width: 100%;
-  transform: translateX(100%);
+  scale: 0;
   opacity: 0;
-  transition: all 0.6s ease-in-out;
+  transition: scale 0.6s ease-in-out, opacity 1s ease-in-out;
   @media (max-width: 660px) {
     flex-direction: column;
     justify-content: center;
   }
   @media (max-width: 400px) {
-    transform: translateX(0) !important;
+    scale: 1 !important;
     opacity: 1 !important;
   }
 `;

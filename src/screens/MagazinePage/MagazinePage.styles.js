@@ -74,9 +74,9 @@ export const Section = styled.div`
   flex-wrap: wrap;
   gap: 5rem;
 
-  transform: translateX(100%);
+  scale: 0;
   opacity: 0;
-  transition: all 0.6s ease-in-out;
+  transition: scale 0.6s ease-in-out, opacity 1s ease-in-out;
   padding: 12rem 4rem 12rem 4rem;
 
   @media (max-width: 490px) {
@@ -84,7 +84,7 @@ export const Section = styled.div`
   }
   @media (max-width: 400px) {
     opacity: 1 !important;
-    transform: translateX(0);
+    scale: 1 !important;
   }
 `;
 export const SectionWrapper = styled.div`
