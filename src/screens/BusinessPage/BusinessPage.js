@@ -592,13 +592,13 @@ const BusinessPage = () => {
               <Button
                 title={"Get Started"}
                 onClick={() => navigate("/request-form")}
-                containerStyle={{ width: "60%" }}
+                containerStyle={{ width: "80%" }}
               />
               <Button
                 onClick={() => navigate("/eMagazine")}
                 title={"See Case Studies"}
                 containerStyle={{
-                  width: "60%",
+                  width: "80%",
                   backgroundColor: "white",
                   border: "2px solid #FE5F55",
                 }}
@@ -764,13 +764,13 @@ const BusinessPage = () => {
               <Button
                 title={"Get Started"}
                 onClick={() => navigate("/request-form")}
-                containerStyle={{ width: "48%" }}
+                containerStyle={{ width: "80%" }}
               />
               <Button
                 onClick={() => navigate("/eMagazine")}
                 title={"See Case Studies"}
                 containerStyle={{
-                  width: "48%",
+                  width: "80%",
                   backgroundColor: "white",
                   border: "2px solid #FE5F55",
                 }}
