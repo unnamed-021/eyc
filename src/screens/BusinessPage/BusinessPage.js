@@ -57,6 +57,7 @@ import {
   CircleImg,
   ImageContainer,
 } from "../../components/Header/Header.styles";
+import MyTable from "../../components/utils/Table";
 
 const BusinessPage = () => {
   const navigate = useNavigate();
@@ -712,23 +713,8 @@ const BusinessPage = () => {
               Unlock game-changing value with EyCrowd brand experiences.
             </Subtitle>
           </TitleContainer>
-          <ImageContainer
-            style={{ width: "100%", height: "100%" }}
-            onClick={() => navigate("/request-form")}
-          >
-            <Image
-              src={Subs}
-              effect="blur"
-              wrapperProps={{
-                style: { transitionDelay: ".3s" },
-              }}
-            />
-            {/* <Absolute>
-              <Button
-                title={"Try EyCrowd now"}
-                containerStyle={{ width: 170, height: 37 }}
-              />
-            </Absolute> */}
+          <ImageContainer style={{ width: "100%", height: "100%" }}>
+            <MyTable />
           </ImageContainer>
         </StyledSectionWrapper>
       </Section>
