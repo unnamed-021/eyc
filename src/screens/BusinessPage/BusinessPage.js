@@ -7,7 +7,6 @@ import {
   Title,
   TitleContainer,
   ButtonsContainer,
-  SectionWrapper,
   TitleWrapper,
   Image,
   ImageRow,
@@ -69,6 +68,7 @@ const BusinessPage = () => {
   const [isIntersecting3, setIsIntersecting3] = useState(false);
   const [isIntersecting4, setIsIntersecting4] = useState(false);
   const [isIntersecting5, setIsIntersecting5] = useState(false);
+  const [isIntersecting6, setIsIntersecting6] = useState(false);
   const [isIntersecting7, setIsIntersecting7] = useState(false);
   const [isIntersecting8, setIsIntersecting8] = useState(false);
   const [isIntersecting9, setIsIntersecting9] = useState(false);
@@ -81,6 +81,7 @@ const BusinessPage = () => {
   const ref3 = useRef(null);
   const ref4 = useRef(null);
   const ref5 = useRef(null);
+  const ref6 = useRef(null);
   const ref7 = useRef(null);
   const ref8 = useRef(null);
   const ref9 = useRef(null);
@@ -106,6 +107,7 @@ const BusinessPage = () => {
   useEffect(() => handleIntersection(setIsIntersecting3, ref3, "slide-in"), []);
   useEffect(() => handleIntersection(setIsIntersecting4, ref4, "slide-in"), []);
   useEffect(() => handleIntersection(setIsIntersecting5, ref5, "slide-in"), []);
+  useEffect(() => handleIntersection(setIsIntersecting6, ref6, "slide-in"), []);
   useEffect(() => handleIntersection(setIsIntersecting7, ref7, "slide-in"), []);
   useEffect(() => handleIntersection(setIsIntersecting8, ref8, "slide-in"), []);
   useEffect(() => handleIntersection(setIsIntersecting9, ref9, "slide-in"), []);
@@ -138,6 +140,7 @@ const BusinessPage = () => {
     handleClassToggle(isIntersecting3, ref3, "slide-in");
     handleClassToggle(isIntersecting4, ref4, "slide-in");
     handleClassToggle(isIntersecting5, ref5, "slide-in");
+    handleClassToggle(isIntersecting6, ref6, "slide-in");
     handleClassToggle(isIntersecting7, ref7, "slide-in");
     handleClassToggle(isIntersecting8, ref8, "slide-in");
     handleClassToggle(isIntersecting9, ref9, "slide-in");
@@ -150,6 +153,7 @@ const BusinessPage = () => {
     isIntersecting3,
     isIntersecting4,
     isIntersecting5,
+    isIntersecting6,
     isIntersecting7,
     isIntersecting8,
     isIntersecting9,
@@ -158,11 +162,9 @@ const BusinessPage = () => {
     isIntersecting12,
   ]);
 
-  const aboutSectionRef = useRef(null);
-
   const scrollToAbout = () => {
-    if (aboutSectionRef.current) {
-      aboutSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    if (ref6.current) {
+      ref6.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -814,8 +816,8 @@ const BusinessPage = () => {
         <BgEYC src={Bg} />
       </Section>
 
-      <Section $grey ref={aboutSectionRef}>
-        <StyledSectionWrapperNoAnimation $center>
+      <Section $grey ref={ref6}>
+        <StyledSectionWrapper $center>
           <TitleContainer $center>
             <Title $center>About EyCrowd</Title>
             <Subtitle $center>
@@ -847,7 +849,7 @@ const BusinessPage = () => {
               />
             </ButtonsContainer>
           </TitleContainer>
-        </StyledSectionWrapperNoAnimation>
+        </StyledSectionWrapper>
       </Section>
 
       <Footer />
