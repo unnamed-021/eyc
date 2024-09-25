@@ -322,7 +322,10 @@ const RequestFormPage = () => {
                     <SecondColumn>
                       <CheckboxComponent
                         checked={selectBrandIndustry === "E-commerce"}
-                        onChange={() => setSelectBrandIndustry("E-commerce")}
+                        onChange={() => {
+                          setSelectBrandIndustry("E-commerce");
+                          setSelectLocationTypes("");
+                        }}
                         label={"E-commerce"}
                       />
 
