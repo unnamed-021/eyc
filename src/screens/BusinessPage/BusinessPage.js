@@ -816,10 +816,10 @@ const BusinessPage = () => {
               customers. We believe brands and people should talk and have fun
               together, in-person and online. <br />
               <br />
-              This is why EyCrowd invented brand experiences, the authentic way
-              to market. Fun, app-guided experiences that brands and consumers
-              love and cherish. EyCrowd bring our large, fast-growing community
-              of enthusiastic consumers to your brand, in-person and online.
+              This is why we invented brand experiences, the authentic way to
+              market. Fun, app-guided experiences that brands and consumers love
+              and cherish. EyCrowd bring our large, fast-growing community of
+              enthusiastic consumers to your brand, in-person and online.
             </Subtitle>
             <ButtonsContainer $center>
               <Button
