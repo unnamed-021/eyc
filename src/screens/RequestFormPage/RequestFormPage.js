@@ -622,7 +622,15 @@ const RequestFormPage = () => {
                 Thank you for your submission. Please select a time to speak
                 with our team.
               </Subtitle>
-              <InlineWidget url="https://calendly.com/ashley-4ec/30min?back=1" />
+
+              <InlineWidget
+                url="https://calendly.com/ashley-4ec/30min?back=1"
+                pageSettings={{
+                  textColor: "#000",
+                  primaryColor: "#FE5F55",
+                }}
+              />
+
               <Subtitle $large>
                 We will confirm your details, identify any additional
                 requirements, and launch! Results typically take three to four

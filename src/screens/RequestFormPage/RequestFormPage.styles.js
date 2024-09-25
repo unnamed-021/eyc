@@ -165,7 +165,13 @@ export const Input = styled.input`
   font-size: 1.6rem;
   font-family: "Poppins-Medium";
 `;
-
+export const LoadingContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120rem;
+  width: 100%;
+`;
 export const Column = styled.div`
   display: flex;
   flex-direction: column;
