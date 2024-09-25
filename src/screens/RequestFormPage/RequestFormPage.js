@@ -181,6 +181,7 @@ const RequestFormPage = () => {
           );
 
           setTab(1);
+          window.scrollTo(0, 0);
         })
         .catch((err) => console.log(err.message));
     } else {

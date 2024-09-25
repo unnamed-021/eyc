@@ -173,12 +173,16 @@ export const ImagesContainer = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+  width: 120rem;
+  @media (max-width: 1500px) {
+    width: 96.1rem;
+  }
+  @media (max-width: 1250px) {
+    width: 100%;
+  }
 
   @media (max-width: 920px) {
     flex-direction: column;
-  }
-  @media (max-width: 490px) {
-    width: 100%;
   }
 `;
 
@@ -186,9 +190,7 @@ export const RightSide = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  @media (max-width: 490px) {
-    width: 100%;
-  }
+  width: 100%;
 `;
 
 export const ImageShadow = styled.div`
@@ -213,6 +215,7 @@ export const ImageRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 0.5rem;
+  width: 100%;
   @media (max-width: 490px) {
     flex-direction: column;
   }
@@ -232,7 +235,7 @@ export const ImageTitle = styled.span`
 `;
 
 export const ImageLeft = styled.div`
-  width: 44.9rem;
+  width: 100%;
   height: 52.4rem;
   z-index: 5;
   border-radius: 1.2rem;
@@ -247,15 +250,9 @@ export const ImageLeft = styled.div`
   &:hover {
     scale: 1.015;
   }
-  @media (max-width: 920px) {
-    width: 50.7rem;
-  }
-  @media (max-width: 490px) {
-    width: 100%;
-  }
 `;
 export const ImageRight = styled.div`
-  width: 50.7rem;
+  width: 100%;
   transition: all 0.3s ease-in-out;
   height: 26rem;
   z-index: 5;
@@ -271,14 +268,11 @@ export const ImageRight = styled.div`
   &:hover {
     scale: 1.015;
   }
-  @media (max-width: 490px) {
-    width: 100%;
-  }
 `;
 export const ImageRightSmall = styled.div`
   border-radius: 1.2rem;
   transition: all 0.3s ease-in-out;
-  width: 25rem;
+  width: 50%;
   z-index: 5;
   height: 25.8rem;
 
@@ -291,6 +285,7 @@ export const ImageRightSmall = styled.div`
   &:hover {
     scale: 1.015;
   }
+
   @media (max-width: 490px) {
     width: 100%;
   }
