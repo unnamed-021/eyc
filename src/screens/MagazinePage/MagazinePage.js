@@ -13,7 +13,7 @@ import {
   Title,
 } from "./MagazinePage.styles";
 
-import Img2 from "../../assets/images/magazine.png";
+import Img2 from "../../assets/images/magazine.svg";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
@@ -125,12 +125,12 @@ const MagazinePage = () => {
         <Section>
           <Column>
             <Title>
-              Subscribe for exclusive insights into the world of authentic
-              marketing with EyCrowd “brand experiences”.
+              Coming in October 2024: Subscribe for exclusive insights into the
+              world EyCrowd “brand experiences”.
             </Title>
             <Subtitle>
               Stay informed with the latest insights on how innovative brands
-              are utilizing EyCrowd's dynamic community and cutting-edge “brand
+              are utilizing EyCrowd’s dynamic community and cutting-edge “brand
               experiences” to bring fresh new faces to physical stores, digital
               platforms, and product touch-points.
             </Subtitle>
