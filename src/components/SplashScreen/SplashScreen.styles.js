@@ -19,6 +19,9 @@ export const Container = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
+  background-color: #fefefe;
+  transition: all 0.4s ease-out;
+  opacity: ${(props) => (props.$fade ? 0 : 1)};
 `;
 
 export const Logo = styled.div`
@@ -41,5 +44,13 @@ export const LogoSVG = styled(Svg)`
   height: 7rem;
   @media (max-width: 400px) {
     height: 5rem;
+  }
+`;
+
+export const Video = styled.video`
+  width: 70%;
+  height: auto;
+  @media (max-width: 800px) {
+    width: 100%;
   }
 `;

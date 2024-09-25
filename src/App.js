@@ -18,7 +18,7 @@ function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setMinimumDurationPassed(true), 1000);
+    const timer = setTimeout(() => setMinimumDurationPassed(true), 2500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -42,6 +42,16 @@ function App() {
   const goToTop = () => {
     window.scrollTo(0, 0);
   };
+
+  useEffect(() => {
+    if (minimumDurationPassed) {
+      document.documentElement.style.overflowY = "hidden";
+      document.documentElement.style.paddingLeft = 0;
+    } else {
+      document.documentElement.style.overflowY = "scroll";
+    }
+  }, [minimumDurationPassed]);
+
   return (
     <Fragment>
       <GlobalStyles />
