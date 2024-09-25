@@ -281,6 +281,7 @@ export const ImgRow = styled.div`
 
   @media (max-width: 880px) {
     width: 255px;
+    margin-bottom: 10px;
   }
 `;
 export const ImgColumn = styled.div`

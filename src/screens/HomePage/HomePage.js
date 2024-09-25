@@ -14,9 +14,9 @@ import {
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-import EYCApp2 from "../../assets/images/eycApp2.png";
-import EYCApp3 from "../../assets/images/eycApp3.png";
-import EYCGif from "../../assets/videos/gif.gif";
+import EYCApp2 from "../../assets/images/eycApp2.jpg";
+import EYCApp3 from "../../assets/images/eycApp3.jpg";
+import EYCGif from "../../assets/videos/finalgif.gif";
 
 import Button from "../../components/utils/Button/Button";
 import VideoModal from "../../components/Modal/VideoModal";

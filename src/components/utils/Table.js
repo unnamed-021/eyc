@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/logoEYC.svg";
 import { ReactComponent as XSvg } from "../../assets/icons/x.svg";
-import Check from "../../assets/images/check.png";
+import Check from "../../assets/images/check.svg";
 import Button from "./Button/Button";
 
 const TableWrapper = styled.div`
@@ -159,7 +159,7 @@ const MyTable = () => {
               <HighlightColumn />
               <Logo />
             </TableHeader>
-            <TableHeader>Add Words</TableHeader>
+            <TableHeader>Ad Words</TableHeader>
             <TableHeader>Digital Ads</TableHeader>
             <TableHeader>Traditional Ads</TableHeader>
           </tr>
