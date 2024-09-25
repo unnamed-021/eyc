@@ -14,48 +14,46 @@ import {
   SmallText,
   BigText,
   ImgColumn,
-  AbsoluteImage,
   ImgRow,
-  Icon,
   BgEYC,
   CardContainer,
   CardRow,
   StyledImage,
+  IconContainer,
+  GreenDotIcon,
+  BlueDotIcon,
+  CircleIcon,
+  BigCircleIcon,
+  CenterRelative,
+  ImageContainer,
 } from "./BusinessPage.styles";
 
+// COMPONENTS
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import MyTable from "../../components/utils/Table";
+import Button from "../../components/utils/Button/Button";
 
+// IMAGES
 import Image1 from "../../assets/images/img1.png";
 import Image2 from "../../assets/images/img3.png";
 import Image3 from "../../assets/images/img4.png";
 import Image4 from "../../assets/images/img2.png";
 import Image5 from "../../assets/images/imag6.png";
-import FootImg from "../../assets/images/foot.svg";
-import Food from "../../assets/images/food.svg";
-import FoodBig from "../../assets/images/bigFood.svg";
-import Online from "../../assets/images/cart.svg";
-import Box from "../../assets/images/box.svg";
-import Circle from "../../assets/images/circle.svg";
-import HomeImg from "../../assets/images/market.svg";
-import HomeImgBig from "../../assets/images/bigMarket.svg";
-import WatchImg from "../../assets/images/watch.svg";
-import DotGreen from "../../assets/images/dotGreen.svg";
-import Dot from "../../assets/images/dotBlue.svg";
 import Bg from "../../assets/images/bgeyc.png";
-import Check from "../../assets/images/check.svg";
-import Consumer from "../../assets/images/consumer.svg";
-import CircleBig from "../../assets/images/bigCircle.svg";
-import BigHeart from "../../assets/images/bigHeart.svg";
 
-import Button from "../../components/utils/Button/Button";
-import {
-  BigCircleImg,
-  CenterRelative,
-  CircleImg,
-  ImageContainer,
-} from "../../components/Header/Header.styles";
-import MyTable from "../../components/utils/Table";
+// ICONS
+import { ReactComponent as FootIcon } from "../../assets/images/foot.svg";
+import { ReactComponent as FoodIcon } from "../../assets/images/food.svg";
+import { ReactComponent as FoodBigIcon } from "../../assets/images/bigFood.svg";
+import { ReactComponent as OnlineIcon } from "../../assets/images/cart.svg";
+import { ReactComponent as BoxIcon } from "../../assets/images/box.svg";
+import { ReactComponent as HomeIcon } from "../../assets/images/market.svg";
+import { ReactComponent as HomeBigIcon } from "../../assets/images/bigMarket.svg";
+import { ReactComponent as WatchIcon } from "../../assets/images/watch.svg";
+import { ReactComponent as HeartBigIcon } from "../../assets/images/bigHeart.svg";
+import { ReactComponent as ConsumerIcon } from "../../assets/images/consumer.svg";
+import { ReactComponent as CheckIcon } from "../../assets/images/check.svg";
 
 const BusinessPage = () => {
   const navigate = useNavigate();
@@ -264,21 +262,15 @@ const BusinessPage = () => {
 
       <Section ref={ref8} $paddingBottom>
         <StyledSectionWrapper>
-          <Title>Benefits for Your Industry</Title>
+          <Title $flexStart>Benefits for Your Industry</Title>
           <ImageRow>
             <ImgRow>
               <ImageContainer>
                 <CenterRelative>
-                  <CircleImg src={Circle} />
-                  <Icon
-                    src={Box}
-                    effect="blur"
-                    wrapperProps={{
-                      style: { transitionDelay: ".3s" },
-                    }}
-                  />
+                  <CircleIcon />
+                  <BoxIcon />
                 </CenterRelative>
-                <AbsoluteImage src={Dot} />
+                <BlueDotIcon />
               </ImageContainer>
               <ImgColumn>
                 <SmallText>
@@ -290,16 +282,11 @@ const BusinessPage = () => {
             <ImgRow>
               <ImageContainer>
                 <CenterRelative>
-                  <CircleImg src={Circle} />
-                  <Icon
-                    src={HomeImg}
-                    effect="blur"
-                    wrapperProps={{
-                      style: { transitionDelay: ".3s" },
-                    }}
-                  />
+                  <CircleIcon />
+
+                  <HomeIcon />
                 </CenterRelative>
-                <AbsoluteImage src={Dot} />
+                <BlueDotIcon />
               </ImageContainer>
               <ImgColumn>
                 <SmallText>
@@ -311,16 +298,11 @@ const BusinessPage = () => {
             <ImgRow>
               <ImageContainer>
                 <CenterRelative>
-                  <CircleImg src={Circle} />
-                  <Icon
-                    src={Food}
-                    effect="blur"
-                    wrapperProps={{
-                      style: { transitionDelay: ".3s" },
-                    }}
-                  />
+                  <CircleIcon />
+
+                  <FoodIcon />
                 </CenterRelative>
-                <AbsoluteImage src={Dot} />
+                <BlueDotIcon />
               </ImageContainer>
               <ImgColumn>
                 <SmallText>
@@ -330,21 +312,18 @@ const BusinessPage = () => {
               </ImgColumn>
             </ImgRow>
           </ImageRow>
-          <Title $marginTop>Turnkey Solutions for Your Market</Title>
+          <Title $marginTop $flexStart>
+            Turnkey Solutions for Your Market
+          </Title>
           <ImageRow>
             <ImgRow>
               <ImageContainer>
                 <CenterRelative>
-                  <CircleImg src={Circle} />
-                  <Icon
-                    src={FootImg}
-                    effect="blur"
-                    wrapperProps={{
-                      style: { transitionDelay: ".3s" },
-                    }}
-                  />
+                  <CircleIcon />
+
+                  <FootIcon />
                 </CenterRelative>
-                <AbsoluteImage src={DotGreen} />
+                <GreenDotIcon />
               </ImageContainer>
               <ImgColumn>
                 <SmallText>
@@ -356,16 +335,11 @@ const BusinessPage = () => {
             <ImgRow>
               <ImageContainer>
                 <CenterRelative>
-                  <CircleImg src={Circle} />
-                  <Icon
-                    src={Online}
-                    effect="blur"
-                    wrapperProps={{
-                      style: { transitionDelay: ".3s" },
-                    }}
-                  />
+                  <CircleIcon />
+
+                  <OnlineIcon />
                 </CenterRelative>
-                <AbsoluteImage src={DotGreen} />
+                <GreenDotIcon />
               </ImageContainer>
               <ImgColumn>
                 <SmallText>
@@ -377,16 +351,11 @@ const BusinessPage = () => {
             <ImgRow>
               <ImageContainer>
                 <CenterRelative>
-                  <CircleImg src={Circle} />
-                  <Icon
-                    src={WatchImg}
-                    effect="blur"
-                    wrapperProps={{
-                      style: { transitionDelay: ".3s" },
-                    }}
-                  />
+                  <CircleIcon />
+
+                  <WatchIcon />
                 </CenterRelative>
-                <AbsoluteImage src={DotGreen} />
+                <GreenDotIcon />
               </ImageContainer>
               <ImgColumn>
                 <SmallText style={{ maxWidth: 170 }}>
@@ -403,13 +372,7 @@ const BusinessPage = () => {
       <Section $grey ref={ref2}>
         <StyledSectionWrapper>
           <TitleWrapper>
-            <Image
-              src={Consumer}
-              effect="blur"
-              wrapperProps={{
-                style: { transitionDelay: ".3s" },
-              }}
-            />
+            <ConsumerIcon />
 
             <TitleContainer>
               <Title>Consumer Products</Title>
@@ -473,8 +436,8 @@ const BusinessPage = () => {
         <StyledSectionWrapper>
           <TitleWrapper $reverse>
             <CenterRelative style={{ width: 240, height: 240 }}>
-              <BigCircleImg src={CircleBig} />
-              <Icon src={HomeImgBig} />
+              <BigCircleIcon />
+              <HomeBigIcon />
             </CenterRelative>
             <TitleContainer>
               <Title>Retail</Title>
@@ -539,8 +502,9 @@ const BusinessPage = () => {
         <StyledSectionWrapper>
           <TitleWrapper>
             <CenterRelative style={{ width: 240, height: 240 }}>
-              <BigCircleImg src={CircleBig} />
-              <Icon src={FoodBig} />
+              <BigCircleIcon />
+
+              <FoodBigIcon />
             </CenterRelative>
 
             <TitleContainer>
@@ -606,15 +570,20 @@ const BusinessPage = () => {
           <CardContainer>
             <Title>Getting Started is Easy</Title>
             <CardRow>
-              <img src={Check} alt="checkMark" />
-              <Subtitle>
+              <IconContainer>
+                <CheckIcon />
+              </IconContainer>
+
+              <Subtitle $flexStart>
                 Tell us how many new consumers to bring to your brand, your
                 target audience, and your budget.
               </Subtitle>
             </CardRow>
             <CardRow>
-              <img src={Check} alt="checkMark" />
-              <Subtitle>
+              <IconContainer>
+                <CheckIcon />
+              </IconContainer>
+              <Subtitle $flexStart>
                 Our world-class platform and team handles everything. You don't
                 have to lift a finger. Results guaranteed.
               </Subtitle>
@@ -623,13 +592,13 @@ const BusinessPage = () => {
               <Button
                 title={"Get Started"}
                 onClick={() => navigate("/request-form")}
-                containerStyle={{ width: "48%" }}
+                containerStyle={{ width: "60%" }}
               />
               <Button
                 onClick={() => navigate("/eMagazine")}
                 title={"See Case Studies"}
                 containerStyle={{
-                  width: "48%",
+                  width: "60%",
                   backgroundColor: "white",
                   border: "2px solid #FE5F55",
                 }}
@@ -645,8 +614,9 @@ const BusinessPage = () => {
         <StyledSectionWrapper>
           <TitleWrapper>
             <CenterRelative style={{ width: 240, height: 240 }}>
-              <BigCircleImg src={CircleBig} />
-              <Icon src={BigHeart} />
+              <BigCircleIcon />
+
+              <HeartBigIcon />
             </CenterRelative>
 
             <TitleContainer>
@@ -771,15 +741,21 @@ const BusinessPage = () => {
           <CardContainer>
             <Title>Get Started Today!</Title>
             <CardRow>
-              <img src={Check} alt="checkMark" />
-              <Subtitle>
+              <IconContainer>
+                <CheckIcon />
+              </IconContainer>
+
+              <Subtitle $flexStart>
                 Tell us how many new consumers to bring to your brand, your
                 target audience, and your budget.
               </Subtitle>
             </CardRow>
             <CardRow>
-              <img src={Check} alt="checkMark" />
-              <Subtitle>
+              <IconContainer>
+                <CheckIcon />
+              </IconContainer>
+
+              <Subtitle $flexStart>
                 Our world-class platform and team handles everything. You don't
                 have to lift a finger. Results guaranteed.
               </Subtitle>

@@ -1,5 +1,9 @@
 import { keyframes, styled } from "styled-components";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { ReactComponent as GreenDot } from "../../assets/images/dotGreen.svg";
+import { ReactComponent as BlueDot } from "../../assets/images/dotBlue.svg";
+import { ReactComponent as Circle } from "../../assets/images/circle.svg";
+import { ReactComponent as CircleBig } from "../../assets/images/bigCircle.svg";
 
 const jumpFadeIn = keyframes`
   0% {
@@ -29,6 +33,23 @@ const jumpFadeOut = keyframes`
     transform: translateY(100%);
     opacity: 0;
   }
+`;
+
+export const ImageContainer = styled.div`
+  position: relative;
+  width: 7.5rem;
+  height: 7.5rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+`;
+
+export const CenterRelative = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
 `;
 
 export const Container = styled.div`
@@ -121,7 +142,7 @@ export const Title = styled.h1`
   text-align: ${(props) => (props.$center ? "center" : "left")};
   margin-top: ${(props) => (props.$marginTop ? "3rem" : "0rem")};
   @media (max-width: 660px) {
-    text-align: center;
+    text-align: ${(props) => (props.$flexStart ? "flex-start" : "center")};
   }
 `;
 export const Subtitle = styled.h2`
@@ -130,7 +151,7 @@ export const Subtitle = styled.h2`
   color: #848484;
   text-align: ${(props) => (props.$center ? "center" : "left")};
   @media (max-width: 660px) {
-    text-align: center;
+    text-align: ${(props) => (props.$flexStart ? "flex-start" : "center")};
   }
 `;
 export const StyledSubtitle = styled(Subtitle)`
@@ -187,9 +208,10 @@ export const CardContainer = styled.div`
 export const CardRow = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center;
+  /* align-items: center; */
   gap: 1rem;
 `;
+export const IconContainer = styled.div``;
 export const ImageRow = styled.div`
   display: flex;
   flex-direction: row;
@@ -278,9 +300,9 @@ export const ImgRow = styled.div`
   flex-direction: row;
   align-items: center;
   gap: 2rem;
-
+  width: 275px;
   @media (max-width: 880px) {
-    width: 255px;
+    /* width: 255px; */
     margin-bottom: 10px;
   }
 `;
@@ -300,8 +322,27 @@ export const SmallText = styled.span`
   max-width: 16rem;
   line-height: 1rem;
 `;
-export const AbsoluteImage = styled.img`
+export const GreenDotIcon = styled(GreenDot)`
   position: absolute;
   right: 0rem;
   top: 0rem;
+`;
+export const BlueDotIcon = styled(BlueDot)`
+  position: absolute;
+  right: 0rem;
+  top: 0rem;
+`;
+
+export const CircleIcon = styled(Circle)`
+  position: absolute;
+  z-index: -1;
+  height: 7.5rem;
+  width: 7.5rem;
+`;
+
+export const BigCircleIcon = styled(CircleBig)`
+  position: absolute;
+  z-index: -1;
+  height: 24rem;
+  width: 24rem;
 `;
