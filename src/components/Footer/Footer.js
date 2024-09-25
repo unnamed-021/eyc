@@ -203,7 +203,7 @@ const Footer = () => {
             }}
           />
           <CopyText>
-            Copyright © 2023 EyCrowd, Inc. - All Rights Reserved.
+            Copyright © 2024 EyCrowd, Inc. - All Rights Reserved.
           </CopyText>
         </NavLinks>
 
