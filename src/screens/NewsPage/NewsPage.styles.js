@@ -65,8 +65,8 @@ export const SectionWrapper = styled.div`
   gap: 4rem;
   max-width: 1440px;
   width: 100%;
-  /* scale: 0;
-  opacity: 0; */
+  scale: 0;
+  opacity: 0;
   transition: scale 0.6s ease-in-out, opacity 1s ease-in-out;
   @media (max-width: 660px) {
     flex-direction: column;

@@ -24,10 +24,6 @@ import {
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-import Img1 from "../../assets/images/news1.png";
-import Img2 from "../../assets/images/news2.png";
-import Img3 from "../../assets/images/news3.png";
-import Img4 from "../../assets/images/news4.png";
 import Img111 from "../../assets/images/n1.svg";
 import Img222 from "../../assets/images/n1.svg";
 import Img333 from "../../assets/images/n1.svg";
@@ -208,7 +204,7 @@ const NewsPage = () => {
   return (
     <Container>
       <Header />
-      <Section $firstSection>
+      <Section $firstSection ref={ref}>
         <SectionWrapper>
           <ImagesContainer>
             <ImageLeft
