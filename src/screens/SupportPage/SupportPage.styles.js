@@ -22,7 +22,7 @@ export const Section = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
-  /* justify-content: center; */
+  justify-content: center;
   padding: 12rem 4rem 12rem 4rem;
 
   background-color: white;
