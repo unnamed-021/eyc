@@ -69,7 +69,7 @@ const PrivacyPolicyPage = () => {
           <div
             style={{ width: "100%" }}
             name="termly-embed"
-            data-id="64549b48-20e5-4022-996d-bb55220eb85f"
+            data-id="438a754a-82f5-4960-b33d-6de69749192e"
             ref={embedRef}
           ></div>
         </SectionWrapper>

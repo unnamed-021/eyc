@@ -31,20 +31,21 @@ const DisclaimerPage = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const handleIntersection = (setIntersecting, ref) => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIntersecting(entry.isIntersecting);
-      },
-      { rootMargin: "-300px" }
-    );
+  useEffect(() => {
+    const handleIntersection = (setIntersecting, ref) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          setIsIntersecting(entry.isIntersecting);
+        },
+        { rootMargin: "-300px" }
+      );
 
-    observer.observe(ref.current);
+      observer.observe(ref.current);
+      return () => observer.disconnect();
+    };
 
-    return () => observer.disconnect();
-  };
-
-  useEffect(() => handleIntersection(setIsIntersecting, ref, "slide-in"), []);
+    handleIntersection(setIsIntersecting, ref);
+  }, []);
 
   useEffect(() => {
     const handleClassToggle = (isIntersecting, ref, className) => {
@@ -58,7 +59,7 @@ const DisclaimerPage = () => {
     };
 
     handleClassToggle(isIntersecting, ref, "slide-in");
-  }, []);
+  }, [isIntersecting]);
 
   return (
     <Container>
