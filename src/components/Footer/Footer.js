@@ -93,7 +93,7 @@ const Footer = () => {
 
           <Link
             onClick={() => {
-              openLink("https://www.eycrowd.com/eula");
+              navigate("/eula");
             }}
           >
             End User License Agreement
@@ -101,7 +101,7 @@ const Footer = () => {
 
           <Link
             onClick={() => {
-              openLink("https://www.eycrowd.com/disclaimer");
+              navigate("/disclaimer");
             }}
           >
             Disclaimer
@@ -109,7 +109,7 @@ const Footer = () => {
 
           <Link
             onClick={() => {
-              openLink("https://www.eycrowd.com/privacy");
+              navigate("/privacy-policy");
             }}
           >
             Privacy Policy

@@ -19,6 +19,9 @@ import MagazinePage from "./screens/MagazinePage/MagazinePage";
 import SupportPage from "./screens/SupportPage/SupportPage";
 import CookiesPolicyPage from "./screens/CookiesPolicyPage/CookiesPolicyPage";
 import TermsAndConditionsPage from "./screens/TermsAndConditionsPage/TermsAndConditionsPage";
+import EULAPage from "./screens/EULAPage/EULAPage";
+import DisclaimerPage from "./screens/DisclaimerPage/DisclaimerPage";
+import PrivacyPolicyPage from "./screens/PrivacyPolicyPage/PrivacyPolicyPage";
 
 function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
@@ -81,6 +84,9 @@ function App() {
               path="/terms-and-conditions"
               element={<TermsAndConditionsPage />}
             />
+            <Route path="/eula" element={<EULAPage />} />
+            <Route path="/disclaimer" element={<DisclaimerPage />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           </Routes>
           <GoToTop show={showGoToTop} onClick={goToTop}>
             <ChevronTop />
