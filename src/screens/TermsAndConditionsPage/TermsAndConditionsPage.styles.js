@@ -22,9 +22,9 @@ export const Section = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100%;
+  min-height: 100dvh;
   justify-content: center;
   padding: 12rem 4rem 12rem 4rem;
-  min-height: 100dvh;
 
   background-color: white;
   min-height: 100dvh;
@@ -75,6 +75,7 @@ export const SectionWrapper = styled.div`
   height: 100%;
   gap: 4rem;
   max-width: 1440px;
+
   width: 100%;
   scale: 0;
   opacity: 0;

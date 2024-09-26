@@ -1,10 +1,14 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Section, SectionWrapper } from "./CookiesPolicyPage.styles";
+import {
+  Container,
+  Section,
+  SectionWrapper,
+} from "./TermsAndConditionsPage.styles";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-const CookiesPolicyPage = () => {
+const TermsAndConditionsPage = () => {
   useEffect(() => {
     const script = document.createElement("script");
     script.type = "text/javascript";
@@ -35,7 +39,7 @@ const CookiesPolicyPage = () => {
     const handleIntersection = (setIntersecting, ref) => {
       const observer = new IntersectionObserver(
         ([entry]) => {
-          setIntersecting(entry.isIntersecting);
+          setIsIntersecting(entry.isIntersecting);
         },
         { rootMargin: "-300px" }
       );
@@ -69,7 +73,7 @@ const CookiesPolicyPage = () => {
           <div
             style={{ width: "100%" }}
             name="termly-embed"
-            data-id="22d02c34-2738-4812-b97c-d690f0a6712a"
+            data-id="aa86bc1a-4dbc-4a17-99b7-a8144ed97596"
             ref={embedRef}
           ></div>
         </SectionWrapper>
@@ -79,4 +83,4 @@ const CookiesPolicyPage = () => {
   );
 };
 
-export default CookiesPolicyPage;
+export default TermsAndConditionsPage;

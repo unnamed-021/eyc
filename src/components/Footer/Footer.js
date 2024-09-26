@@ -85,7 +85,7 @@ const Footer = () => {
 
           <Link
             onClick={() => {
-              openLink("https://www.eycrowd.com/terms-and-conditions");
+              navigate("/terms-and-conditions");
             }}
           >
             Terms and Conditions

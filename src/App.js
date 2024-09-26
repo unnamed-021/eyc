@@ -18,6 +18,7 @@ import ContactUsPage from "./screens/ContactUsPage/ContactUsPage";
 import MagazinePage from "./screens/MagazinePage/MagazinePage";
 import SupportPage from "./screens/SupportPage/SupportPage";
 import CookiesPolicyPage from "./screens/CookiesPolicyPage/CookiesPolicyPage";
+import TermsAndConditionsPage from "./screens/TermsAndConditionsPage/TermsAndConditionsPage";
 
 function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
@@ -76,6 +77,10 @@ function App() {
             <Route path="/request-form" element={<RequestFormPage />} />
             <Route path="/support-request" element={<SupportPage />} />
             <Route path="/cookies-policy" element={<CookiesPolicyPage />} />
+            <Route
+              path="/terms-and-conditions"
+              element={<TermsAndConditionsPage />}
+            />
           </Routes>
           <GoToTop show={showGoToTop} onClick={goToTop}>
             <ChevronTop />
