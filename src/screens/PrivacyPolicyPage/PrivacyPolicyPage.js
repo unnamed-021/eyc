@@ -58,7 +58,7 @@ const PrivacyPolicyPage = () => {
       });
     };
 
-    handleClassToggle(isIntersecting, ref, "slide-in");
+    handleClassToggle(isIntersecting, ref, "fade-in");
   }, [isIntersecting]);
 
   return (

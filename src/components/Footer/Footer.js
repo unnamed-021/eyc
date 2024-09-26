@@ -116,7 +116,7 @@ const Footer = () => {
           </Link>
           <Link
             onClick={() => {
-              openLink("https://www.eycrowd.com/dsaf");
+              navigate("/data-subject-access-request");
             }}
           >
             Data Subject Access Request
@@ -131,7 +131,7 @@ const Footer = () => {
           </Link>
           <Link
             onClick={() => {
-              openLink("https://www.eycrowd.com/cookie-policy");
+              navigate("/cookies-policy");
             }}
           >
             Cookie Preferences

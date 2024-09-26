@@ -22,6 +22,7 @@ import TermsAndConditionsPage from "./screens/TermsAndConditionsPage/TermsAndCon
 import EULAPage from "./screens/EULAPage/EULAPage";
 import DisclaimerPage from "./screens/DisclaimerPage/DisclaimerPage";
 import PrivacyPolicyPage from "./screens/PrivacyPolicyPage/PrivacyPolicyPage";
+import DSARPage from "./screens/DSARPage/DSARPage";
 
 function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
@@ -87,6 +88,7 @@ function App() {
             <Route path="/eula" element={<EULAPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+            <Route path="/data-subject-access-request" element={<DSARPage />} />
           </Routes>
           <GoToTop show={showGoToTop} onClick={goToTop}>
             <ChevronTop />

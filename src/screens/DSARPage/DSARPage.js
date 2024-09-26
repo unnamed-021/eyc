@@ -1,27 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Section, SectionWrapper } from "./DisclaimerPage.styles";
+import { Container, Section, SectionWrapper } from "./DSARPage.styles";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
-const DisclaimerPage = () => {
-  useEffect(() => {
-    const script = document.createElement("script");
-    script.type = "text/javascript";
-    script.id = "termly-jssdk";
-    script.src = "https://app.termly.io/embed-policy.min.js";
-    const embedElement = embedRef.current;
-    if (embedElement) {
-      embedElement.appendChild(script);
-    }
-
-    return () => {
-      if (embedElement && embedElement.contains(script)) {
-        embedElement.removeChild(script);
-      }
-    };
-  }, []);
-
+const DSARPage = () => {
   /* SCROLL ANIMATION */
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef(null);
@@ -66,12 +49,10 @@ const DisclaimerPage = () => {
       <Header />
       <Section $firstSection ref={ref}>
         <SectionWrapper>
-          <div
-            style={{ width: "100%" }}
-            name="termly-embed"
-            data-id="207acda6-8ca0-4c4b-acde-85aca149e19d"
-            ref={embedRef}
-          ></div>
+          <iframe
+            style={{ width: "100%", height: "100%" }}
+            src="https://app.termly.io/notify/438a754a-82f5-4960-b33d-6de69749192e"
+          />
         </SectionWrapper>
       </Section>
       <Footer />
@@ -79,4 +60,4 @@ const DisclaimerPage = () => {
   );
 };
 
-export default DisclaimerPage;
+export default DSARPage;
