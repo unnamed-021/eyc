@@ -68,13 +68,13 @@ const Footer = () => {
             Business FAQ's
           </Link>
 
-          <Link
+          {/* <Link
             onClick={() => {
               navigate("/support-request");
             }}
           >
             Support
-          </Link>
+          </Link> */}
           <Link
             onClick={() => {
               navigate("/cookies-policy");

@@ -338,7 +338,7 @@ const RequestFormPage = () => {
                     </SecondColumn>
                   </ColumnsRow>
                 </FormColumn>
-                <BannerContainer>
+                {/* <BannerContainer>
                   <FreeTrail>Free Trail</FreeTrail>
                   <List>
                     <Text>
@@ -346,7 +346,7 @@ const RequestFormPage = () => {
                       for One Month
                     </Text>
                   </List>
-                </BannerContainer>
+                </BannerContainer> */}
               </FormRow>
 
               <FormRow $flexStart>
