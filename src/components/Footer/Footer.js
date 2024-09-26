@@ -131,7 +131,7 @@ const Footer = () => {
           </Link>
           <Link
             onClick={() => {
-              openLink("https://www.eycrowd.com/cookie-policy");
+              navigate("/cookies-policy");
             }}
           >
             Cookie Preferences
