@@ -8,7 +8,6 @@ const DSARPage = () => {
   /* SCROLL ANIMATION */
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef(null);
-  const embedRef = useRef(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);

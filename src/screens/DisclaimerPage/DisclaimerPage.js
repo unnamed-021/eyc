@@ -33,12 +33,9 @@ const DisclaimerPage = () => {
 
   useEffect(() => {
     const handleIntersection = (setIntersecting, ref) => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          setIsIntersecting(entry.isIntersecting);
-        },
-        { rootMargin: "-300px" }
-      );
+      const observer = new IntersectionObserver(([entry]) => {
+        setIsIntersecting(entry.isIntersecting);
+      });
 
       observer.observe(ref.current);
       return () => observer.disconnect();
