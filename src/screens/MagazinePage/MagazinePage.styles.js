@@ -136,13 +136,12 @@ export const Subtitle = styled.span`
 `;
 
 export const Input = styled.input`
-  color: #8e8e8e;
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
   width: 100%;
 
   outline: none;
-  color: #b0b0b0;
+
   font-size: 1.6rem;
   font-family: "Poppins-Medium";
   border: ${(props) => (props.$error ? "1px solid red" : "1px solid #8e8e8e")};
@@ -151,14 +150,13 @@ export const Input = styled.input`
   }
 `;
 export const TextArea = styled.textarea`
-  color: #8e8e8e;
   border: 1px solid #8e8e8e;
   border-radius: 0.4rem;
   padding: 0.5rem 1rem;
   width: 100%;
   min-height: 10rem;
   outline: none;
-  color: #b0b0b0;
+
   font-size: 1.6rem;
   font-family: "Poppins-Medium";
 `;

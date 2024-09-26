@@ -70,7 +70,7 @@ const Footer = () => {
 
           <Link
             onClick={() => {
-              // openLink("https://www.eycrowd.com/supportrequest");
+              navigate("/support-request");
             }}
           >
             Support

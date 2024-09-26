@@ -48,7 +48,7 @@ export const HeaderWrapper = styled.div`
   max-width: 1440px;
 
   @media (max-width: 1500px) {
-    padding: 0rem 5rem;
+    padding: 0rem 2rem;
   }
   @media (max-width: 750px) {
     display: none;
@@ -66,6 +66,15 @@ export const Image = styled.img`
   }
 `;
 
+export const CenteredNavLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+`;
 export const NavLinks = styled.div`
   display: flex;
   flex-direction: row;

@@ -3,13 +3,13 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import {
   HeaderContainer,
-  NavLinks,
   Link,
   HeaderWrapper,
   HamburgerMenu,
   Row,
   StyledNavLinks,
   Login,
+  CenteredNavLinks,
 } from "./Header.styles";
 import Menu from "../utils/Menu";
 
@@ -112,7 +112,7 @@ const Header = ({ onAboutClick }) => {
           }}
         />
 
-        <NavLinks>
+        <CenteredNavLinks>
           <Link
             $active={pathname === "/"}
             onClick={() => {
@@ -154,7 +154,7 @@ const Header = ({ onAboutClick }) => {
           >
             News
           </Link>
-        </NavLinks>
+        </CenteredNavLinks>
         <Login
           onClick={() => window.open("https://app.eycrowd.com/login", "_blank")}
         >
