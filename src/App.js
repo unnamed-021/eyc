@@ -22,7 +22,7 @@ import TermsAndConditionsPage from "./screens/TermsAndConditionsPage/TermsAndCon
 import EULAPage from "./screens/EULAPage/EULAPage";
 import DisclaimerPage from "./screens/DisclaimerPage/DisclaimerPage";
 import PrivacyPolicyPage from "./screens/PrivacyPolicyPage/PrivacyPolicyPage";
-import DSARPage from "./screens/DSARPage/DSARPage";
+import BusinessFAQsPage from "./screens/BusinessFAQsPage/BusinessFAQsPage";
 
 function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
@@ -80,6 +80,7 @@ function App() {
             <Route path="/eMagazine" element={<MagazinePage />} />
             <Route path="/request-form" element={<RequestFormPage />} />
             <Route path="/support-request" element={<SupportPage />} />
+            <Route path="/business-faqs" element={<BusinessFAQsPage />} />
             <Route path="/cookies-policy" element={<CookiesPolicyPage />} />
             <Route
               path="/terms-and-conditions"

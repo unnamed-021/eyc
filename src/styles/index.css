@@ -195,6 +195,18 @@
 
 @font-face {
   font-display: swap;
+  font-family: "Poppins-SemiBold-Italic";
+  font-style: normal;
+  line-height: normal;
+  font-weight: 600;
+  src: url("../assets/fonts/Poppins-SemiBoldItalic.woff2") format("woff2"),
+    url("../assets/fonts/Poppins-SemiBoldItalic.woff") format("woff"),
+    url("../assets/fonts/Poppins-SemiBoldItalic.eot") format("eot"),
+    url("../assets/fonts/Poppins-SemiBoldItalic.ttf") format("ttf");
+}
+
+@font-face {
+  font-display: swap;
   font-family: "Poppins-Bold";
   font-style: normal;
   line-height: normal;

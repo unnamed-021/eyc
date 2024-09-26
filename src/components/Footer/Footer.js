@@ -62,7 +62,7 @@ const Footer = () => {
           </Link>
           <Link
             onClick={() => {
-              openLink("https://www.eycrowd.com/businessfaqs");
+              navigate("/business-faqs");
             }}
           >
             Business FAQ's
