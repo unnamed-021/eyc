@@ -214,6 +214,7 @@ export const Label = styled.span`
 export const FormRow = styled.div`
   display: flex;
   flex-direction: row;
+  position: relative;
   align-items: ${(props) => (props.$flexStart ? "flex-start" : "center")};
   gap: 3rem;
   flex-wrap: wrap;
@@ -363,4 +364,44 @@ export const StyledInput = styled.input`
   @media (max-width: 400px) {
     width: 100%;
   }
+`;
+
+export const BannerContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  right: 0;
+`;
+
+export const FreeTrail = styled.span`
+  color: #fff;
+  background-color: #fe5f55;
+  border-radius: 1rem;
+  height: 3.8rem;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15rem;
+  text-align: center;
+`;
+
+export const List = styled.div`
+  background-color: #fff;
+  border: 1px solid #fe5f55;
+  border-radius: 0rem 0rem 1rem 1rem;
+  height: 11.5rem;
+  width: 13.3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const Text = styled.span`
+  color: #fe5f55;
+  font-family: "Poppins-Medium";
+  font-size: 1.4rem;
+  text-align: center;
 `;

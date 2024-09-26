@@ -1,8 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { InlineWidget } from "react-calendly";
+import { PopupModal } from "react-calendly";
 import openToast from "../../utils/toast";
 import {
+  BannerContainer,
   Column,
   ColumnsRow,
   Container,
@@ -10,10 +11,12 @@ import {
   FormColumn,
   FormContainer,
   FormRow,
+  FreeTrail,
   Img,
   InfoImg,
   InputValue,
   Label,
+  List,
   Photo,
   Row,
   SecondColumn,
@@ -22,6 +25,7 @@ import {
   SmallRow,
   StyledInput,
   Subtitle,
+  Text,
   Title,
   Value,
 } from "./RequestFormPage.styles";
@@ -194,6 +198,14 @@ const RequestFormPage = () => {
     }
   };
 
+  const [openPopup, setOpenPopup] = useState(false);
+
+  useEffect(() => {
+    if (tab === 1) {
+      setOpenPopup(true);
+    }
+  }, [tab]);
+
   /* SCROLL ANIMATION */
 
   const [isIntersecting, setIsIntersecting] = useState(false);
@@ -326,6 +338,15 @@ const RequestFormPage = () => {
                     </SecondColumn>
                   </ColumnsRow>
                 </FormColumn>
+                <BannerContainer>
+                  <FreeTrail>Free Trail</FreeTrail>
+                  <List>
+                    <Text>
+                      23 Fresh Faces <br />1 Location <br />
+                      for One Month
+                    </Text>
+                  </List>
+                </BannerContainer>
               </FormRow>
 
               <FormRow $flexStart>
@@ -624,12 +645,15 @@ const RequestFormPage = () => {
                 with our team.
               </Subtitle>
 
-              <InlineWidget
+              <PopupModal
                 url="https://calendly.com/ashley-4ec/30min?back=1"
                 pageSettings={{
                   textColor: "#000",
                   primaryColor: "#FE5F55",
                 }}
+                open={openPopup}
+                onModalClose={() => setOpenPopup(false)}
+                rootElement={document.getElementById("root")}
               />
 
               <Subtitle $large>

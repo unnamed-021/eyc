@@ -1,16 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useDispatch } from "react-redux";
-import { useLocation, useNavigate } from "react-router-dom";
+
 import {
   Container,
   Section,
   SectionWrapper,
   Title,
   LogoIcon,
-  InputContainer,
-  Input,
-  Label,
-  TextArea,
   BoldText,
   Text,
   TextContainer,
@@ -18,12 +13,8 @@ import {
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import Button from "../../components/utils/Button/Button";
-import openToast from "../../utils/toast";
 
 const BusinessFAQsPage = () => {
-  const navigate = useNavigate();
-
   /* SCROLL ANIMATION */
 
   const [isIntersecting, setIsIntersecting] = useState(false);
