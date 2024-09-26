@@ -35,12 +35,25 @@ import MyTable from "../../components/utils/Table";
 import Button from "../../components/utils/Button/Button";
 
 // IMAGES
-import Image1 from "../../assets/images/img1.png";
-import Image2 from "../../assets/images/img3.png";
-import Image3 from "../../assets/images/img4.png";
-import Image4 from "../../assets/images/img2.png";
+
 import Image5 from "../../assets/images/imag6.png";
 import Bg from "../../assets/images/bgeyc.png";
+import LegoImg from "../../assets/images/imageL.png";
+import OilImg from "../../assets/images/OilnVingear.png";
+import OilImg1 from "../../assets/images/OilandVinegar1.png";
+import OilImg2 from "../../assets/images/oil2.png";
+import OilImg3 from "../../assets/images/oil3.png";
+import LoveEyC1 from "../../assets/images/weloveeyc.png";
+import Junior1 from "../../assets/images/Junior1.png";
+import TacoImg from "../../assets/images/taco.png";
+import PizzaImg from "../../assets/images/pizzafood.png";
+import PeopleImg from "../../assets/images/people.png";
+import LoveEyC2 from "../../assets/images/weloveeyc1.png";
+import LoveEyC3 from "../../assets/images/weloveeyc2.png";
+import LoveEyC4 from "../../assets/images/weloveeyc4.png";
+import RetailImg from "../../assets/images/retail1.png";
+import RetailImg2 from "../../assets/images/retail2.png";
+import ReadyImg from "../../assets/images/ready1.png";
 
 // ICONS
 import { ReactComponent as FootIcon } from "../../assets/images/foot.svg";
@@ -222,7 +235,7 @@ const BusinessPage = () => {
         <StyledSectionWrapper>
           <TitleWrapper>
             <Image
-              src={Image5}
+              src={PeopleImg}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
@@ -408,21 +421,21 @@ const BusinessPage = () => {
 
           <ImageRow>
             <Image
-              src={Image1}
+              src={OilImg}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
               }}
             />
             <StyledImage
-              src={Image1}
+              src={LegoImg}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
               }}
             />
             <StyledImage
-              src={Image1}
+              src={OilImg3}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
@@ -474,21 +487,21 @@ const BusinessPage = () => {
 
           <ImageRow>
             <Image
-              src={Image2}
+              src={OilImg1}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
               }}
             />
             <StyledImage
-              src={Image3}
+              src={RetailImg}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
               }}
             />
             <StyledImage
-              src={Image2}
+              src={RetailImg2}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
@@ -541,21 +554,21 @@ const BusinessPage = () => {
 
           <ImageRow>
             <Image
-              src={Image4}
+              src={Junior1}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
               }}
             />
             <StyledImage
-              src={Image4}
+              src={PizzaImg}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
               }}
             />
             <StyledImage
-              src={Image4}
+              src={TacoImg}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
@@ -654,21 +667,21 @@ const BusinessPage = () => {
 
           <ImageRow>
             <Image
-              src={Image4}
+              src={OilImg2}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
               }}
             />
             <StyledImage
-              src={Image4}
+              src={LoveEyC1}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
               }}
             />
             <StyledImage
-              src={Image4}
+              src={LoveEyC4}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },
@@ -726,7 +739,7 @@ const BusinessPage = () => {
             </TitleContainer>
 
             <Image
-              src={Image5}
+              src={ReadyImg}
               effect="blur"
               wrapperProps={{
                 style: { transitionDelay: ".3s" },

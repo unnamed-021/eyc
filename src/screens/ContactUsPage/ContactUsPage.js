@@ -14,7 +14,7 @@ import {
   Title,
 } from "./ContactUsPage.styles";
 
-import Img1 from "../../assets/images/opt.png";
+import Img1 from "../../assets/images/readyimg.png";
 
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";

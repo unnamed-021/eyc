@@ -30,8 +30,8 @@ import {
   Value,
 } from "./RequestFormPage.styles";
 
-import Img1 from "../../assets/images/opt.png";
-import Check from "../../assets/images/check.png";
+import Img1 from "../../assets/images/imag6.png";
+import Check from "../../assets/images/check.svg";
 import Info from "../../assets/images/info.png";
 
 import Header from "../../components/Header/Header";
@@ -659,8 +659,7 @@ const RequestFormPage = () => {
               <Subtitle $large>
                 We will confirm your details, identify any additional
                 requirements, and launch! Results typically take three to four
-                weeks. Feel free to call us at 1.XXX.XXX.XXXX or
-                xxxxx@eycrowd.com.
+                weeks. Feel free to email us on support@eycrowd.com.
                 <br />
                 <br />
                 Rest assured, our world-class platform and team handles
