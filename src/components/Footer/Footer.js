@@ -114,7 +114,7 @@ const Footer = () => {
           >
             Privacy Policy
           </Link>
-          <Link
+          {/* <Link
             onClick={() => {
               navigate("/data-subject-access-request");
             }}
@@ -128,14 +128,7 @@ const Footer = () => {
             }}
           >
             Do Not Sell My Info
-          </Link>
-          <Link
-            onClick={() => {
-              navigate("/cookies-policy");
-            }}
-          >
-            Cookie Preferences
-          </Link>
+          </Link> */}
           <Logo style={{ marginTop: 20 }} />
         </NavLinks>
 

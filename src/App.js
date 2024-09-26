@@ -88,7 +88,7 @@ function App() {
             <Route path="/eula" element={<EULAPage />} />
             <Route path="/disclaimer" element={<DisclaimerPage />} />
             <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-            <Route path="/data-subject-access-request" element={<DSARPage />} />
+            {/* <Route path="/data-subject-access-request" element={<DSARPage />} /> */}
           </Routes>
           <GoToTop show={showGoToTop} onClick={goToTop}>
             <ChevronTop />
