@@ -17,6 +17,7 @@ import RequestFormPage from "./screens/RequestFormPage/RequestFormPage";
 import ContactUsPage from "./screens/ContactUsPage/ContactUsPage";
 import MagazinePage from "./screens/MagazinePage/MagazinePage";
 import SupportPage from "./screens/SupportPage/SupportPage";
+import CookiesPolicyPage from "./screens/CookiesPolicyPage/CookiesPolicyPage";
 
 function App() {
   const [minimumDurationPassed, setMinimumDurationPassed] = useState(false);
@@ -74,6 +75,7 @@ function App() {
             <Route path="/eMagazine" element={<MagazinePage />} />
             <Route path="/request-form" element={<RequestFormPage />} />
             <Route path="/support-request" element={<SupportPage />} />
+            <Route path="/cookies-policy" element={<CookiesPolicyPage />} />
           </Routes>
           <GoToTop show={showGoToTop} onClick={goToTop}>
             <ChevronTop />
